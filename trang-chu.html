@@ -110,6 +110,35 @@
         transition: none !important;
       }
     }
+    /* Feathered Edge Mask for Soft Seamless Backdrop Transitions */
+    .feather-mask-y {
+      -webkit-mask-image: linear-gradient(to bottom, transparent 0%, black 15%, black 85%, transparent 100%);
+      mask-image: linear-gradient(to bottom, transparent 0%, black 15%, black 85%, transparent 100%);
+    }
+
+    /* Dual Opposing Infinite Marquee Animations */
+    @keyframes marquee-left {
+      0% { transform: translateX(0%); }
+      100% { transform: translateX(-50%); }
+    }
+    @keyframes marquee-right {
+      0% { transform: translateX(-50%); }
+      100% { transform: translateX(0%); }
+    }
+    .animate-marquee-left {
+      display: flex;
+      width: max-content;
+      animation: marquee-left 34s linear infinite;
+    }
+    .animate-marquee-right {
+      display: flex;
+      width: max-content;
+      animation: marquee-right 34s linear infinite;
+    }
+    .marquee-container:hover .animate-marquee-left,
+    .marquee-container:hover .animate-marquee-right {
+      animation-play-state: paused;
+    }
   </style>
 </head>
 <body class="bg-white text-slate-800 antialiased selection:bg-brand-900 selection:text-white">
@@ -225,11 +254,11 @@
       <div class="absolute inset-0 z-0 overflow-hidden pointer-events-none">
         <img src="assets/images/may-say-container-cuong-thinh.jpg" 
              alt="Cường Thịnh - Dàn máy sấy container và nhà máy thực tế Lai Châu" 
-             class="w-full h-full object-cover object-center scale-105 filter brightness-[0.72] contrast-[1.1] transition-transform duration-1000">
+             class="w-full h-full object-cover object-center scale-105 filter brightness-[0.72] contrast-[1.1] transition-transform duration-1000 feather-mask-y">
         <!-- Layer 1: Horizontal Directional Deep Emerald to Obsidian Tint -->
         <div class="absolute inset-0 bg-gradient-to-r from-[#03140C]/96 via-[#072517]/88 to-[#03140C]/82"></div>
         <!-- Layer 2: Top-Bottom Vignette to enhance Header & Section 2 Transition -->
-        <div class="absolute inset-0 bg-gradient-to-b from-[#03140C]/70 via-transparent to-[#04170E]"></div>
+        <div class="absolute inset-0 bg-gradient-to-b from-[#04170E] via-transparent to-[#04170E]"></div>
         <!-- Layer 3: Ambient Radial Glow -->
         <div class="absolute -top-24 -left-24 w-96 h-96 bg-emerald-500/15 rounded-full blur-3xl"></div>
         <div class="absolute top-1/2 right-0 w-[500px] h-[500px] bg-amber-500/10 rounded-full blur-3xl"></div>
@@ -318,18 +347,18 @@
               <!-- Real Plant Image Window -->
               <div class="relative rounded-2xl overflow-hidden aspect-[4/3] w-full border border-white/15 bg-black/40 shadow-inner">
                 <img class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" 
-                     alt="Container máy sấy hạt Macca Cường Thịnh Carrier 45R1 tại xưởng sản xuất" 
-                     src="assets/images/may-say-container-cuong-thinh.jpg">
-                <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent"></div>
+                     alt="Dây chuyền chế biến nông sản đạt chuẩn ISO tại Nhà máy Tam Đường" 
+                     src="assets/images/nha-may-che-bien-tam-duong.jpg">
+                <div class="absolute inset-0 bg-gradient-to-t from-black/85 via-black/20 to-transparent"></div>
                 
                 <!-- Floating Glass Badge on image -->
                 <div class="absolute bottom-3 left-3 right-3 flex items-center justify-between text-white text-xs">
                   <div class="flex items-center gap-2 bg-black/60 backdrop-blur-md px-3 py-1.5 rounded-xl border border-white/20">
-                    <span class="material-symbols-outlined text-[16px] text-amber-400">tune</span>
-                    <span class="font-bold">Model MS-20 Container</span>
+                    <span class="material-symbols-outlined text-[16px] text-emerald-400">precision_manufacturing</span>
+                    <span class="font-bold">Nhà Máy Tam Đường</span>
                   </div>
                   <span class="bg-emerald-600/90 backdrop-blur-md px-2.5 py-1.5 rounded-xl font-bold text-[11px] border border-emerald-400/40">
-                    20 TẤN / MẺ
+                    ISO 22000 READY
                   </span>
                 </div>
               </div>
@@ -451,21 +480,106 @@
       </div>
     </section>
 
+    <!-- DUAL OPPOSING SYMMETRIC MARQUEE TICKER (LIVE ECOSYSTEM TELEMETRY) -->
+    <div class="w-full bg-[#03140C] border-y border-emerald-900/60 py-4 overflow-hidden relative select-none shadow-inner" aria-hidden="true">
+      <!-- Ambient side vignettes for smooth edge fade-out -->
+      <div class="pointer-events-none absolute inset-y-0 left-0 w-24 sm:w-44 bg-gradient-to-r from-[#03140C] to-transparent z-10"></div>
+      <div class="pointer-events-none absolute inset-y-0 right-0 w-24 sm:w-44 bg-gradient-to-l from-[#03140C] to-transparent z-10"></div>
+      
+      <!-- Track 1: Moving Right-to-Left (Thiết Bị Cơ Khí & Công Nghệ Sấy MS-20) -->
+      <div class="marquee-container overflow-hidden py-1">
+        <div class="animate-marquee-left flex items-center gap-8 whitespace-nowrap text-xs sm:text-sm font-semibold text-slate-300">
+          <span class="flex items-center gap-2"><span class="material-symbols-outlined text-amber-400 text-[18px]">precision_manufacturing</span> Dàn Máy Sấy Khí Động Học MS-20</span>
+          <span class="text-emerald-500">•</span>
+          <span class="flex items-center gap-2"><span class="material-symbols-outlined text-emerald-400 text-[18px]">shield</span> 100% Inox SUS 304 Thực Phẩm</span>
+          <span class="text-emerald-500">•</span>
+          <span class="flex items-center gap-2"><span class="material-symbols-outlined text-amber-400 text-[18px]">bolt</span> Tiết Kiệm 40% Điện Năng Tuần Hoàn Kín</span>
+          <span class="text-emerald-500">•</span>
+          <span class="flex items-center gap-2"><span class="material-symbols-outlined text-emerald-400 text-[18px]">tune</span> Hệ Điều Khiển PLC Cảm Ứng Tự Động</span>
+          <span class="text-emerald-500">•</span>
+          <span class="flex items-center gap-2"><span class="material-symbols-outlined text-amber-400 text-[18px]">water_drop</span> Kiểm Soát Độ Ẩm Sâu &lt; 2.5% Chuẩn Xuất Khẩu</span>
+          <span class="text-emerald-500">•</span>
+          <span class="flex items-center gap-2"><span class="material-symbols-outlined text-emerald-400 text-[18px]">factory</span> Xưởng Chế Tạo Đình Vũ Hải Phòng (3.500m²)</span>
+          <span class="text-emerald-500">•</span>
+          <span class="flex items-center gap-2"><span class="material-symbols-outlined text-amber-400 text-[18px]">handshake</span> Chuyển Giao Trọn Gói 24+ Hợp Tác Xã</span>
+          <span class="text-emerald-500">•</span>
+          <span class="flex items-center gap-2"><span class="material-symbols-outlined text-emerald-400 text-[18px]">verified</span> Bảo Hành Kỹ Thuật 24 Tháng</span>
+          <span class="text-emerald-500">•</span>
+          <!-- Duplicate set for continuous seamless loop -->
+          <span class="flex items-center gap-2"><span class="material-symbols-outlined text-amber-400 text-[18px]">precision_manufacturing</span> Dàn Máy Sấy Khí Động Học MS-20</span>
+          <span class="text-emerald-500">•</span>
+          <span class="flex items-center gap-2"><span class="material-symbols-outlined text-emerald-400 text-[18px]">shield</span> 100% Inox SUS 304 Thực Phẩm</span>
+          <span class="text-emerald-500">•</span>
+          <span class="flex items-center gap-2"><span class="material-symbols-outlined text-amber-400 text-[18px]">bolt</span> Tiết Kiệm 40% Điện Năng Tuần Hoàn Kín</span>
+          <span class="text-emerald-500">•</span>
+          <span class="flex items-center gap-2"><span class="material-symbols-outlined text-emerald-400 text-[18px]">tune</span> Hệ Điều Khiển PLC Cảm Ứng Tự Động</span>
+          <span class="text-emerald-500">•</span>
+          <span class="flex items-center gap-2"><span class="material-symbols-outlined text-amber-400 text-[18px]">water_drop</span> Kiểm Soát Độ Ẩm Sâu &lt; 2.5% Chuẩn Xuất Khẩu</span>
+          <span class="text-emerald-500">•</span>
+          <span class="flex items-center gap-2"><span class="material-symbols-outlined text-emerald-400 text-[18px]">factory</span> Xưởng Chế Tạo Đình Vũ Hải Phòng (3.500m²)</span>
+          <span class="text-emerald-500">•</span>
+          <span class="flex items-center gap-2"><span class="material-symbols-outlined text-amber-400 text-[18px]">handshake</span> Chuyển Giao Trọn Gói 24+ Hợp Tác Xã</span>
+          <span class="text-emerald-500">•</span>
+          <span class="flex items-center gap-2"><span class="material-symbols-outlined text-emerald-400 text-[18px]">verified</span> Bảo Hành Kỹ Thuật 24 Tháng</span>
+          <span class="text-emerald-500">•</span>
+        </div>
+      </div>
+
+      <!-- Track 2: Moving Left-to-Right (Nông Sản Bản Địa & Chuỗi Liên Kết HTX) -->
+      <div class="marquee-container overflow-hidden py-1 border-t border-emerald-950/60 mt-1.5">
+        <div class="animate-marquee-right flex items-center gap-8 whitespace-nowrap text-xs sm:text-sm font-semibold text-emerald-300/90">
+          <span class="flex items-center gap-2"><span class="material-symbols-outlined text-emerald-400 text-[18px]">eco</span> Hạt Mắc-ca Lai Châu OCOP 4 Sao</span>
+          <span class="text-amber-500/60">•</span>
+          <span class="flex items-center gap-2"><span class="material-symbols-outlined text-amber-300 text-[18px]">landscape</span> Vùng Trồng Tam Đường Cao Trên 800m</span>
+          <span class="text-amber-500/60">•</span>
+          <span class="flex items-center gap-2"><span class="material-symbols-outlined text-emerald-400 text-[18px]">nutrition</span> Thảo Quả Rừng Tây Bắc Sấy Khô</span>
+          <span class="text-amber-500/60">•</span>
+          <span class="flex items-center gap-2"><span class="material-symbols-outlined text-amber-300 text-[18px]">spa</span> Bí Xanh Thơm Ba Bể Sấy Thăng Hoa</span>
+          <span class="text-amber-500/60">•</span>
+          <span class="flex items-center gap-2"><span class="material-symbols-outlined text-emerald-400 text-[18px]">domain</span> Nhà Máy Chế Biến Bản Nùng Nàng (Tam Đường)</span>
+          <span class="text-amber-500/60">•</span>
+          <span class="flex items-center gap-2"><span class="material-symbols-outlined text-amber-300 text-[18px]">workspace_premium</span> Chuẩn Hóa ISO 22000:2018 &amp; HACCP</span>
+          <span class="text-amber-500/60">•</span>
+          <span class="flex items-center gap-2"><span class="material-symbols-outlined text-emerald-400 text-[18px]">groups</span> Bao Tiêu Nông Sản Cho 1.200+ Hộ Dân Bản Địa</span>
+          <span class="text-amber-500/60">•</span>
+          <span class="flex items-center gap-2"><span class="material-symbols-outlined text-amber-300 text-[18px]">public</span> Xuất Khẩu Chính Ngạch Trung Quốc, Nhật Bản</span>
+          <span class="text-amber-500/60">•</span>
+          <!-- Duplicate set for continuous seamless loop -->
+          <span class="flex items-center gap-2"><span class="material-symbols-outlined text-emerald-400 text-[18px]">eco</span> Hạt Mắc-ca Lai Châu OCOP 4 Sao</span>
+          <span class="text-amber-500/60">•</span>
+          <span class="flex items-center gap-2"><span class="material-symbols-outlined text-amber-300 text-[18px]">landscape</span> Vùng Trồng Tam Đường Cao Trên 800m</span>
+          <span class="text-amber-500/60">•</span>
+          <span class="flex items-center gap-2"><span class="material-symbols-outlined text-emerald-400 text-[18px]">nutrition</span> Thảo Quả Rừng Tây Bắc Sấy Khô</span>
+          <span class="text-amber-500/60">•</span>
+          <span class="flex items-center gap-2"><span class="material-symbols-outlined text-amber-300 text-[18px]">spa</span> Bí Xanh Thơm Ba Bể Sấy Thăng Hoa</span>
+          <span class="text-amber-500/60">•</span>
+          <span class="flex items-center gap-2"><span class="material-symbols-outlined text-emerald-400 text-[18px]">domain</span> Nhà Máy Chế Biến Bản Nùng Nàng (Tam Đường)</span>
+          <span class="text-amber-500/60">•</span>
+          <span class="flex items-center gap-2"><span class="material-symbols-outlined text-amber-300 text-[18px]">workspace_premium</span> Chuẩn Hóa ISO 22000:2018 &amp; HACCP</span>
+          <span class="text-amber-500/60">•</span>
+          <span class="flex items-center gap-2"><span class="material-symbols-outlined text-emerald-400 text-[18px]">groups</span> Bao Tiêu Nông Sản Cho 1.200+ Hộ Dân Bản Địa</span>
+          <span class="text-amber-500/60">•</span>
+          <span class="flex items-center gap-2"><span class="material-symbols-outlined text-amber-300 text-[18px]">public</span> Xuất Khẩu Chính Ngạch Trung Quốc, Nhật Bản</span>
+          <span class="text-amber-500/60">•</span>
+        </div>
+      </div>
+    </div>
+
     <!-- SECTION 3: 4 CORE COMPETENCIES (CINEMATIC INDUSTRIAL WORKSHOP BACKDROP) -->
-    <section class="relative py-20 lg:py-28 bg-[#04170E] overflow-hidden border-y border-emerald-950" data-reveal="up">
+    <section class="relative py-20 lg:py-28 bg-[#04170E] overflow-hidden border-y border-emerald-950">
       <!-- Authentic Industrial Workshop Backdrop (Clearly Visible & Dramatic) -->
       <div class="absolute inset-0 z-0 overflow-hidden pointer-events-none">
         <img src="assets/images/thi-cong-may-say-dinh-vu.jpg" 
              alt="Xưởng cơ khí Cường Thịnh Đình Vũ" 
-             class="w-full h-full object-cover object-center scale-105 filter brightness-[0.70] contrast-[1.25]">
+             class="w-full h-full object-cover object-center scale-105 filter brightness-[0.70] contrast-[1.25] feather-mask-y">
         <div class="absolute inset-0 bg-gradient-to-r from-[#03140C]/94 via-[#072416]/82 to-[#03140C]/90"></div>
-        <div class="absolute inset-0 bg-gradient-to-b from-[#03140C]/70 via-transparent to-[#03140C]/85"></div>
+        <div class="absolute inset-0 bg-gradient-to-b from-[#04170E] via-transparent to-[#04170E]"></div>
       </div>
 
       <div class="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <!-- Section Header -->
+        <!-- Section Header (Symmetrical Reveal) -->
         <div class="flex flex-col md:flex-row md:items-end justify-between gap-6 mb-12">
-          <div class="flex flex-col gap-3">
+          <div class="flex flex-col gap-3" data-reveal="left">
             <span class="text-xs font-bold uppercase tracking-widest text-[#F59E0B] font-headline flex items-center gap-1.5">
               <span class="material-symbols-outlined text-[16px]">domain</span>
               HỆ SINH THÁI CƯỜNG THỊNH TECH &amp; AGRO
@@ -474,16 +588,16 @@
               4 Năng Lực Cốt Lõi Kiến Tạo Chuỗi Giá Trị
             </h2>
           </div>
-          <p class="text-sm sm:text-base text-gray-200 max-w-xl leading-relaxed">
+          <p class="text-sm sm:text-base text-gray-200 max-w-xl leading-relaxed" data-reveal="right">
             Mô hình liên kết đa tầng giữa giải pháp cơ khí hiện đại và chế biến sâu nông sản tự nhiên, chuẩn hóa tiêu chuẩn thương mại quốc tế.
           </p>
         </div>
 
-        <!-- Bento Grid 4 Cards -->
+        <!-- Bento Grid 4 Cards (Symmetrical Center-Meeting Motion: Cards 1&2 from Left, Cards 3&4 from Right) -->
         <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
           
           <!-- Card 1: Chế Tạo Máy -->
-          <div class="group bg-white/95 backdrop-blur-md rounded-2xl border border-gray-200/90 shadow-sm hover:shadow-2xl transition-all duration-300 flex flex-col justify-between relative overflow-hidden">
+          <div class="group bg-white/95 backdrop-blur-md rounded-2xl border border-gray-200/90 shadow-sm hover:shadow-2xl transition-all duration-300 flex flex-col justify-between relative overflow-hidden" data-reveal="left">
             <div class="relative h-44 w-full overflow-hidden bg-gray-900">
               <img class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" alt="Chế tạo máy móc cơ khí Inox SUS 304 Hải Phòng" src="assets/images/thi-cong-may-say-dinh-vu.jpg">
               <div class="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent"></div>
@@ -515,7 +629,7 @@
           </div>
 
           <!-- Card 2: Chế Biến Nông Sản -->
-          <div class="group bg-white/95 backdrop-blur-md rounded-2xl border border-gray-200/90 shadow-sm hover:shadow-2xl transition-all duration-300 flex flex-col justify-between relative overflow-hidden">
+          <div class="group bg-white/95 backdrop-blur-md rounded-2xl border border-gray-200/90 shadow-sm hover:shadow-2xl transition-all duration-300 flex flex-col justify-between relative overflow-hidden" data-reveal="left">
             <div class="relative h-44 w-full overflow-hidden bg-gray-900">
               <img class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" alt="Khay sấy macca công nghiệp tại nhà máy Tam Đường" src="assets/images/khay-say-macca-nha-may.jpg">
               <div class="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent"></div>
@@ -547,7 +661,7 @@
           </div>
 
           <!-- Card 3: Thương Mại & Xuất Khẩu -->
-          <div class="group bg-white/95 backdrop-blur-md rounded-2xl border border-gray-200/90 shadow-sm hover:shadow-2xl transition-all duration-300 flex flex-col justify-between relative overflow-hidden">
+          <div class="group bg-white/95 backdrop-blur-md rounded-2xl border border-gray-200/90 shadow-sm hover:shadow-2xl transition-all duration-300 flex flex-col justify-between relative overflow-hidden" data-reveal="right">
             <div class="relative h-44 w-full overflow-hidden bg-gray-900">
               <img class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" alt="Xúc tiến thương mại xuất khẩu nông sản Cường Thịnh" src="assets/images/xuc-tien-thuong-mai-quoc-te.jpg">
               <div class="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent"></div>
@@ -579,7 +693,7 @@
           </div>
 
           <!-- Card 4: Chuyển Giao HTX -->
-          <div class="group bg-white rounded-2xl border border-gray-200/90 shadow-lg hover:shadow-2xl transition-all duration-300 flex flex-col justify-between relative overflow-hidden">
+          <div class="group bg-white rounded-2xl border border-gray-200/90 shadow-lg hover:shadow-2xl transition-all duration-300 flex flex-col justify-between relative overflow-hidden" data-reveal="right">
             <div class="relative h-44 w-full overflow-hidden bg-gray-900">
               <img class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" alt="Xe Hino chuyên dụng vận chuyển máy sấy Cường Thịnh chuyển giao cho các HTX Tây Bắc" src="assets/images/xe-hino-van-chuyen-may-say.jpg">
               <div class="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent"></div>
@@ -629,7 +743,7 @@
           <div class="relative z-10 grid grid-cols-1 lg:grid-cols-12 gap-10 items-center">
             
             <!-- Left Info (7 cols) -->
-            <div class="lg:col-span-7 flex flex-col gap-6">
+            <div class="lg:col-span-7 flex flex-col gap-6" data-reveal="left">
               <div class="flex flex-wrap items-center gap-2">
                 <span class="px-3 py-1 bg-amber-50 border border-amber-200 text-[#B45309] text-xs font-bold rounded-full uppercase tracking-wider font-headline">
                   THIẾT BỊ ĐỘT PHÁ CÔNG NGHỆ 2024
@@ -693,7 +807,7 @@
             </div>
 
             <!-- Right Visual (5 cols): Real Plant Photo with Spec Badges -->
-            <div class="lg:col-span-5 relative">
+            <div class="lg:col-span-5 relative" data-reveal="right">
               <div class="relative rounded-2xl overflow-hidden shadow-xl border border-gray-200 bg-gray-900 group">
                 <img class="w-full h-80 lg:h-96 object-cover group-hover:scale-105 transition-transform duration-700" alt="Bàn giao thực tế hệ thống sấy container MS-20 Cường Thịnh" src="assets/images/ban-giao-may-say-truong-giang.jpg">
                 <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent"></div>
@@ -718,20 +832,20 @@
     </section>
 
     <!-- SECTION 5: SPECIALTY NORTHWEST AGRO-PRODUCTS (CINEMATIC MOUNTAIN PLANTATION BACKDROP) -->
-    <section class="relative py-20 lg:py-28 bg-[#04170E] border-t border-emerald-950 overflow-hidden" data-reveal="up">
+    <section class="relative py-20 lg:py-28 bg-[#04170E] border-t border-emerald-950 overflow-hidden">
       <!-- Authentic Mountain Plantation Backdrop (Clearly Visible & Dramatic) -->
       <div class="absolute inset-0 z-0 overflow-hidden pointer-events-none">
         <img src="assets/images/vuon-uom-macca-doi-nui.jpg" 
              alt="Vùng nguyên liệu núi cao Lai Châu - Cường Thịnh" 
-             class="w-full h-full object-cover object-center scale-105 filter brightness-[0.70] contrast-[1.25]">
+             class="w-full h-full object-cover object-center scale-105 filter brightness-[0.70] contrast-[1.25] feather-mask-y">
         <div class="absolute inset-0 bg-gradient-to-r from-[#03140C]/94 via-[#072416]/82 to-[#03140C]/90"></div>
-        <div class="absolute inset-0 bg-gradient-to-b from-[#03140C]/70 via-transparent to-[#03140C]/85"></div>
+        <div class="absolute inset-0 bg-gradient-to-b from-[#04170E] via-transparent to-[#04170E]"></div>
       </div>
 
       <div class="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <!-- Header -->
+        <!-- Header (Symmetrical Reveal) -->
         <div class="flex flex-col md:flex-row md:items-end justify-between gap-6 mb-12">
-          <div class="flex flex-col gap-3">
+          <div class="flex flex-col gap-3" data-reveal="left">
             <span class="text-xs font-bold uppercase tracking-widest text-[#F59E0B] font-headline flex items-center gap-1.5">
               <span class="material-symbols-outlined text-[16px]">eco</span>
               VÙNG NGUYÊN LIỆU ĐẶC SẢN TÂY BẮC
@@ -740,16 +854,16 @@
               Nông Sản Chủ Lực Chuẩn Xuất Khẩu
             </h2>
           </div>
-          <p class="text-sm sm:text-base text-gray-200 max-w-xl leading-relaxed">
+          <p class="text-sm sm:text-base text-gray-200 max-w-xl leading-relaxed" data-reveal="right">
             Thu hoạch từ thổ nhưỡng cao nguyên trù phú Lai Châu — Điện Biên — Lạng Sơn, chế biến sâu ngay tại chỗ bằng công nghệ MS-20 giúp lưu giữ trọn vẹn hương vị tự nhiên.
           </p>
         </div>
 
-        <!-- 3 Luxury B2B Product Cards -->
+        <!-- 3 Luxury B2B Product Cards (Symmetrical: Left from Left, Center from Up, Right from Right) -->
         <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
           
           <!-- Product 1: Macca -->
-          <div class="bg-white/95 backdrop-blur-md rounded-2xl border border-gray-200/90 shadow-sm hover:shadow-2xl transition-all duration-300 flex flex-col overflow-hidden group">
+          <div class="bg-white/95 backdrop-blur-md rounded-2xl border border-gray-200/90 shadow-sm hover:shadow-2xl transition-all duration-300 flex flex-col overflow-hidden group" data-reveal="left">
             <div class="relative h-60 overflow-hidden bg-gray-100">
               <img class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" alt="Hạt Mắc-ca sấy nứt tự nhiên Lai Châu" src="assets/images/nong-san-chu-luc-tay-bac.jpg">
               <span class="absolute top-3 left-3 px-3 py-1 bg-[#0B3B24] text-white text-xs font-bold rounded-full uppercase tracking-wider font-headline">
@@ -779,7 +893,7 @@
           </div>
 
           <!-- Product 2: Cà phê -->
-          <div class="bg-white/95 backdrop-blur-md rounded-2xl border border-gray-200/90 shadow-sm hover:shadow-2xl transition-all duration-300 flex flex-col overflow-hidden group">
+          <div class="bg-white/95 backdrop-blur-md rounded-2xl border border-gray-200/90 shadow-sm hover:shadow-2xl transition-all duration-300 flex flex-col overflow-hidden group" data-reveal="up">
             <div class="relative h-60 overflow-hidden bg-gray-100">
               <img class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" alt="Cà phê Arabica Núi Cao Điện Biên" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBRESmZ7Alj_kzfy2Sh2A06H-ivtkB3QqHeHiwUIu1OpVOo_-8QDzO4M-BakS3XLk50xvlcmIROJbgcaBkB5PKAbyEFb1l8KTioVaLUaL0J9U8SKuZSmmVTKwMrTafwkmjnHw8ah95uWqEN8NlgSMpd7qkW92R_3mMcKIdtngxJrcK1ZVvbyw002h4kbfIP1kkAKZNFG3Exxg59VdNI6-kNkY4LwZ76GnrUy52t3q6Ydsb5X6xhxtFbhw">
               <span class="absolute top-3 left-3 px-3 py-1 bg-[#0B3B24] text-white text-xs font-bold rounded-full uppercase tracking-wider font-headline">
@@ -809,7 +923,7 @@
           </div>
 
           <!-- Product 3: Quế & Hồi -->
-          <div class="bg-white/95 backdrop-blur-md rounded-2xl border border-gray-200/90 shadow-sm hover:shadow-2xl transition-all duration-300 flex flex-col overflow-hidden group">
+          <div class="bg-white/95 backdrop-blur-md rounded-2xl border border-gray-200/90 shadow-sm hover:shadow-2xl transition-all duration-300 flex flex-col overflow-hidden group" data-reveal="right">
             <div class="relative h-60 overflow-hidden bg-gray-100">
               <img class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" alt="Quế rừng tự nhiên và Hoa hồi Lạng Sơn" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBGVzByMfa9wRnjN3atOiarFf-NTEnLEHSPFd4Jol3nG6Ai8r1aJISBxK5OcEaNEpm_ax1b6fD7m7t3_rq2C3YAd0m7j56cXcRxeGMQMlOsO-l5gpS8knihn6VVlhqUc1lyfPTaGVXD9sltc5MAKCv__ubdtfWfhCySi6Nc6-4IFdFuqZe89HPuhyOo7xwNeWYnuLFF8sQNIeb_nGADSxjfOytCKyjErOMHRij96Q2yZ2_VUuSGiRIy7Q">
               <span class="absolute top-3 left-3 px-3 py-1 bg-[#0B3B24] text-white text-xs font-bold rounded-full uppercase tracking-wider font-headline">
@@ -857,7 +971,7 @@
           <div class="relative z-10 grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 items-center">
             
             <!-- Left Info (7 cols) -->
-            <div class="lg:col-span-7 flex flex-col gap-6">
+            <div class="lg:col-span-7 flex flex-col gap-6" data-reveal="left">
               <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-white/10 backdrop-blur-md border border-white/15 w-fit">
                 <span class="w-2 h-2 rounded-full bg-[#F59E0B] animate-pulse"></span>
                 <span class="text-xs font-bold tracking-widest uppercase text-amber-300 font-headline">Cổng Tiếp Nhận B2B • Phản Hồi Trong 2 Giờ</span>
@@ -889,7 +1003,7 @@
             </div>
 
             <!-- Right Action Box (5 cols) -->
-            <div class="lg:col-span-5 flex flex-col gap-4 bg-white/10 backdrop-blur-md p-6 sm:p-8 rounded-2xl border border-white/20 shadow-xl">
+            <div class="lg:col-span-5 flex flex-col gap-4 bg-white/10 backdrop-blur-md p-6 sm:p-8 rounded-2xl border border-white/20 shadow-xl" data-reveal="right">
               <span class="text-xs font-bold uppercase tracking-wider text-amber-300 font-headline">Hành Động Trọng Tâm</span>
               
               <a href="bao-gia-rfq.html" class="flex items-center justify-between px-6 py-4 rounded-xl bg-gradient-to-r from-[#D97706] to-[#B45309] hover:from-[#B45309] hover:to-[#92400E] text-white font-bold text-base shadow-lg hover:shadow-xl transition-all transform hover:-translate-y-0.5 group">
