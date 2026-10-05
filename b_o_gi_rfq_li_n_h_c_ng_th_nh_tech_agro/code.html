@@ -255,31 +255,102 @@
     </section>
 
     <!-- SECTION 1: HERO & THREE SLA TELEMETRY METRICS -->
-    <section class="py-14 lg:py-18 bg-gradient-to-b from-white via-slate-50/50 to-white relative overflow-hidden border-b border-gray-100" data-reveal="up">
+    <section class="py-12 lg:py-16 bg-gradient-to-b from-white via-slate-50/50 to-white relative overflow-hidden border-b border-gray-200/80">
       <div class="absolute inset-0 bg-[radial-gradient(#e5e7eb_1px,transparent_1px)] [background-size:20px_20px] opacity-60 pointer-events-none"></div>
 
       <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         
-        <div class="text-center max-w-3xl mx-auto flex flex-col items-center gap-4 mb-10">
-          <div class="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-emerald-50 border border-emerald-200/70 text-[#0B3B24] text-xs font-bold uppercase tracking-wider shadow-xs">
-            <span class="material-symbols-outlined text-[16px] text-[#D97706]">receipt_long</span>
-            YÊU CẦU BÁO GIÁ KỸ THUẬT &amp; DỰ TOÁN B2B
+        <!-- Hero 2-Column Split: Editorial Manifesto + Real Engineering Workshop Visual -->
+        <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 items-center pb-12">
+          
+          <!-- Left: Headline & Manifesto (7 cols) -->
+          <div class="lg:col-span-7 flex flex-col gap-5" data-reveal="left">
+            <div class="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-emerald-50 border border-emerald-200/70 text-[#0B3B24] text-xs font-bold uppercase tracking-wider self-start shadow-xs">
+              <span class="w-2 h-2 rounded-full bg-[#D97706] animate-pulse"></span>
+              YÊU CẦU BÁO GIÁ KỸ THUẬT &amp; DỰ TOÁN B2B
+            </div>
+
+            <h1 class="font-headline text-3xl sm:text-4xl lg:text-5xl font-extrabold text-slate-950 leading-[1.15] tracking-tight">
+              Cổng Tiếp Nhận <br class="hidden sm:inline">
+              <span class="text-[#0B3B24]">Báo Giá Kỹ Thuật (RFQ)</span> &amp; Dự Toán
+            </h1>
+
+            <p class="text-base sm:text-lg text-slate-600 leading-relaxed max-w-2xl">
+              Dành riêng cho Doanh nghiệp chế biến, Hợp tác xã nông nghiệp và Chủ đầu tư chuỗi giá trị. Đội ngũ kỹ sư cơ điện chế tạo Cường Thịnh cung cấp báo giá bóc tách BoM chi tiết, sơ đồ bố trí CAD và phương án hoàn vốn thực tế.
+            </p>
+
+            <!-- 2 Quick Action Buttons -->
+            <div class="flex flex-wrap items-center gap-3 pt-2">
+              <a href="#rfq-master-form" class="inline-flex items-center gap-2 px-5 py-3 rounded-xl bg-[#0B3B24] hover:bg-[#144d32] text-white font-bold text-xs sm:text-sm shadow-md hover:shadow-lg transition-all transform hover:-translate-y-0.5">
+                <span class="material-symbols-outlined text-[18px] text-[#F59E0B]">assignment_turned_in</span>
+                <span>Điền Phiếu Yêu Cầu Báo Giá RFQ</span>
+              </a>
+              <a href="tel:0932050101" class="inline-flex items-center gap-2 px-5 py-3 rounded-xl bg-white border border-gray-300 hover:border-gray-400 text-slate-800 font-semibold text-xs sm:text-sm shadow-xs hover:bg-gray-50 transition-all">
+                <span class="material-symbols-outlined text-[18px] text-[#D97706]">call</span>
+                <span>Hotline Kỹ Sư Trưởng: 0932.050101</span>
+              </a>
+            </div>
           </div>
 
-          <h1 class="font-headline text-3xl sm:text-4xl lg:text-5xl font-extrabold text-slate-950 leading-[1.15] tracking-tight">
-            Cổng Tiếp Nhận <span class="text-[#0B3B24]">Báo Giá Kỹ Thuật (RFQ)</span>
-          </h1>
+          <!-- Right: Authentic Engineering Fabrication & Plant Visual (5 cols) -->
+          <div class="lg:col-span-5 relative" data-reveal="right">
+            <div class="relative rounded-2xl overflow-hidden shadow-2xl border border-gray-200/90 bg-gray-900 group">
+              <!-- Top bar indicator on image -->
+              <div class="absolute top-0 left-0 right-0 z-20 px-4 py-2.5 bg-black/60 backdrop-blur-md text-white flex items-center justify-between text-xs font-semibold tracking-wider uppercase">
+                <span class="flex items-center gap-1.5 text-[#86efac]">
+                  <span class="material-symbols-outlined text-[14px]">verified</span>
+                  Xưởng Chế Tạo &amp; Lắp Ráp Inox 304
+                </span>
+                <span class="text-gray-300">KCN Đình Vũ • Hải Phòng</span>
+              </div>
 
-          <p class="text-sm sm:text-base text-slate-600 leading-relaxed">
-            Dành cho Hợp tác xã, Doanh nghiệp chế biến thực phẩm và Đối tác thương mại quốc tế. Đội ngũ kỹ sư cơ điện chế tạo Cường Thịnh cung cấp báo giá chi tiết, sơ đồ CAD và giải pháp tài trợ vốn khả thi trong 24 giờ.
-          </p>
+              <!-- Real Plant & Engineering Visual -->
+              <div class="aspect-[4/3] w-full overflow-hidden">
+                <img class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" 
+                     alt="Xưởng gia công cơ khí chế tạo máy sấy Inox 304 Cường Thịnh tại Hải Phòng" 
+                     src="https://lh3.googleusercontent.com/aida-public/AB6AXuBgaTq892LHp371QYrIaEQt25Qa87AZuNVW_J2yXW7o34Lnmc2Vsgf_EhV2zAqASXMI1MKSMQknmzg1kjKwcVyefQmwZmiW_iPoefGbgQur__CPm3UDKbqKIGPBl0x90MVkepRGJ6GPcG9AjCdYZwSeJXlmXGIZZvyjPYTUIwGz6P8DJnzxUAsS6jWPEVvL55TG72d3F88p9kOWERlS31S6trGj6AJl1vgkpAmheJRNzmE0fBl32vssgA">
+              </div>
+
+              <!-- Floating Glass Badge 1 (Bottom Left) -->
+              <div class="absolute bottom-4 left-4 z-20 px-3.5 py-2 rounded-xl bg-white/95 backdrop-blur-md text-[#0B3B24] border border-white/50 shadow-lg flex items-center gap-2">
+                <div class="w-7 h-7 rounded-lg bg-[#0B3B24] text-white flex items-center justify-center shrink-0 font-bold text-xs">&lt;2h</div>
+                <div class="flex flex-col">
+                  <span class="text-[11px] font-bold uppercase leading-tight font-headline">Phản Hồi RFQ Nhanh</span>
+                  <span class="text-[10px] text-slate-500 leading-tight">Tiếp nhận 24/7 toàn quốc</span>
+                </div>
+              </div>
+
+              <!-- Floating Glass Badge 2 (Bottom Right) -->
+              <div class="absolute bottom-4 right-4 z-20 px-3 py-2 rounded-xl bg-[#0B3B24]/90 backdrop-blur-md text-white border border-[#144d32] shadow-lg flex items-center gap-1.5 text-xs font-semibold">
+                <span class="material-symbols-outlined text-[16px] text-[#F59E0B]">lock</span>
+                <span>Bảo Mật NDA 100%</span>
+              </div>
+            </div>
+
+            <!-- 3 Engineering Anchors Below Image -->
+            <div class="mt-4 grid grid-cols-3 gap-2.5 text-center">
+              <div class="p-2.5 rounded-xl bg-white border border-gray-200/80 shadow-xs">
+                <span class="block text-xs font-bold text-[#0B3B24] font-headline">Bóc Tách BoM</span>
+                <span class="text-[10px] text-slate-500">Chuẩn Inox 304</span>
+              </div>
+              <div class="p-2.5 rounded-xl bg-white border border-gray-200/80 shadow-xs">
+                <span class="block text-xs font-bold text-[#B45309] font-headline">Layout CAD 2D/3D</span>
+                <span class="text-[10px] text-slate-500">Khảo sát miễn phí</span>
+              </div>
+              <div class="p-2.5 rounded-xl bg-white border border-gray-200/80 shadow-xs">
+                <span class="block text-xs font-bold text-emerald-700 font-headline">Hỗ Trợ HTX</span>
+                <span class="text-[10px] text-slate-500">Tài trợ vốn linh hoạt</span>
+              </div>
+            </div>
+          </div>
+
         </div>
 
-        <!-- 3 SLA Commitment Cards -->
+        <!-- 3 SLA Commitment Cards (Staggered Delays) -->
         <div class="grid grid-cols-1 sm:grid-cols-3 gap-6 pt-2">
           
           <!-- Metric 1 -->
-          <div class="bg-white p-6 sm:p-7 rounded-2xl border border-gray-200/90 shadow-sm flex flex-col justify-between hover:shadow-md transition-shadow">
+          <div class="bg-white p-6 sm:p-7 rounded-2xl border border-gray-200/90 shadow-sm flex flex-col justify-between hover:shadow-md transition-shadow" data-reveal="up" data-reveal-delay="100">
             <div class="flex items-center justify-between text-slate-500 mb-3">
               <span class="text-xs font-bold uppercase tracking-wider text-[#0B3B24]">Sơ bộ &amp; Tư vấn hướng tuyến</span>
               <span class="material-symbols-outlined text-[#0B3B24] text-[24px]">speed</span>
@@ -294,7 +365,7 @@
           </div>
 
           <!-- Metric 2 -->
-          <div class="bg-white p-6 sm:p-7 rounded-2xl border border-gray-200/90 shadow-sm flex flex-col justify-between hover:shadow-md transition-shadow">
+          <div class="bg-white p-6 sm:p-7 rounded-2xl border border-gray-200/90 shadow-sm flex flex-col justify-between hover:shadow-md transition-shadow" data-reveal="up" data-reveal-delay="200">
             <div class="flex items-center justify-between text-slate-500 mb-3">
               <span class="text-xs font-bold uppercase tracking-wider text-[#B45309]">Dự toán &amp; Layout CAD</span>
               <span class="material-symbols-outlined text-[#D97706] text-[24px]">architecture</span>
@@ -309,7 +380,7 @@
           </div>
 
           <!-- Metric 3 -->
-          <div class="bg-white p-6 sm:p-7 rounded-2xl border border-gray-200/90 shadow-sm flex flex-col justify-between hover:shadow-md transition-shadow">
+          <div class="bg-white p-6 sm:p-7 rounded-2xl border border-gray-200/90 shadow-sm flex flex-col justify-between hover:shadow-md transition-shadow" data-reveal="up" data-reveal-delay="300">
             <div class="flex items-center justify-between text-slate-500 mb-3">
               <span class="text-xs font-bold uppercase tracking-wider text-[#0B3B24]">Thẩm định hiện trường</span>
               <span class="material-symbols-outlined text-[#0B3B24] text-[24px]">travel_explore</span>
@@ -335,7 +406,7 @@
         <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start">
           
           <!-- LEFT SIDE: CONTACT PILLARS & INDUSTRIAL CREDENTIALS (5 cols) -->
-          <div class="lg:col-span-5 flex flex-col gap-6">
+          <div class="lg:col-span-5 flex flex-col gap-6" data-reveal="left">
             
             <!-- Legal Entity Card -->
             <div class="bg-[#0B3B24] text-white p-7 sm:p-8 rounded-3xl shadow-lg relative overflow-hidden flex flex-col justify-between gap-6">
@@ -435,7 +506,7 @@
           </div>
 
           <!-- RIGHT SIDE: THE COMPREHENSIVE RFQ INTAKE FORM (7 cols) -->
-          <div class="lg:col-span-7 bg-white p-8 sm:p-10 rounded-3xl border border-gray-200/90 shadow-sm flex flex-col justify-between">
+          <div class="lg:col-span-7 bg-white p-8 sm:p-10 rounded-3xl border border-gray-200/90 shadow-sm flex flex-col justify-between" data-reveal="right">
             
             <form id="rfq-master-form" class="flex flex-col gap-6" onsubmit="event.preventDefault(); document.getElementById('rfq-success-modal').classList.remove('hidden');">
               
@@ -609,7 +680,7 @@
         <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
           
           <!-- Phase 1 -->
-          <div class="bg-slate-50 p-6 rounded-2xl border border-gray-200/80 shadow-xs flex flex-col justify-between">
+          <div class="bg-slate-50 p-6 rounded-2xl border border-gray-200/80 shadow-xs flex flex-col justify-between hover:shadow-md hover:border-emerald-300 transition-all" data-reveal="up" data-reveal-delay="100">
             <div>
               <div class="flex items-center justify-between mb-3">
                 <span class="font-headline text-3xl font-extrabold text-[#0B3B24]">01</span>
@@ -624,7 +695,7 @@
           </div>
 
           <!-- Phase 2 -->
-          <div class="bg-slate-50 p-6 rounded-2xl border border-gray-200/80 shadow-xs flex flex-col justify-between">
+          <div class="bg-slate-50 p-6 rounded-2xl border border-gray-200/80 shadow-xs flex flex-col justify-between hover:shadow-md hover:border-emerald-300 transition-all" data-reveal="up" data-reveal-delay="200">
             <div>
               <div class="flex items-center justify-between mb-3">
                 <span class="font-headline text-3xl font-extrabold text-[#0B3B24]">02</span>
@@ -639,7 +710,7 @@
           </div>
 
           <!-- Phase 3 -->
-          <div class="bg-slate-50 p-6 rounded-2xl border border-gray-200/80 shadow-xs flex flex-col justify-between">
+          <div class="bg-slate-50 p-6 rounded-2xl border border-gray-200/80 shadow-xs flex flex-col justify-between hover:shadow-md hover:border-emerald-300 transition-all" data-reveal="up" data-reveal-delay="300">
             <div>
               <div class="flex items-center justify-between mb-3">
                 <span class="font-headline text-3xl font-extrabold text-[#0B3B24]">03</span>
@@ -654,7 +725,7 @@
           </div>
 
           <!-- Phase 4 -->
-          <div class="bg-slate-50 p-6 rounded-2xl border border-gray-200/80 shadow-xs flex flex-col justify-between">
+          <div class="bg-slate-50 p-6 rounded-2xl border border-gray-200/80 shadow-xs flex flex-col justify-between hover:shadow-md hover:border-emerald-300 transition-all" data-reveal="up" data-reveal-delay="400">
             <div>
               <div class="flex items-center justify-between mb-3">
                 <span class="font-headline text-3xl font-extrabold text-[#0B3B24]">04</span>
@@ -687,7 +758,7 @@
         <div class="space-y-4 text-xs sm:text-sm">
           
           <!-- FAQ 1 -->
-          <div class="bg-white p-6 rounded-2xl border border-gray-200/80 shadow-xs">
+          <div class="bg-white p-6 rounded-2xl border border-gray-200/80 shadow-xs hover:shadow-md transition-shadow" data-reveal="up" data-reveal-delay="100">
             <h4 class="font-headline text-base font-bold text-slate-950 mb-2 flex items-center gap-2">
               <span class="material-symbols-outlined text-[#0B3B24] text-[20px]">help_outline</span>
               Báo giá gửi qua RFQ đã bao gồm chi phí vận chuyển và lắp đặt chưa?
@@ -698,7 +769,7 @@
           </div>
 
           <!-- FAQ 2 -->
-          <div class="bg-white p-6 rounded-2xl border border-gray-200/80 shadow-xs">
+          <div class="bg-white p-6 rounded-2xl border border-gray-200/80 shadow-xs hover:shadow-md transition-shadow" data-reveal="up" data-reveal-delay="200">
             <h4 class="font-headline text-base font-bold text-slate-950 mb-2 flex items-center gap-2">
               <span class="material-symbols-outlined text-[#0B3B24] text-[20px]">help_outline</span>
               Chính sách bảo hành cơ điện lạnh và hỗ trợ kỹ thuật tại các tỉnh vùng cao như thế nào?
@@ -709,7 +780,7 @@
           </div>
 
           <!-- FAQ 3 -->
-          <div class="bg-white p-6 rounded-2xl border border-gray-200/80 shadow-xs">
+          <div class="bg-white p-6 rounded-2xl border border-gray-200/80 shadow-xs hover:shadow-md transition-shadow" data-reveal="up" data-reveal-delay="300">
             <h4 class="font-headline text-base font-bold text-slate-950 mb-2 flex items-center gap-2">
               <span class="material-symbols-outlined text-[#0B3B24] text-[20px]">help_outline</span>
               Hợp tác xã có được hỗ trợ phương thức trả chậm hoặc hoàn tất hồ sơ vốn vay khuyến công?
