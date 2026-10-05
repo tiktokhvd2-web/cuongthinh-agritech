@@ -342,91 +342,91 @@
 
           <!-- Right: Industrial Parameter Cockpit HUD (5 cols) -->
           <div class="lg:col-span-5 relative" data-reveal="right">
-            <div class="relative rounded-3xl overflow-hidden bg-slate-950/80 backdrop-blur-2xl border border-emerald-500/30 p-5 shadow-2xl shadow-black/60 flex flex-col gap-4 font-mono">
+            <div class="relative rounded-3xl overflow-hidden bg-[#041c11]/80 backdrop-blur-2xl border border-emerald-500/25 p-5 sm:p-6 shadow-2xl shadow-black/60 flex flex-col gap-4 font-mono">
               <!-- Top Cockpit Header -->
-              <div class="flex items-center justify-between pb-3 border-b border-emerald-900/60 text-xs">
+              <div class="flex items-center justify-between pb-3 border-b border-white/10 text-xs">
                 <div class="flex items-center gap-2">
                   <span class="relative flex h-2 w-2">
                     <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-emerald-400 opacity-75"></span>
                     <span class="relative inline-flex rounded-full h-2 w-2 bg-emerald-400"></span>
                   </span>
-                  <span class="font-bold text-emerald-300 uppercase tracking-wider font-headline">HỆ THỐNG SẤY MS-20 CONTAINER</span>
+                  <span class="font-bold text-white uppercase tracking-wider font-headline">HỆ THỐNG SẤY MS-20 CONTAINER</span>
                 </div>
-                <span class="px-2 py-0.5 rounded bg-emerald-500/10 text-emerald-400 font-bold border border-emerald-500/30 text-[10px]">
-                  LIVE • SCADA ONLINE
+                <span class="px-2.5 py-0.5 rounded-full bg-white/10 text-white/90 font-mono font-bold border border-white/15 text-[10px]">
+                  SCADA ONLINE
                 </span>
               </div>
 
               <!-- 4 Industrial Metric Gauge Strips -->
-              <div class="flex flex-col gap-2.5">
+              <div class="flex flex-col gap-2.5 font-sans">
                 <!-- Gauge 1 -->
-                <div class="p-3 rounded-2xl bg-white/5 border border-white/10 flex items-center justify-between">
+                <div class="p-3 rounded-2xl bg-white/5 border border-white/10 flex items-center justify-between hover:bg-white/10 transition-colors">
                   <div class="flex items-center gap-3">
-                    <span class="material-symbols-outlined text-amber-400 text-[22px]">thermostat</span>
+                    <span class="material-symbols-outlined text-emerald-400 text-[22px]">thermostat</span>
                     <div class="flex flex-col">
                       <span class="text-xs font-bold text-white font-headline">Dải Nhiệt Tuần Hoàn</span>
-                      <span class="text-[10px] text-slate-400 font-sans">Bảo toàn tinh dầu tự nhiên</span>
+                      <span class="text-[10px] text-slate-400">Bảo toàn tinh dầu tự nhiên</span>
                     </div>
                   </div>
                   <div class="text-right">
-                    <span class="text-base font-extrabold text-amber-300">38°C – 62°C</span>
+                    <span class="text-base font-extrabold text-white tracking-tight font-headline">38°C – 62°C</span>
                     <span class="block text-[10px] text-slate-400">Điều áp biến tần</span>
                   </div>
                 </div>
 
                 <!-- Gauge 2 -->
-                <div class="p-3 rounded-2xl bg-white/5 border border-white/10 flex items-center justify-between">
+                <div class="p-3 rounded-2xl bg-white/5 border border-white/10 flex items-center justify-between hover:bg-white/10 transition-colors">
                   <div class="flex items-center gap-3">
                     <span class="material-symbols-outlined text-emerald-400 text-[22px]">humidity_percentage</span>
                     <div class="flex flex-col">
                       <span class="text-xs font-bold text-white font-headline">Kiểm Soát Độ Ẩm Sâu</span>
-                      <span class="text-[10px] text-slate-400 font-sans">Cảm biến ẩm điện dung</span>
+                      <span class="text-[10px] text-slate-400">Cảm biến ẩm điện dung</span>
                     </div>
                   </div>
                   <div class="text-right">
-                    <span class="text-base font-extrabold text-emerald-400">≤ 1.5%</span>
+                    <span class="text-base font-extrabold text-emerald-300 tracking-tight font-headline">≤ 1.5%</span>
                     <span class="block text-[10px] text-slate-400">Chuẩn xuất khẩu</span>
                   </div>
                 </div>
 
                 <!-- Gauge 3 -->
-                <div class="p-3 rounded-2xl bg-white/5 border border-white/10 flex items-center justify-between">
+                <div class="p-3 rounded-2xl bg-white/5 border border-white/10 flex items-center justify-between hover:bg-white/10 transition-colors">
                   <div class="flex items-center gap-3">
-                    <span class="material-symbols-outlined text-blue-400 text-[22px]">energy_savings_leaf</span>
+                    <span class="material-symbols-outlined text-emerald-400 text-[22px]">energy_savings_leaf</span>
                     <div class="flex flex-col">
                       <span class="text-xs font-bold text-white font-headline">Tỉ Lệ Tiết Kiệm Điện</span>
-                      <span class="text-[10px] text-slate-400 font-sans">Hoàn lưu nhiệt khí động</span>
+                      <span class="text-[10px] text-slate-400">Hoàn lưu nhiệt khí động</span>
                     </div>
                   </div>
                   <div class="text-right">
-                    <span class="text-base font-extrabold text-blue-400">-45.8%</span>
+                    <span class="text-base font-extrabold text-white tracking-tight font-headline">-45.8%</span>
                     <span class="block text-[10px] text-slate-400">So với sấy điện trở</span>
                   </div>
                 </div>
 
                 <!-- Gauge 4 -->
-                <div class="p-3 rounded-2xl bg-white/5 border border-white/10 flex items-center justify-between">
+                <div class="p-3 rounded-2xl bg-white/5 border border-white/10 flex items-center justify-between hover:bg-white/10 transition-colors">
                   <div class="flex items-center gap-3">
-                    <span class="material-symbols-outlined text-purple-400 text-[22px]">shield</span>
+                    <span class="material-symbols-outlined text-emerald-400 text-[22px]">shield</span>
                     <div class="flex flex-col">
                       <span class="text-xs font-bold text-white font-headline">Tiêu Chuẩn Cơ Khí</span>
-                      <span class="text-[10px] text-slate-400 font-sans">Hàn TIG bảo vệ khí Argon</span>
+                      <span class="text-[10px] text-slate-400">Hàn TIG bảo vệ khí Argon</span>
                     </div>
                   </div>
                   <div class="text-right">
-                    <span class="text-base font-extrabold text-white">SUS 304</span>
+                    <span class="text-base font-extrabold text-white tracking-tight font-headline">SUS 304</span>
                     <span class="block text-[10px] text-slate-400">Dày 2.0 – 3.5mm</span>
                   </div>
                 </div>
               </div>
 
               <!-- Bottom Hardware Specs Strip -->
-              <div class="pt-2 border-t border-emerald-900/60 flex items-center justify-between text-[11px] text-slate-400 font-sans">
-                <span class="flex items-center gap-1.5 text-emerald-300">
-                  <span class="material-symbols-outlined text-[15px]">terminal</span>
+              <div class="pt-2 border-t border-white/10 flex items-center justify-between text-[11px] text-slate-400 font-sans">
+                <span class="flex items-center gap-1.5 text-slate-300">
+                  <span class="material-symbols-outlined text-[15px] text-emerald-400">terminal</span>
                   PLC Omron • SCADA IoT
                 </span>
-                <span class="text-amber-400 font-semibold font-mono">BẢO HÀNH 24 THÁNG TẬN NƠI</span>
+                <span class="text-emerald-400/90 font-semibold font-mono">BẢO HÀNH 24 THÁNG TẬN NƠI</span>
               </div>
             </div>
           </div>
