@@ -10,7 +10,10 @@
   <!-- Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Space+Grotesk:wght@500;600;700;800&display=swap" rel="stylesheet">
+    <!-- Human-Crafted Vietnamese Enterprise Typography: Plus Jakarta Sans & Be Vietnam Pro -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,400&family=Plus+Jakarta+Sans:wght@500;600;700;800;900&display=swap" rel="stylesheet">
   <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" rel="stylesheet">
 
   <script src="https://cdn.tailwindcss.com"></script>
@@ -37,50 +40,78 @@
             }
           },
           fontFamily: {
-            headline: ['Space Grotesk', 'sans-serif'],
-            body: ['Inter', 'sans-serif'],
+            headline: ['Plus Jakarta Sans', 'sans-serif'],
+            body: ['Be Vietnam Pro', 'sans-serif'],
           }
         }
       }
     };
   </script>
-  <style>
-    body { font-family: 'Inter', sans-serif; }
-    h1, h2, h3, h4, h5, .font-headline { font-family: 'Space Grotesk', sans-serif; }
-  
-  /* High-Precision Scroll Reveal Styles */
-  [data-reveal] {
-    opacity: 0;
-    transition: opacity 0.75s cubic-bezier(0.16, 1, 0.3, 1), transform 0.75s cubic-bezier(0.16, 1, 0.3, 1);
-    will-change: opacity, transform;
-  }
-  [data-reveal="up"] {
-    transform: translateY(28px);
-  }
-  [data-reveal="left"] {
-    transform: translateX(-32px);
-  }
-  [data-reveal="right"] {
-    transform: translateX(32px);
-  }
-  [data-reveal="scale"] {
-    transform: scale(0.96);
-  }
-  [data-reveal].revealed {
-    opacity: 1 !important;
-    transform: translate(0, 0) scale(1) !important;
-  }
-  @media (prefers-reduced-motion: reduce) {
-    [data-reveal] {
-      opacity: 1 !important;
-      transform: none !important;
-      transition: none !important;
+    <style>
+    body { 
+      font-family: 'Be Vietnam Pro', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; 
+      color: #334155; 
+      background-color: #ffffff;
+      -webkit-font-smoothing: antialiased;
+      -moz-osx-font-smoothing: grayscale;
     }
-  }
+    h1, h2, h3, h4, h5, .font-headline { 
+      font-family: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, sans-serif; 
+      letter-spacing: -0.025em; 
+      color: #0F172A;
+    }
+  
+    /* Top Scroll Reading Progress Bar */
+    #scroll-progress-bar {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 0%;
+      height: 3px;
+      background: linear-gradient(90deg, #0B3B24 0%, #15803d 50%, #D97706 100%);
+      z-index: 9999;
+      transition: width 0.1s ease-out;
+      box-shadow: 0 0 10px rgba(217, 119, 6, 0.4);
+    }
 
+    /* Cinematic Optical Blur-to-Focus Motion Engine */
+    [data-reveal] {
+      opacity: 0;
+      filter: blur(10px);
+      transition: opacity 0.85s cubic-bezier(0.16, 1, 0.3, 1), 
+                  transform 0.85s cubic-bezier(0.16, 1, 0.3, 1), 
+                  filter 0.85s cubic-bezier(0.16, 1, 0.3, 1);
+      will-change: opacity, transform, filter;
+    }
+    [data-reveal="up"] {
+      transform: translateY(54px);
+    }
+    [data-reveal="left"] {
+      transform: translateX(-64px);
+    }
+    [data-reveal="right"] {
+      transform: translateX(64px);
+    }
+    [data-reveal="scale"] {
+      transform: scale(0.92);
+    }
+    [data-reveal].revealed {
+      opacity: 1 !important;
+      filter: blur(0px) !important;
+      transform: translate(0, 0) scale(1) !important;
+    }
+    @media (prefers-reduced-motion: reduce) {
+      [data-reveal] {
+        opacity: 1 !important;
+        filter: none !important;
+        transform: none !important;
+        transition: none !important;
+      }
+    }
   </style>
 </head>
-<body class="bg-white text-gray-800 antialiased selection:bg-brand-900 selection:text-white">
+<body class="bg-white text-slate-800 antialiased selection:bg-brand-900 selection:text-white">
+  <div id="scroll-progress-bar"></div>
 
   <!-- ==================== 1. MASTER EXECUTIVE HEADER ==================== -->
     <!-- ==================== 1. MASTER ENTERPRISE B2B HEADER ==================== -->
@@ -139,7 +170,7 @@
               TECH &amp; AGRO
             </span>
           </div>
-          <span class="text-[9.5px] sm:text-[10px] tracking-widest uppercase font-semibold text-gray-500 leading-tight mt-0.5">
+          <span class="text-[9.5px] sm:text-[10px] tracking-widest uppercase font-semibold text-slate-500 leading-tight mt-0.5">
             Cơ Điện Chế Tạo &amp; Nông Sản Tây Bắc • Est. 2018
           </span>
         </div>
@@ -147,19 +178,19 @@
 
       <!-- Center: Frosted Glass Capsule Navigation (5 Core Pillars) -->
       <nav class="hidden xl:flex items-center gap-1 bg-slate-100/80 backdrop-blur-md p-1.5 rounded-full border border-slate-200/90 shadow-[inset_0_1px_2px_rgba(0,0,0,0.03)]">
-        <a class="px-3 sm:px-3.5 py-1.5 text-[13px] text-gray-600 hover:text-[#0B3B24] hover:bg-white/90 font-medium rounded-full transition-all duration-200 whitespace-nowrap" href="index.html">
+        <a class="px-3 sm:px-3.5 py-1.5 text-[13px] text-slate-600 hover:text-[#0B3B24] hover:bg-white/90 font-medium rounded-full transition-all duration-200 whitespace-nowrap" href="index.html">
           Trang chủ
         </a>
-        <a class="px-3 sm:px-3.5 py-1.5 text-[13px] text-gray-600 hover:text-[#0B3B24] hover:bg-white/90 font-medium rounded-full transition-all duration-200 whitespace-nowrap" href="gioi-thieu.html">
+        <a class="px-3 sm:px-3.5 py-1.5 text-[13px] text-slate-600 hover:text-[#0B3B24] hover:bg-white/90 font-medium rounded-full transition-all duration-200 whitespace-nowrap" href="gioi-thieu.html">
           Giới thiệu
         </a>
-        <a class="px-3 sm:px-3.5 py-1.5 text-[13px] text-gray-600 hover:text-[#0B3B24] hover:bg-white/90 font-medium rounded-full transition-all duration-200 whitespace-nowrap" href="linh-vuc-cong-nghe.html">
+        <a class="px-3 sm:px-3.5 py-1.5 text-[13px] text-slate-600 hover:text-[#0B3B24] hover:bg-white/90 font-medium rounded-full transition-all duration-200 whitespace-nowrap" href="linh-vuc-cong-nghe.html">
           Lĩnh vực & Công nghệ
         </a>
-        <a class="px-3 sm:px-3.5 py-1.5 text-[13px] text-gray-600 hover:text-[#0B3B24] hover:bg-white/90 font-medium rounded-full transition-all duration-200 whitespace-nowrap" href="nong-san-chu-luc.html">
+        <a class="px-3 sm:px-3.5 py-1.5 text-[13px] text-slate-600 hover:text-[#0B3B24] hover:bg-white/90 font-medium rounded-full transition-all duration-200 whitespace-nowrap" href="nong-san-chu-luc.html">
           Nông sản chủ lực
         </a>
-        <a class="px-3 sm:px-3.5 py-1.5 text-[13px] text-gray-600 hover:text-[#0B3B24] hover:bg-white/90 font-medium rounded-full transition-all duration-200 whitespace-nowrap" href="du-an-htx.html">
+        <a class="px-3 sm:px-3.5 py-1.5 text-[13px] text-slate-600 hover:text-[#0B3B24] hover:bg-white/90 font-medium rounded-full transition-all duration-200 whitespace-nowrap" href="du-an-htx.html">
           Dự án & HTX
         </a>
       </nav>
@@ -169,7 +200,7 @@
         <!-- International Language Switcher -->
         <div class="hidden lg:inline-flex items-center bg-slate-100 p-0.5 rounded-full border border-gray-200/80 text-[11px] font-bold" title="Chọn ngôn ngữ hiển thị">
           <span class="px-2 py-0.5 rounded-full bg-[#0B3B24] text-white shadow-xs">VN</span>
-          <span class="px-2 py-0.5 text-gray-500 hover:text-gray-900 cursor-pointer transition-colors" onclick="alert('English version will be available in next release / Phiên bản Tiếng Anh đang hoàn thiện.');">EN</span>
+          <span class="px-2 py-0.5 text-slate-500 hover:text-slate-900 cursor-pointer transition-colors" onclick="alert('English version will be available in next release / Phiên bản Tiếng Anh đang hoàn thiện.');">EN</span>
         </div>
 
         <a class="hidden sm:inline-flex items-center gap-1.5 px-3 py-1.5 text-xs font-semibold text-[#0B3B24] bg-emerald-50 hover:bg-emerald-100 border border-emerald-200/80 rounded-full transition-colors" href="tel:0932050101">
@@ -196,13 +227,13 @@
     <!-- Top Breadcrumb & Status Indicator Row -->
     <section class="w-full bg-slate-50/80 border-b border-gray-200/70 py-3.5 px-4 sm:px-6 lg:px-8">
       <div class="max-w-7xl mx-auto flex flex-col md:flex-row md:items-center justify-between gap-3 text-xs">
-        <nav class="flex items-center gap-2 text-gray-500 font-medium">
+        <nav class="flex items-center gap-2 text-slate-500 font-medium">
           <a class="hover:text-[#0B3B24] transition-colors flex items-center gap-1" href="index.html">
             <span class="material-symbols-outlined text-[16px]">home</span>
             <span>Trang chủ</span>
           </a>
           <span class="material-symbols-outlined text-[13px] text-gray-400">chevron_right</span>
-          <span class="text-gray-500">Liên Hệ Doanh Nghiệp</span>
+          <span class="text-slate-500">Liên Hệ Doanh Nghiệp</span>
           <span class="material-symbols-outlined text-[13px] text-gray-400">chevron_right</span>
           <span class="text-[#0B3B24] font-semibold">Cổng Báo Giá RFQ Trực Tuyến</span>
         </nav>
@@ -235,11 +266,11 @@
             YÊU CẦU BÁO GIÁ KỸ THUẬT &amp; DỰ TOÁN B2B
           </div>
 
-          <h1 class="font-headline text-3xl sm:text-4xl lg:text-5xl font-extrabold text-gray-950 leading-[1.15] tracking-tight">
-            Cổng Tiếp Nhận <span class="text-transparent bg-clip-text bg-gradient-to-r from-[#0B3B24] via-[#15803d] to-[#D97706]">Báo Giá Kỹ Thuật (RFQ)</span>
+          <h1 class="font-headline text-3xl sm:text-4xl lg:text-5xl font-extrabold text-slate-950 leading-[1.15] tracking-tight">
+            Cổng Tiếp Nhận <span class="text-[#0B3B24]">Báo Giá Kỹ Thuật (RFQ)</span>
           </h1>
 
-          <p class="text-sm sm:text-base text-gray-600 leading-relaxed">
+          <p class="text-sm sm:text-base text-slate-600 leading-relaxed">
             Dành cho Hợp tác xã, Doanh nghiệp chế biến thực phẩm và Đối tác thương mại quốc tế. Đội ngũ kỹ sư cơ điện chế tạo Cường Thịnh cung cấp báo giá chi tiết, sơ đồ CAD và giải pháp tài trợ vốn khả thi trong 24 giờ.
           </p>
         </div>
@@ -249,7 +280,7 @@
           
           <!-- Metric 1 -->
           <div class="bg-white p-6 sm:p-7 rounded-2xl border border-gray-200/90 shadow-sm flex flex-col justify-between hover:shadow-md transition-shadow">
-            <div class="flex items-center justify-between text-gray-500 mb-3">
+            <div class="flex items-center justify-between text-slate-500 mb-3">
               <span class="text-xs font-bold uppercase tracking-wider text-[#0B3B24]">Sơ bộ &amp; Tư vấn hướng tuyến</span>
               <span class="material-symbols-outlined text-[#0B3B24] text-[24px]">speed</span>
             </div>
@@ -257,29 +288,29 @@
               <span class="font-headline text-4xl sm:text-5xl font-extrabold text-[#0B3B24] tracking-tight">&lt; 2h</span>
               <span class="text-sm font-bold text-[#D97706]">Làm việc</span>
             </div>
-            <p class="text-xs text-gray-600 leading-relaxed">
+            <p class="text-xs text-slate-600 leading-relaxed">
               Kỹ sư chuyên trách phản hồi điện thoại trực tiếp, làm rõ công suất, chủng loại nguyên liệu và layout nhà xưởng.
             </p>
           </div>
 
           <!-- Metric 2 -->
           <div class="bg-white p-6 sm:p-7 rounded-2xl border border-gray-200/90 shadow-sm flex flex-col justify-between hover:shadow-md transition-shadow">
-            <div class="flex items-center justify-between text-gray-500 mb-3">
+            <div class="flex items-center justify-between text-slate-500 mb-3">
               <span class="text-xs font-bold uppercase tracking-wider text-[#B45309]">Dự toán &amp; Layout CAD</span>
               <span class="material-symbols-outlined text-[#D97706] text-[24px]">architecture</span>
             </div>
             <div class="flex items-baseline gap-2 mb-2">
               <span class="font-headline text-4xl sm:text-5xl font-extrabold text-[#D97706] tracking-tight">24 - 48h</span>
-              <span class="text-sm font-bold text-gray-500">Giờ kỹ thuật</span>
+              <span class="text-sm font-bold text-slate-500">Giờ kỹ thuật</span>
             </div>
-            <p class="text-xs text-gray-600 leading-relaxed">
+            <p class="text-xs text-slate-600 leading-relaxed">
               Cung cấp hồ sơ chào thầu hoàn chỉnh: Bóc tách BoM vật tư Inox 304, thông số điện động lực và biểu đồ hồi nhiệt.
             </p>
           </div>
 
           <!-- Metric 3 -->
           <div class="bg-white p-6 sm:p-7 rounded-2xl border border-gray-200/90 shadow-sm flex flex-col justify-between hover:shadow-md transition-shadow">
-            <div class="flex items-center justify-between text-gray-500 mb-3">
+            <div class="flex items-center justify-between text-slate-500 mb-3">
               <span class="text-xs font-bold uppercase tracking-wider text-[#0B3B24]">Thẩm định hiện trường</span>
               <span class="material-symbols-outlined text-[#0B3B24] text-[24px]">travel_explore</span>
             </div>
@@ -287,7 +318,7 @@
               <span class="font-headline text-4xl sm:text-5xl font-extrabold text-[#0B3B24] tracking-tight" data-counter="72" data-counter-suffix="h">72h</span>
               <span class="text-sm font-bold text-gray-700">Tận nơi</span>
             </div>
-            <p class="text-xs text-gray-600 leading-relaxed">
+            <p class="text-xs text-slate-600 leading-relaxed">
               Kỹ sư trưởng có mặt trực tiếp tại cơ sở HTX tại các tỉnh Tây Bắc để đo đạc nền móng và nguồn cấp điện 3 pha.
             </p>
           </div>
@@ -365,7 +396,7 @@
 
             <!-- Two Facilities Card -->
             <div class="bg-white p-7 rounded-3xl border border-gray-200/90 shadow-sm flex flex-col gap-5">
-              <h4 class="font-headline text-base font-bold text-gray-950 flex items-center gap-2">
+              <h4 class="font-headline text-base font-bold text-slate-950 flex items-center gap-2">
                 <span class="material-symbols-outlined text-[#0B3B24] text-[20px]">domain</span>
                 Địa Điểm Nhà Máy &amp; Xưởng Chế Tạo
               </h4>
@@ -376,7 +407,7 @@
                     <span class="material-symbols-outlined text-[16px] text-[#D97706]">factory</span>
                     <span>1. Nhà Máy Sấy Lạnh &amp; Thu Mua Nông Sản:</span>
                   </div>
-                  <p class="text-gray-600 pl-6">
+                  <p class="text-slate-600 pl-6">
                     Bản Nùng Nàng, Huyện Tam Đường, Tỉnh Lai Châu.
                   </p>
                   <span class="text-[11px] text-gray-400 pl-6">Quy mô: 5.000m² - Trung tâm thu gom Macca, Dược liệu Tây Bắc</span>
@@ -387,7 +418,7 @@
                     <span class="material-symbols-outlined text-[16px] text-[#D97706]">precision_manufacturing</span>
                     <span>2. Xưởng Cơ Khí Chế Tạo Máy Sấy &amp; Kho Thiết Bị:</span>
                   </div>
-                  <p class="text-gray-600 pl-6">
+                  <p class="text-slate-600 pl-6">
                     KCN Đình Vũ, Phường Đông Hải 2, Quận Hải An, TP. Hải Phòng.
                   </p>
                   <span class="text-[11px] text-gray-400 pl-6">Quy mô: 3.500m² - Gia công Inox 304 tiêu chuẩn GMP/HACCP</span>
@@ -405,53 +436,53 @@
               <!-- Form Header -->
               <div class="border-b border-gray-100 pb-5">
                 <div class="flex items-center justify-between gap-2">
-                  <h3 class="font-headline text-xl sm:text-2xl font-bold text-gray-950">
+                  <h3 class="font-headline text-xl sm:text-2xl font-bold text-slate-950">
                     Phiếu Khảo Sát &amp; Đăng Ký Nhận Báo Giá RFQ
                   </h3>
                   <span class="hidden sm:inline-flex px-2.5 py-1 bg-emerald-50 text-[#0B3B24] text-[11px] font-bold rounded-full border border-emerald-200">
                     B2B Portal
                   </span>
                 </div>
-                <p class="text-xs text-gray-500 mt-1">
+                <p class="text-xs text-slate-500 mt-1">
                   Vui lòng cung cấp chi tiết yêu cầu để bộ phận kỹ thuật dự toán chính xác vật tư và đơn giá xuất xưởng.
                 </p>
               </div>
 
               <!-- Step 1: Lĩnh vực quan tâm (Radio Cards) -->
               <div class="flex flex-col gap-2.5">
-                <label class="text-xs font-bold text-gray-900 uppercase tracking-wider">
+                <label class="text-xs font-bold text-slate-900 uppercase tracking-wider">
                   1. Lĩnh vực / Hạng mục yêu cầu <span class="text-[#D97706]">*</span>
                 </label>
                 <div class="grid grid-cols-1 sm:grid-cols-2 gap-3 text-xs">
                   <label class="flex items-start gap-3 p-3.5 rounded-xl border border-gray-200 bg-slate-50/50 hover:bg-emerald-50/40 hover:border-emerald-300 cursor-pointer transition-colors">
                     <input type="radio" name="rfq_category" value="may-say" checked class="mt-0.5 text-[#0B3B24] focus:ring-[#0B3B24]">
                     <div>
-                      <strong class="text-gray-900 block font-semibold">Chế tạo Máy sấy Inox 304</strong>
-                      <span class="text-gray-500 text-[11px]">Dòng MS-20, Heat Pump, sấy tháp hoàn lưu</span>
+                      <strong class="text-slate-900 block font-semibold">Chế tạo Máy sấy Inox 304</strong>
+                      <span class="text-slate-500 text-[11px]">Dòng MS-20, Heat Pump, sấy tháp hoàn lưu</span>
                     </div>
                   </label>
 
                   <label class="flex items-start gap-3 p-3.5 rounded-xl border border-gray-200 bg-slate-50/50 hover:bg-emerald-50/40 hover:border-emerald-300 cursor-pointer transition-colors">
                     <input type="radio" name="rfq_category" value="nong-san" class="mt-0.5 text-[#0B3B24] focus:ring-[#0B3B24]">
                     <div>
-                      <strong class="text-gray-900 block font-semibold">Thu mua Nông sản Sỉ / Xuất khẩu</strong>
-                      <span class="text-gray-500 text-[11px]">Macca Lai Châu, Cà phê Arabica, Quế Hồi</span>
+                      <strong class="text-slate-900 block font-semibold">Thu mua Nông sản Sỉ / Xuất khẩu</strong>
+                      <span class="text-slate-500 text-[11px]">Macca Lai Châu, Cà phê Arabica, Quế Hồi</span>
                     </div>
                   </label>
 
                   <label class="flex items-start gap-3 p-3.5 rounded-xl border border-gray-200 bg-slate-50/50 hover:bg-emerald-50/40 hover:border-emerald-300 cursor-pointer transition-colors">
                     <input type="radio" name="rfq_category" value="htx" class="mt-0.5 text-[#0B3B24] focus:ring-[#0B3B24]">
                     <div>
-                      <strong class="text-gray-900 block font-semibold">Chuyển giao Công nghệ HTX</strong>
-                      <span class="text-gray-500 text-[11px]">Khảo sát thực địa, liên kết bao tiêu trọn gói</span>
+                      <strong class="text-slate-900 block font-semibold">Chuyển giao Công nghệ HTX</strong>
+                      <span class="text-slate-500 text-[11px]">Khảo sát thực địa, liên kết bao tiêu trọn gói</span>
                     </div>
                   </label>
 
                   <label class="flex items-start gap-3 p-3.5 rounded-xl border border-gray-200 bg-slate-50/50 hover:bg-emerald-50/40 hover:border-emerald-300 cursor-pointer transition-colors">
                     <input type="radio" name="rfq_category" value="oem" class="mt-0.5 text-[#0B3B24] focus:ring-[#0B3B24]">
                     <div>
-                      <strong class="text-gray-900 block font-semibold">Gia công OEM / Đóng gói Nhãn riêng</strong>
-                      <span class="text-gray-500 text-[11px]">Hút chân không, đóng túi nhôm, chuẩn OCOP 4 sao</span>
+                      <strong class="text-slate-900 block font-semibold">Gia công OEM / Đóng gói Nhãn riêng</strong>
+                      <span class="text-slate-500 text-[11px]">Hút chân không, đóng túi nhôm, chuẩn OCOP 4 sao</span>
                     </div>
                   </label>
                 </div>
@@ -459,51 +490,51 @@
 
               <!-- Step 2: Thông tin doanh nghiệp / Đơn vị -->
               <div class="flex flex-col gap-2.5">
-                <label class="text-xs font-bold text-gray-900 uppercase tracking-wider">
+                <label class="text-xs font-bold text-slate-900 uppercase tracking-wider">
                   2. Thông tin đối tác liên hệ <span class="text-[#D97706]">*</span>
                 </label>
                 <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
                   <div class="flex flex-col gap-1">
                     <label class="text-[11px] font-semibold text-gray-700">Tên Doanh nghiệp / Hợp tác xã <span class="text-[#D97706]">*</span></label>
-                    <input required type="text" placeholder="Công ty CP Nông Sản Á Châu..." class="w-full px-3.5 py-2.5 bg-slate-50 border border-gray-200 rounded-xl text-xs text-gray-900 focus:outline-none focus:bg-white focus:ring-1 focus:ring-[#0B3B24]">
+                    <input required type="text" placeholder="Công ty CP Nông Sản Á Châu..." class="w-full px-3.5 py-2.5 bg-slate-50 border border-gray-200 rounded-xl text-xs text-slate-900 focus:outline-none focus:bg-white focus:ring-1 focus:ring-[#0B3B24]">
                   </div>
 
                   <div class="flex flex-col gap-1">
                     <label class="text-[11px] font-semibold text-gray-700">Mã số thuế (nếu có)</label>
-                    <input type="text" placeholder="Ví dụ: 0102030405..." class="w-full px-3.5 py-2.5 bg-slate-50 border border-gray-200 rounded-xl text-xs text-gray-900 focus:outline-none focus:bg-white focus:ring-1 focus:ring-[#0B3B24]">
+                    <input type="text" placeholder="Ví dụ: 0102030405..." class="w-full px-3.5 py-2.5 bg-slate-50 border border-gray-200 rounded-xl text-xs text-slate-900 focus:outline-none focus:bg-white focus:ring-1 focus:ring-[#0B3B24]">
                   </div>
 
                   <div class="flex flex-col gap-1">
                     <label class="text-[11px] font-semibold text-gray-700">Người liên hệ &amp; Chức vụ <span class="text-[#D97706]">*</span></label>
-                    <input required type="text" placeholder="Nguyễn Văn A - Giám đốc kỹ thuật" class="w-full px-3.5 py-2.5 bg-slate-50 border border-gray-200 rounded-xl text-xs text-gray-900 focus:outline-none focus:bg-white focus:ring-1 focus:ring-[#0B3B24]">
+                    <input required type="text" placeholder="Nguyễn Văn A - Giám đốc kỹ thuật" class="w-full px-3.5 py-2.5 bg-slate-50 border border-gray-200 rounded-xl text-xs text-slate-900 focus:outline-none focus:bg-white focus:ring-1 focus:ring-[#0B3B24]">
                   </div>
 
                   <div class="flex flex-col gap-1">
                     <label class="text-[11px] font-semibold text-gray-700">Số điện thoại / Zalo <span class="text-[#D97706]">*</span></label>
-                    <input required type="tel" placeholder="09xx xxx xxx" class="w-full px-3.5 py-2.5 bg-slate-50 border border-gray-200 rounded-xl text-xs text-gray-900 focus:outline-none focus:bg-white focus:ring-1 focus:ring-[#0B3B24]">
+                    <input required type="tel" placeholder="09xx xxx xxx" class="w-full px-3.5 py-2.5 bg-slate-50 border border-gray-200 rounded-xl text-xs text-slate-900 focus:outline-none focus:bg-white focus:ring-1 focus:ring-[#0B3B24]">
                   </div>
 
                   <div class="flex flex-col gap-1">
                     <label class="text-[11px] font-semibold text-gray-700">Email công vụ</label>
-                    <input type="email" placeholder="contact@domain.vn" class="w-full px-3.5 py-2.5 bg-slate-50 border border-gray-200 rounded-xl text-xs text-gray-900 focus:outline-none focus:bg-white focus:ring-1 focus:ring-[#0B3B24]">
+                    <input type="email" placeholder="contact@domain.vn" class="w-full px-3.5 py-2.5 bg-slate-50 border border-gray-200 rounded-xl text-xs text-slate-900 focus:outline-none focus:bg-white focus:ring-1 focus:ring-[#0B3B24]">
                   </div>
 
                   <div class="flex flex-col gap-1">
                     <label class="text-[11px] font-semibold text-gray-700">Địa chỉ xưởng / Tỉnh thành <span class="text-[#D97706]">*</span></label>
-                    <input required type="text" placeholder="Lai Châu, Sơn La, Hà Nội..." class="w-full px-3.5 py-2.5 bg-slate-50 border border-gray-200 rounded-xl text-xs text-gray-900 focus:outline-none focus:bg-white focus:ring-1 focus:ring-[#0B3B24]">
+                    <input required type="text" placeholder="Lai Châu, Sơn La, Hà Nội..." class="w-full px-3.5 py-2.5 bg-slate-50 border border-gray-200 rounded-xl text-xs text-slate-900 focus:outline-none focus:bg-white focus:ring-1 focus:ring-[#0B3B24]">
                   </div>
                 </div>
               </div>
 
               <!-- Step 3: Chi tiết thông số kỹ thuật -->
               <div class="flex flex-col gap-2.5">
-                <label class="text-xs font-bold text-gray-900 uppercase tracking-wider">
+                <label class="text-xs font-bold text-slate-900 uppercase tracking-wider">
                   3. Thông số kỹ thuật &amp; Quy mô mong muốn
                 </label>
                 <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
                   <div class="flex flex-col gap-1">
                     <label class="text-[11px] font-semibold text-gray-700">Loại nguyên liệu cần xử lý</label>
-                    <select class="w-full px-3.5 py-2.5 bg-slate-50 border border-gray-200 rounded-xl text-xs text-gray-900 focus:outline-none focus:bg-white focus:ring-1 focus:ring-[#0B3B24]">
+                    <select class="w-full px-3.5 py-2.5 bg-slate-50 border border-gray-200 rounded-xl text-xs text-slate-900 focus:outline-none focus:bg-white focus:ring-1 focus:ring-[#0B3B24]">
                       <option value="mac-ca">Hạt Mắc ca (Macadamia)</option>
                       <option value="ca-phe">Cà phê thóc / Cà phê nhân Arabica</option>
                       <option value="hoa-hoi">Hoa hồi &amp; Quế chẻ</option>
@@ -515,7 +546,7 @@
 
                   <div class="flex flex-col gap-1">
                     <label class="text-[11px] font-semibold text-gray-700">Công suất sấy yêu cầu</label>
-                    <select class="w-full px-3.5 py-2.5 bg-slate-50 border border-gray-200 rounded-xl text-xs text-gray-900 focus:outline-none focus:bg-white focus:ring-1 focus:ring-[#0B3B24]">
+                    <select class="w-full px-3.5 py-2.5 bg-slate-50 border border-gray-200 rounded-xl text-xs text-slate-900 focus:outline-none focus:bg-white focus:ring-1 focus:ring-[#0B3B24]">
                       <option value="200kg">Quy mô mẫu: 200 - 300 kg/mẻ</option>
                       <option value="500kg">Quy mô vừa: 500 - 800 kg/mẻ</option>
                       <option value="1tan">Dòng chuẩn: 1.000 - 1.500 kg/mẻ (MS-20)</option>
@@ -527,13 +558,13 @@
 
                 <div class="flex flex-col gap-1 mt-2">
                   <label class="text-[11px] font-semibold text-gray-700">Mô tả chi tiết yêu cầu kỹ thuật / Ghi chú đơn hàng</label>
-                  <textarea rows="3" placeholder="Ghi chú về nguồn điện sẵn có (1 pha hay 3 pha), kích thước mặt bằng xưởng, hoặc các tiêu chuẩn xuất khẩu mong muốn (HACCP, ISO 22000, FDA)..." class="w-full px-3.5 py-2.5 bg-slate-50 border border-gray-200 rounded-xl text-xs text-gray-900 focus:outline-none focus:bg-white focus:ring-1 focus:ring-[#0B3B24]"></textarea>
+                  <textarea rows="3" placeholder="Ghi chú về nguồn điện sẵn có (1 pha hay 3 pha), kích thước mặt bằng xưởng, hoặc các tiêu chuẩn xuất khẩu mong muốn (HACCP, ISO 22000, FDA)..." class="w-full px-3.5 py-2.5 bg-slate-50 border border-gray-200 rounded-xl text-xs text-slate-900 focus:outline-none focus:bg-white focus:ring-1 focus:ring-[#0B3B24]"></textarea>
                 </div>
               </div>
 
               <!-- Submit Button & Feedback Assurance -->
               <div class="pt-2 flex flex-col sm:flex-row items-center justify-between gap-4">
-                <span class="text-[11px] text-gray-500 flex items-center gap-1.5">
+                <span class="text-[11px] text-slate-500 flex items-center gap-1.5">
                   <span class="material-symbols-outlined text-emerald-600 text-[18px]">verified</span>
                   Báo giá điện tử sẽ gửi qua Email &amp; Zalo sau 2h
                 </span>
@@ -561,10 +592,10 @@
           <span class="text-xs font-bold uppercase tracking-widest text-[#B45309] font-headline">
             TIẾN TRÌNH MINH BẠCH
           </span>
-          <h2 class="font-headline text-2xl sm:text-3xl font-extrabold text-gray-950 tracking-tight">
+          <h2 class="font-headline text-2xl sm:text-3xl font-extrabold text-slate-950 tracking-tight">
             Quy Trình Xử Lý RFQ &amp; Triển Khai Hợp Đồng
           </h2>
-          <p class="text-xs sm:text-sm text-gray-600">
+          <p class="text-xs sm:text-sm text-slate-600">
             Từ tiếp nhận nhu cầu ban đầu đến nghiệm thu máy sấy tại xưởng và bảo hành dài hạn.
           </p>
         </div>
@@ -578,8 +609,8 @@
                 <span class="font-headline text-3xl font-extrabold text-[#0B3B24]">01</span>
                 <span class="material-symbols-outlined text-[#0B3B24] text-[24px]">contact_phone</span>
               </div>
-              <h4 class="font-headline text-base font-bold text-gray-950 mb-1.5">Tiếp Nhận &amp; Khảo Sát Nhanh</h4>
-              <p class="text-xs text-gray-600 leading-relaxed">
+              <h4 class="font-headline text-base font-bold text-slate-950 mb-1.5">Tiếp Nhận &amp; Khảo Sát Nhanh</h4>
+              <p class="text-xs text-slate-600 leading-relaxed">
                 Đánh giá bài toán nhiệt độ, công suất và phân bổ kỹ sư chuyên trách liên hệ trực tiếp trong 2 giờ.
               </p>
             </div>
@@ -593,8 +624,8 @@
                 <span class="font-headline text-3xl font-extrabold text-[#0B3B24]">02</span>
                 <span class="material-symbols-outlined text-[#0B3B24] text-[24px]">design_services</span>
               </div>
-              <h4 class="font-headline text-base font-bold text-gray-950 mb-1.5">Bản Vẽ CAD &amp; Báo Giá BoM</h4>
-              <p class="text-xs text-gray-600 leading-relaxed">
+              <h4 class="font-headline text-base font-bold text-slate-950 mb-1.5">Bản Vẽ CAD &amp; Báo Giá BoM</h4>
+              <p class="text-xs text-slate-600 leading-relaxed">
                 Bóc tách chi tiết khối lượng Inox 304, hệ thống máy nén lạnh, quạt gió chịu nhiệt và điều khiển PLC.
               </p>
             </div>
@@ -608,8 +639,8 @@
                 <span class="font-headline text-3xl font-extrabold text-[#0B3B24]">03</span>
                 <span class="material-symbols-outlined text-[#0B3B24] text-[24px]">handshake</span>
               </div>
-              <h4 class="font-headline text-base font-bold text-gray-950 mb-1.5">Ký Kết Hợp Đồng &amp; Chế Tạo</h4>
-              <p class="text-xs text-gray-600 leading-relaxed">
+              <h4 class="font-headline text-base font-bold text-slate-950 mb-1.5">Ký Kết Hợp Đồng &amp; Chế Tạo</h4>
+              <p class="text-xs text-slate-600 leading-relaxed">
                 Thống nhất điều khoản thanh toán theo giai đoạn, tiến hành cắt laser và hàn TIG khép kín tại xưởng Hải Phòng.
               </p>
             </div>
@@ -623,8 +654,8 @@
                 <span class="font-headline text-3xl font-extrabold text-[#0B3B24]">04</span>
                 <span class="material-symbols-outlined text-[#0B3B24] text-[24px]">verified</span>
               </div>
-              <h4 class="font-headline text-base font-bold text-gray-950 mb-1.5">Lắp Đặt &amp; Nghiệm Thu Mẻ Sấy</h4>
-              <p class="text-xs text-gray-600 leading-relaxed">
+              <h4 class="font-headline text-base font-bold text-slate-950 mb-1.5">Lắp Đặt &amp; Nghiệm Thu Mẻ Sấy</h4>
+              <p class="text-xs text-slate-600 leading-relaxed">
                 Vận chuyển lên cơ sở HTX, đấu nối điện 3 pha, chạy thử mẻ sấy thật và bàn giao công nghệ kèm chứng thư bảo hành.
               </p>
             </div>
@@ -642,7 +673,7 @@
         
         <div class="text-center flex flex-col gap-2">
           <span class="text-xs font-bold uppercase tracking-widest text-[#B45309] font-headline">GIẢI ĐÁP DOANH NGHIỆP</span>
-          <h2 class="font-headline text-2xl sm:text-3xl font-extrabold text-gray-950 tracking-tight">
+          <h2 class="font-headline text-2xl sm:text-3xl font-extrabold text-slate-950 tracking-tight">
             Câu Hỏi Thường Gặp Về Báo Giá &amp; Hợp Đồng
           </h2>
         </div>
@@ -651,33 +682,33 @@
           
           <!-- FAQ 1 -->
           <div class="bg-white p-6 rounded-2xl border border-gray-200/80 shadow-xs">
-            <h4 class="font-headline text-base font-bold text-gray-950 mb-2 flex items-center gap-2">
+            <h4 class="font-headline text-base font-bold text-slate-950 mb-2 flex items-center gap-2">
               <span class="material-symbols-outlined text-[#0B3B24] text-[20px]">help_outline</span>
               Báo giá gửi qua RFQ đã bao gồm chi phí vận chuyển và lắp đặt chưa?
             </h4>
-            <p class="text-gray-600 leading-relaxed pl-7">
+            <p class="text-slate-600 leading-relaxed pl-7">
               Trong hồ sơ chào giá chính thức, Cường Thịnh luôn tách bạch rõ: (1) Đơn giá xuất xưởng thiết bị, (2) Chi phí đóng gói và vận tải địa hình đồi núi đến tận nhà xưởng HTX, và (3) Chi phí nhân công kỹ sư lắp đặt, chạy thử mẻ sấy nghiệm thu. Quý khách hoàn toàn chủ động lựa chọn phương án trọn gói (Turnkey EPC).
             </p>
           </div>
 
           <!-- FAQ 2 -->
           <div class="bg-white p-6 rounded-2xl border border-gray-200/80 shadow-xs">
-            <h4 class="font-headline text-base font-bold text-gray-950 mb-2 flex items-center gap-2">
+            <h4 class="font-headline text-base font-bold text-slate-950 mb-2 flex items-center gap-2">
               <span class="material-symbols-outlined text-[#0B3B24] text-[20px]">help_outline</span>
               Chính sách bảo hành cơ điện lạnh và hỗ trợ kỹ thuật tại các tỉnh vùng cao như thế nào?
             </h4>
-            <p class="text-gray-600 leading-relaxed pl-7">
+            <p class="text-slate-600 leading-relaxed pl-7">
               Mọi dây chuyền máy sấy do Cường Thịnh chế tạo được cam kết bảo hành cơ khí và hệ thống điện lạnh <strong>24 tháng</strong>. Chúng tôi có trạm kỹ thuật thường trực tại Tam Đường (Lai Châu), sẵn sàng có mặt tại các tỉnh Lai Châu, Điện Biên, Sơn La trong vòng <strong>24 - 48 giờ</strong> khi có phát sinh sự cố.
             </p>
           </div>
 
           <!-- FAQ 3 -->
           <div class="bg-white p-6 rounded-2xl border border-gray-200/80 shadow-xs">
-            <h4 class="font-headline text-base font-bold text-gray-950 mb-2 flex items-center gap-2">
+            <h4 class="font-headline text-base font-bold text-slate-950 mb-2 flex items-center gap-2">
               <span class="material-symbols-outlined text-[#0B3B24] text-[20px]">help_outline</span>
               Hợp tác xã có được hỗ trợ phương thức trả chậm hoặc hoàn tất hồ sơ vốn vay khuyến công?
             </h4>
-            <p class="text-gray-600 leading-relaxed pl-7">
+            <p class="text-slate-600 leading-relaxed pl-7">
               Có. Cường Thịnh hỗ trợ trọn gói hồ sơ kỹ thuật, chứng chỉ xuất xưởng, hợp đồng kinh tế và hóa đơn GTGT đầy đủ để HTX nộp đề án nhận hỗ trợ từ Quỹ Khuyến công Quốc gia/Tỉnh hoặc vay ưu đãi từ Ngân hàng Chính sách xã hội. Đồng thời có chính sách thanh toán linh hoạt theo từng đợt thu hoạch nông sản.
             </p>
           </div>
@@ -695,11 +726,11 @@
       <div class="w-16 h-16 rounded-full bg-emerald-100 text-[#0B3B24] flex items-center justify-center mb-1">
         <span class="material-symbols-outlined text-[36px]">check_circle</span>
       </div>
-      <h3 class="font-headline text-2xl font-bold text-gray-950">Tiếp Nhận RFQ Thành Công!</h3>
-      <p class="text-xs sm:text-sm text-gray-600 leading-relaxed">
+      <h3 class="font-headline text-2xl font-bold text-slate-950">Tiếp Nhận RFQ Thành Công!</h3>
+      <p class="text-xs sm:text-sm text-slate-600 leading-relaxed">
         Hệ thống Cường Thịnh Tech &amp; Agro đã ghi nhận thông tin yêu cầu báo giá của Quý Đơn Vị. Kỹ sư trưởng sẽ rà soát thông số và liên hệ phản hồi trong vòng <strong>02 giờ làm việc</strong>.
       </p>
-      <div class="w-full bg-slate-50 p-3 rounded-xl border border-gray-200 text-xs text-left text-gray-600 space-y-1">
+      <div class="w-full bg-slate-50 p-3 rounded-xl border border-gray-200 text-xs text-left text-slate-600 space-y-1">
         <div><strong>Hotline kỹ thuật:</strong> 0932.050101</div>
         <div><strong>Email phòng dự án:</strong> contact@cuongthinhagri.vn</div>
       </div>
@@ -879,10 +910,20 @@
   </script>
 
 
-  <!-- Native High-Performance Scroll Reveal & Live Telemetry Counter Engine -->
+    <!-- Native Cinematic Scroll Reveal & Telemetry Engine -->
   <script>
     (function() {
-      // 1. Scroll Reveal Engine via IntersectionObserver
+      // 1. Reading Progress Bar
+      const progBar = document.getElementById('scroll-progress-bar');
+      window.addEventListener('scroll', function() {
+        const totalHeight = document.documentElement.scrollHeight - window.innerHeight;
+        if (totalHeight > 0 && progBar) {
+          const prog = (window.scrollY / totalHeight) * 100;
+          progBar.style.width = Math.min(prog, 100) + '%';
+        }
+      });
+
+      // 2. Optical Blur-to-Focus Reveal via IntersectionObserver
       const revealItems = document.querySelectorAll('[data-reveal]');
       if ('IntersectionObserver' in window && revealItems.length > 0) {
         const revealObserver = new IntersectionObserver(function(entries, observer) {
@@ -910,7 +951,7 @@
         });
       }
 
-      // 2. Telemetry Number Counter Animation
+      // 3. Telemetry Number Counter Animation
       const counterItems = document.querySelectorAll('[data-counter]');
       if ('IntersectionObserver' in window && counterItems.length > 0) {
         const counterObserver = new IntersectionObserver(function(entries, observer) {
@@ -920,13 +961,13 @@
               const targetVal = parseInt(el.getAttribute('data-counter'), 10);
               const prefix = el.getAttribute('data-counter-prefix') || '';
               const suffix = el.getAttribute('data-counter-suffix') || '';
-              const duration = 1400; // ms
+              const duration = 1500;
               const startTimestamp = performance.now();
 
               function step(now) {
                 const elapsed = now - startTimestamp;
                 const progress = Math.min(elapsed / duration, 1);
-                // Ease out cubic
+                // EaseOutCubic
                 const easeVal = 1 - Math.pow(1 - progress, 3);
                 const currentVal = Math.floor(easeVal * targetVal);
                 el.textContent = prefix + currentVal.toLocaleString('en-US') + suffix;
@@ -949,6 +990,7 @@
       }
     })();
   </script>
+
 
 </body>
 </html>
