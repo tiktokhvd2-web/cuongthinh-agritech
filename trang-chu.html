@@ -10,7 +10,10 @@
   <!-- Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Space+Grotesk:wght@500;600;700;800&display=swap" rel="stylesheet">
+    <!-- Human-Crafted Vietnamese Enterprise Typography: Plus Jakarta Sans & Be Vietnam Pro -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,400&family=Plus+Jakarta+Sans:wght@500;600;700;800;900&display=swap" rel="stylesheet">
   <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" rel="stylesheet">
 
   <script src="https://cdn.tailwindcss.com"></script>
@@ -37,24 +40,84 @@
             }
           },
           fontFamily: {
-            headline: ['Space Grotesk', 'sans-serif'],
-            body: ['Inter', 'sans-serif'],
+            headline: ['Plus Jakarta Sans', 'sans-serif'],
+            body: ['Be Vietnam Pro', 'sans-serif'],
           }
         }
       }
     };
   </script>
-  <style>
-    body { font-family: 'Inter', sans-serif; }
-    h1, h2, h3, h4, h5, .font-headline { font-family: 'Space Grotesk', sans-serif; }
+    <style>
+    body { 
+      font-family: 'Be Vietnam Pro', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; 
+      color: #334155; 
+      background-color: #ffffff;
+      -webkit-font-smoothing: antialiased;
+      -moz-osx-font-smoothing: grayscale;
+    }
+    h1, h2, h3, h4, h5, .font-headline { 
+      font-family: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, sans-serif; 
+      letter-spacing: -0.025em; 
+      color: #0F172A;
+    }
+  
+    /* Top Scroll Reading Progress Bar */
+    #scroll-progress-bar {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 0%;
+      height: 3px;
+      background: linear-gradient(90deg, #0B3B24 0%, #15803d 50%, #D97706 100%);
+      z-index: 9999;
+      transition: width 0.1s ease-out;
+      box-shadow: 0 0 10px rgba(217, 119, 6, 0.4);
+    }
+
+    /* Cinematic Optical Blur-to-Focus Motion Engine */
+    [data-reveal] {
+      opacity: 0;
+      filter: blur(10px);
+      transition: opacity 0.85s cubic-bezier(0.16, 1, 0.3, 1), 
+                  transform 0.85s cubic-bezier(0.16, 1, 0.3, 1), 
+                  filter 0.85s cubic-bezier(0.16, 1, 0.3, 1);
+      will-change: opacity, transform, filter;
+    }
+    [data-reveal="up"] {
+      transform: translateY(54px);
+    }
+    [data-reveal="left"] {
+      transform: translateX(-64px);
+    }
+    [data-reveal="right"] {
+      transform: translateX(64px);
+    }
+    [data-reveal="scale"] {
+      transform: scale(0.92);
+    }
+    [data-reveal].revealed {
+      opacity: 1 !important;
+      filter: blur(0px) !important;
+      transform: translate(0, 0) scale(1) !important;
+    }
+    @media (prefers-reduced-motion: reduce) {
+      [data-reveal] {
+        opacity: 1 !important;
+        filter: none !important;
+        transform: none !important;
+        transition: none !important;
+      }
+    }
   </style>
 </head>
-<body class="bg-white text-gray-800 antialiased selection:bg-brand-900 selection:text-white">
+<body class="bg-white text-slate-800 antialiased selection:bg-brand-900 selection:text-white">
+  <div id="scroll-progress-bar"></div>
 
   <!-- ==================== 1. MASTER EXECUTIVE HEADER ==================== -->
+    <!-- ==================== 1. MASTER ENTERPRISE B2B HEADER ==================== -->
   <header class="fixed top-0 left-0 right-0 z-50 bg-white/95 backdrop-blur-md border-b border-gray-200/80 shadow-[0_4px_20px_rgba(0,0,0,0.03)] transition-all">
-    <!-- Top Bar -->
-    <div class="bg-[#0B3B24] text-white py-1.5 px-4 sm:px-6 lg:px-8 border-b border-[#144d32]">
+    <!-- Top Bar with Smart Collapse -->
+    <div id="header-top-bar" class="bg-[#0B3B24] text-white py-1.5 px-4 sm:px-6 lg:px-8 border-b border-[#144d32] transition-all duration-300 overflow-hidden" style="max-height: 50px;">
       <div class="max-w-7xl mx-auto flex flex-col md:flex-row justify-between items-center gap-1.5 text-xs font-medium tracking-wide">
         <div class="flex flex-wrap items-center justify-center md:justify-start gap-2 sm:gap-3 text-center md:text-left">
           <span class="flex items-center gap-1.5">
@@ -69,74 +132,89 @@
           <span class="hidden lg:inline text-gray-300">Nhà máy: Bản Nùng Nàng, Tam Đường, Lai Châu</span>
         </div>
         <div class="flex items-center gap-3 sm:gap-4 text-gray-200 text-xs">
-          <a class="hover:text-white transition-colors flex items-center gap-1" href="tel:0932050101">
-            <span class="material-symbols-outlined text-[15px] text-[#F59E0B]">call</span>
-            <span>Hotline B2B: <strong class="text-white font-semibold">0932.050101</strong></span>
+          <a class="hover:text-amber-400 transition-colors flex items-center gap-1" href="tel:0932050101">
+            <span class="material-symbols-outlined text-[14px] text-[#F59E0B]">call</span>
+            <span>Hotline B2B: <strong class="text-white font-bold tracking-wider">0932.050101</strong></span>
           </a>
-          <span class="opacity-40 hidden sm:inline">|</span>
-          <a class="hover:text-white transition-colors hidden sm:flex items-center gap-1" href="mailto:contact@cuongthinhagri.vn">
-            <span class="material-symbols-outlined text-[15px]">mail</span>
+          <span class="opacity-40 hidden sm:inline">•</span>
+          <a class="hover:text-amber-400 transition-colors hidden sm:flex items-center gap-1" href="mailto:contact@cuongthinhagri.vn">
+            <span class="material-symbols-outlined text-[14px] text-[#F59E0B]">mail</span>
             <span>contact@cuongthinhagri.vn</span>
           </a>
         </div>
       </div>
     </div>
 
-    <!-- Main Navigation Bar (Centered Capsule Balance) -->
-    <div class="max-w-7xl mx-auto h-20 px-4 sm:px-6 lg:px-8 flex items-center justify-between gap-4">
-      <!-- Left: Brand Logo -->
+    <!-- Main Navigation Bar (Dynamic Shrink on Scroll) -->
+    <div id="header-main-bar" class="max-w-7xl mx-auto h-20 px-4 sm:px-6 lg:px-8 flex items-center justify-between gap-4 transition-all duration-300">
+      
+      <!-- Brand Logo Mark with Industrial Metallic Badge -->
       <a href="index.html" class="flex items-center gap-3 shrink-0 group transition-transform hover:scale-[1.01]" aria-label="Cường Thịnh - Về Trang chủ">
-        <div class="w-11 h-11 rounded-xl bg-[#0B3B24] flex items-center justify-center shadow-sm group-hover:bg-[#144d32] transition-colors shrink-0">
-          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 40 40" class="w-7 h-7" fill="none">
-            <rect width="40" height="40" rx="8" fill="none"/>
-            <path d="M20 7L29 16L20 25L11 16Z" stroke="#F6F4E6" stroke-width="2.5" stroke-linejoin="round"/>
-            <circle cx="20" cy="16" r="3.5" fill="#D97706"/>
-            <path d="M12 28C15 24 25 24 28 28" stroke="#D97706" stroke-width="2.5" stroke-linecap="round"/>
-            <path d="M8 33C14 29 26 29 32 33" stroke="#F6F4E6" stroke-width="2" stroke-linecap="round" stroke-dasharray="2 3"/>
-          </svg>
+        <div class="relative w-11 h-11 rounded-xl bg-gradient-to-br from-[#0B3B24] via-[#144d32] to-[#0B3B24] p-[1.5px] shadow-sm group-hover:scale-105 transition-transform duration-200">
+          <div class="w-full h-full rounded-[10px] bg-[#0B3B24] flex items-center justify-center border border-[#F59E0B]/30">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 40 40" class="w-6 h-6" fill="none">
+              <path d="M20 6L30 16L20 26L10 16Z" stroke="#F6F4E6" stroke-width="2.5" stroke-linejoin="round"/>
+              <circle cx="20" cy="16" r="3.5" fill="#D97706"/>
+              <path d="M12 29C15 25 25 25 28 29" stroke="#D97706" stroke-width="2.5" stroke-linecap="round"/>
+              <path d="M8 34C14 30 26 30 32 34" stroke="#86efac" stroke-width="2" stroke-linecap="round" stroke-dasharray="2 3"/>
+            </svg>
+          </div>
+          <div class="absolute -bottom-0.5 -right-0.5 w-3.5 h-3.5 rounded-full bg-[#D97706] border-2 border-white flex items-center justify-center text-[7px] text-white font-extrabold shadow-xs">★</div>
         </div>
         <div class="flex flex-col">
-          <span class="font-headline text-lg md:text-xl font-bold tracking-tight text-[#0B3B24] leading-tight uppercase group-hover:text-[#144d32] transition-colors">
-            CƯỜNG THỊNH
-          </span>
-          <span class="text-[10px] md:text-[11px] tracking-widest uppercase font-bold text-[#B45309] leading-tight mt-0.5">
-            CÔNG NGHỆ &amp; NÔNG SẢN TÂY BẮC
+          <div class="flex items-center gap-1.5">
+            <span class="font-headline text-lg sm:text-xl font-extrabold tracking-tight text-[#0B3B24] leading-tight uppercase group-hover:text-[#144d32] transition-colors">
+              CƯỜNG THỊNH
+            </span>
+            <span class="px-1.5 py-0.5 rounded text-[9.5px] font-bold bg-[#D97706]/10 text-[#D97706] tracking-wider uppercase border border-[#D97706]/20">
+              TECH &amp; AGRO
+            </span>
+          </div>
+          <span class="text-[9.5px] sm:text-[10px] tracking-widest uppercase font-semibold text-slate-500 leading-tight mt-0.5">
+            Cơ Điện Chế Tạo &amp; Nông Sản Tây Bắc • Est. 2018
           </span>
         </div>
       </a>
 
-      <!-- Center: Floating Capsule Navigation Tabs -->
-      <nav class="hidden xl:flex items-center gap-1 bg-gray-100/90 p-1.5 rounded-full border border-gray-200/80 shadow-[inset_0_1px_3px_rgba(0,0,0,0.04)]">
-        <a class="px-4 py-2 text-[13.5px] bg-[#0B3B24] text-white font-bold shadow-md rounded-full transition-all duration-200 whitespace-nowrap" href="index.html">
-          Trang chủ
+      <!-- Center: Frosted Glass Capsule Navigation (5 Core Pillars) -->
+      <nav class="hidden xl:flex items-center gap-1 bg-slate-100/80 backdrop-blur-md p-1.5 rounded-full border border-slate-200/90 shadow-[inset_0_1px_2px_rgba(0,0,0,0.03)]">
+        <a class="px-3.5 sm:px-4 py-1.5 text-[13px] bg-white text-[#0B3B24] font-bold shadow-xs rounded-full border border-gray-200/80 flex items-center gap-1.5 whitespace-nowrap transition-all duration-200" href="index.html">
+          <span class="w-1.5 h-1.5 rounded-full bg-emerald-500 animate-pulse"></span>
+          <span>Trang chủ</span>
         </a>
-        <a class="px-4 py-2 text-[13.5px] text-gray-600 hover:text-[#0B3B24] hover:bg-white font-medium rounded-full transition-all duration-200 whitespace-nowrap" href="gioi-thieu.html">
+        <a class="px-3 sm:px-3.5 py-1.5 text-[13px] text-slate-600 hover:text-[#0B3B24] hover:bg-white/90 font-medium rounded-full transition-all duration-200 whitespace-nowrap" href="gioi-thieu.html">
           Giới thiệu
         </a>
-        <a class="px-4 py-2 text-[13.5px] text-gray-600 hover:text-[#0B3B24] hover:bg-white font-medium rounded-full transition-all duration-200 whitespace-nowrap" href="linh-vuc-cong-nghe.html">
-          Lĩnh vực &amp; Công nghệ
+        <a class="px-3 sm:px-3.5 py-1.5 text-[13px] text-slate-600 hover:text-[#0B3B24] hover:bg-white/90 font-medium rounded-full transition-all duration-200 whitespace-nowrap" href="linh-vuc-cong-nghe.html">
+          Lĩnh vực & Công nghệ
         </a>
-        <a class="px-4 py-2 text-[13.5px] text-gray-600 hover:text-[#0B3B24] hover:bg-white font-medium rounded-full transition-all duration-200 whitespace-nowrap" href="nong-san-chu-luc.html">
+        <a class="px-3 sm:px-3.5 py-1.5 text-[13px] text-slate-600 hover:text-[#0B3B24] hover:bg-white/90 font-medium rounded-full transition-all duration-200 whitespace-nowrap" href="nong-san-chu-luc.html">
           Nông sản chủ lực
         </a>
-        <a class="px-4 py-2 text-[13.5px] text-gray-600 hover:text-[#0B3B24] hover:bg-white font-medium rounded-full transition-all duration-200 whitespace-nowrap" href="du-an-htx.html">
-          Dự án &amp; HTX
-        </a>
-        <a class="px-4 py-2 text-[13.5px] text-gray-600 hover:text-[#0B3B24] hover:bg-white font-medium rounded-full transition-all duration-200 whitespace-nowrap" href="index.html#rfq-section">
-          Tin tức &amp; Tài liệu
+        <a class="px-3 sm:px-3.5 py-1.5 text-[13px] text-slate-600 hover:text-[#0B3B24] hover:bg-white/90 font-medium rounded-full transition-all duration-200 whitespace-nowrap" href="du-an-htx.html">
+          Dự án & HTX
         </a>
       </nav>
 
-      <!-- Right: Action Cluster -->
-      <div class="flex items-center gap-3 shrink-0">
-        <a class="hidden sm:inline-flex items-center gap-1.5 px-3.5 py-2 text-xs font-semibold text-[#0B3B24] bg-emerald-50 hover:bg-emerald-100 border border-emerald-200 rounded-full transition-colors" href="gioi-thieu.html#ho-so-nang-luc">
-          <span class="material-symbols-outlined text-[16px] text-[#0B3B24]">description</span>
-          <span>Catalogue PDF</span>
+      <!-- Right: Action Cluster (Language Switcher + Hotline + Glowing RFQ CTA) -->
+      <div class="flex items-center gap-2.5 sm:gap-3 shrink-0">
+        <!-- International Language Switcher -->
+        <div class="hidden lg:inline-flex items-center bg-slate-100 p-0.5 rounded-full border border-gray-200/80 text-[11px] font-bold" title="Chọn ngôn ngữ hiển thị">
+          <span class="px-2 py-0.5 rounded-full bg-[#0B3B24] text-white shadow-xs">VN</span>
+          <span class="px-2 py-0.5 text-slate-500 hover:text-slate-900 cursor-pointer transition-colors" onclick="alert('English version will be available in next release / Phiên bản Tiếng Anh đang hoàn thiện.');">EN</span>
+        </div>
+
+        <a class="hidden sm:inline-flex items-center gap-1.5 px-3 py-1.5 text-xs font-semibold text-[#0B3B24] bg-emerald-50 hover:bg-emerald-100 border border-emerald-200/80 rounded-full transition-colors" href="tel:0932050101">
+          <span class="material-symbols-outlined text-[15px] text-[#0B3B24]">headset_mic</span>
+          <span class="font-mono font-bold">0932.050101</span>
         </a>
-        <a class="inline-flex items-center gap-2 px-5 py-2.5 bg-gradient-to-r from-[#D97706] to-[#B45309] hover:from-[#B45309] hover:to-[#92400E] text-white rounded-full text-xs sm:text-sm font-bold shadow-md hover:shadow-lg transition-all duration-200 transform hover:-translate-y-0.5" href="bao-gia-rfq.html">
-          <span class="material-symbols-outlined text-[18px]">request_quote</span>
+
+        <!-- Glowing Amber RFQ Button -->
+        <a class="inline-flex items-center gap-1.5 sm:gap-2 px-4 sm:px-5 py-2 sm:py-2.5 bg-gradient-to-r from-[#D97706] to-[#B45309] hover:from-[#B45309] hover:to-[#92400E] text-white rounded-full text-xs sm:text-sm font-bold shadow-md hover:shadow-lg ring-2 ring-[#D97706]/20 hover:ring-[#D97706]/40 transition-all duration-200 transform hover:-translate-y-0.5" href="bao-gia-rfq.html">
+          <span class="material-symbols-outlined text-[17px] text-amber-200">request_quote</span>
           <span>Yêu cầu báo giá RFQ</span>
         </a>
+
         <button id="mobile-menu-toggle" class="xl:hidden flex items-center justify-center p-2 rounded-lg text-[#0B3B24] hover:bg-gray-100 transition-colors" aria-label="Mở menu điều hướng">
           <span class="material-symbols-outlined text-[26px]">menu</span>
         </button>
@@ -148,7 +226,7 @@
   <main class="w-full pt-28 bg-white min-h-screen">
     
     <!-- SECTION 1: HERO BANNER & REAL INDUSTRIAL EVIDENCE -->
-    <section class="relative w-full overflow-hidden bg-gradient-to-b from-slate-50/70 via-white to-white py-12 lg:py-20 border-b border-gray-100">
+    <section class="relative w-full overflow-hidden bg-gradient-to-b from-slate-50/70 via-white to-white py-12 lg:py-20 border-b border-gray-100" data-reveal="up">
       <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
           
@@ -174,9 +252,9 @@
             </h1>
 
             <!-- Subheading -->
-            <p class="text-base sm:text-lg text-gray-600 leading-relaxed max-w-2xl">
+            <p class="text-base sm:text-lg text-slate-600 leading-relaxed max-w-2xl">
               Từ cơ khí chế tạo máy công nghệ cao đến hệ sinh thái chế biến sâu nông sản chất lượng cao Tây Bắc. Kết nối hoàn chỉnh chuỗi giá trị: 
-              <strong class="text-gray-900 font-semibold">Vùng nguyên liệu — Công nghệ sấy sâu MS-20 — Chế biến tiêu chuẩn — Thương mại xuất khẩu</strong>.
+              <strong class="text-slate-900 font-semibold">Vùng nguyên liệu — Công nghệ sấy sâu MS-20 — Chế biến tiêu chuẩn — Thương mại xuất khẩu</strong>.
             </p>
 
             <!-- Actions -->
@@ -185,14 +263,10 @@
                 <span>Khám phá Thiết bị &amp; Công nghệ</span>
                 <span class="material-symbols-outlined text-[18px]">arrow_forward</span>
               </a>
-              <a class="inline-flex items-center gap-2 px-5 py-3.5 rounded-full bg-white hover:bg-gray-50 text-gray-800 font-semibold text-sm sm:text-base border border-gray-300 shadow-sm hover:shadow transition-all" href="gioi-thieu.html#ho-so-nang-luc">
-                <span class="material-symbols-outlined text-[18px] text-[#D97706]">download</span>
-                <span>Tải Hồ sơ năng lực PDF</span>
+              <a class="inline-flex items-center gap-2 px-5 py-3.5 rounded-full bg-white hover:bg-gray-50 text-slate-800 font-semibold text-sm sm:text-base border border-gray-300 shadow-sm hover:shadow transition-all" href="bao-gia-rfq.html">
+                <span class="material-symbols-outlined text-[18px] text-[#D97706]">request_quote</span>
+                <span>Nhận Dự Toán &amp; Báo Giá RFQ</span>
               </a>
-              <div class="w-full sm:w-auto flex items-center gap-2.5 px-4 py-3 rounded-full bg-gray-50 border border-gray-200 text-xs sm:text-sm text-gray-700">
-                <span class="material-symbols-outlined text-[#0B3B24] text-[18px]">support_agent</span>
-                <span>Hotline Kỹ thuật: <strong class="text-[#0B3B24] font-bold">0932.050101</strong></span>
-              </div>
             </div>
           </div>
 
@@ -218,7 +292,7 @@
                 <div class="w-7 h-7 rounded-lg bg-[#0B3B24] text-white flex items-center justify-center shrink-0 font-bold text-xs">20T</div>
                 <div class="flex flex-col">
                   <span class="text-[11px] font-bold uppercase leading-tight font-headline">Buồng Sấy Macca MS-20</span>
-                  <span class="text-[10px] text-gray-500 leading-tight">Công suất 20.000 kg / mẻ</span>
+                  <span class="text-[10px] text-slate-500 leading-tight">Công suất 20.000 kg / mẻ</span>
                 </div>
               </div>
 
@@ -232,96 +306,84 @@
 
         </div>
 
-        <!-- Trust Features Strip below Hero -->
-        <div class="mt-12 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 p-5 rounded-2xl bg-slate-50 border border-gray-200/80 shadow-sm">
-          <div class="flex items-center gap-3.5 p-2">
-            <div class="w-10 h-10 rounded-xl bg-emerald-100 text-[#0B3B24] flex items-center justify-center shrink-0">
-              <span class="material-symbols-outlined text-[22px]">verified_user</span>
-            </div>
-            <div class="flex flex-col">
-              <span class="text-sm font-bold text-gray-900 font-headline">Bảo Hành 12 Tháng</span>
-              <span class="text-xs text-gray-500">Toàn diện thiết bị, bảo trì tại chỗ</span>
-            </div>
-          </div>
-          <div class="flex items-center gap-3.5 p-2">
-            <div class="w-10 h-10 rounded-xl bg-emerald-100 text-[#0B3B24] flex items-center justify-center shrink-0">
-              <span class="material-symbols-outlined text-[22px]">precision_manufacturing</span>
-            </div>
-            <div class="flex flex-col">
-              <span class="text-sm font-bold text-gray-900 font-headline">Hải Phòng &amp; Tam Đường</span>
-              <span class="text-xs text-gray-500">Xưởng cơ khí &amp; Nhà máy Tây Bắc</span>
-            </div>
-          </div>
-          <div class="flex items-center gap-3.5 p-2">
-            <div class="w-10 h-10 rounded-xl bg-amber-100 text-[#B45309] flex items-center justify-center shrink-0">
-              <span class="material-symbols-outlined text-[22px]">eco</span>
-            </div>
-            <div class="flex flex-col">
-              <span class="text-sm font-bold text-gray-900 font-headline">Công Nghệ Sấy MS-20</span>
-              <span class="text-xs text-gray-500">Tiết kiệm 30% điện, bảo toàn tinh dầu</span>
-            </div>
-          </div>
-          <div class="flex items-center gap-3.5 p-2">
-            <div class="w-10 h-10 rounded-xl bg-emerald-100 text-[#0B3B24] flex items-center justify-center shrink-0">
-              <span class="material-symbols-outlined text-[22px]">agriculture</span>
-            </div>
-            <div class="flex flex-col">
-              <span class="text-sm font-bold text-gray-900 font-headline">Vùng Trồng OCOP 4 Sao</span>
-              <span class="text-xs text-gray-500">Lai Châu • Điện Biên • Lạng Sơn</span>
-            </div>
-          </div>
         </div>
-
-      </div>
     </section>
 
-    <!-- SECTION 2: INDUSTRIAL DASHBOARD METRICS BAR -->
-    <section class="py-12 bg-white">
+    <!-- SECTION 2: MASTER BENTO TELEMETRY & CAPABILITY GRID -->
+    <section class="py-12 bg-white" data-reveal="up">
       <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div class="rounded-3xl bg-gradient-to-r from-[#0B3B24] via-[#0E492D] to-[#0B3B24] text-white p-8 lg:p-12 shadow-2xl border border-[#144d32] relative overflow-hidden">
-          <!-- Subtle background glow -->
+          <!-- Subtle background ambient glow -->
           <div class="absolute -right-20 -top-20 w-80 h-80 bg-emerald-500/10 rounded-full blur-3xl pointer-events-none"></div>
           <div class="absolute -left-20 -bottom-20 w-80 h-80 bg-amber-500/10 rounded-full blur-3xl pointer-events-none"></div>
 
-          <div class="relative z-10 grid grid-cols-2 lg:grid-cols-4 gap-8 lg:gap-10 divide-y sm:divide-y-0 sm:divide-x divide-[#144d32]/80">
-            <!-- Metric 1 -->
-            <div class="flex flex-col items-center lg:items-start text-center lg:text-left gap-2 sm:px-4 pt-4 sm:pt-0">
-              <div class="flex items-center gap-2 text-[#F59E0B] mb-1">
-                <span class="material-symbols-outlined text-[20px]">calendar_today</span>
-                <span class="text-[11px] font-bold tracking-widest uppercase font-headline">Thành Lập</span>
+          <div class="relative z-10 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 lg:gap-8 divide-y md:divide-y-0 md:divide-x divide-[#144d32]/90">
+            <!-- Telemetry Card 1 -->
+            <div class="flex flex-col gap-3 md:px-4 pt-4 md:pt-0">
+              <div class="flex items-center justify-between">
+                <span class="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-md bg-white/10 text-emerald-300 text-[11px] font-bold tracking-wide uppercase font-headline">
+                  <span class="material-symbols-outlined text-[15px]">verified_user</span>
+                  Bảo hành 24T
+                </span>
+                <span class="text-xs text-gray-400 font-mono">EST. 2018</span>
               </div>
-              <div class="text-4xl lg:text-5xl font-extrabold text-white font-headline tracking-tight">2018</div>
-              <p class="text-xs text-gray-300 leading-snug">Khởi nguồn chế tạo cơ khí công nghiệp tại TP. Hải Phòng</p>
+              <div class="flex items-baseline gap-2">
+                <span class="text-4xl lg:text-5xl font-extrabold text-white font-headline tracking-tight" data-counter="2018">2018</span>
+                <span class="text-xs text-amber-400 font-semibold font-headline">Hải Phòng</span>
+              </div>
+              <h4 class="text-sm font-bold text-white font-headline">Cơ Khí Chế Tạo Inox 304</h4>
+              <p class="text-xs text-gray-300 leading-relaxed">Xưởng cơ khí tự chủ tại Hải Phòng, chuyên sâu chế tạo máy sấy công nghiệp và thiết bị chế biến bền bỉ.</p>
             </div>
 
-            <!-- Metric 2 -->
-            <div class="flex flex-col items-center lg:items-start text-center lg:text-left gap-2 sm:px-4 pt-4 sm:pt-0">
-              <div class="flex items-center gap-2 text-[#F59E0B] mb-1">
-                <span class="material-symbols-outlined text-[20px]">distance</span>
-                <span class="text-[11px] font-bold tracking-widest uppercase font-headline">Quy Mô</span>
+            <!-- Telemetry Card 2 -->
+            <div class="flex flex-col gap-3 md:px-4 pt-6 md:pt-0">
+              <div class="flex items-center justify-between">
+                <span class="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-md bg-amber-400/20 text-[#F59E0B] text-[11px] font-bold tracking-wide uppercase font-headline">
+                  <span class="material-symbols-outlined text-[15px]">bolt</span>
+                  Tiết Kiệm 40% Điện
+                </span>
+                <span class="text-xs text-gray-400 font-mono">TAM ĐƯỜNG</span>
               </div>
-              <div class="text-4xl lg:text-5xl font-extrabold text-white font-headline tracking-tight">03 Tỉnh</div>
-              <p class="text-xs text-gray-300 leading-snug">Cụm vùng nguyên liệu &amp; liên kết: Lai Châu • Điện Biên • Lạng Sơn</p>
+              <div class="flex items-baseline gap-2">
+                <span class="text-4xl lg:text-5xl font-extrabold text-white font-headline tracking-tight">20 Tấn</span>
+                <span class="text-xs text-gray-300 font-semibold">/ mẻ</span>
+              </div>
+              <h4 class="text-sm font-bold text-white font-headline">Công Nghệ Sấy MS-20</h4>
+              <p class="text-xs text-gray-300 leading-relaxed">Hệ thống sấy hồi lưu gió đối lưu đa tầng, bảo toàn nguyên vẹn hàm lượng tinh dầu và dưỡng chất tự nhiên.</p>
             </div>
 
-            <!-- Metric 3 -->
-            <div class="flex flex-col items-center lg:items-start text-center lg:text-left gap-2 sm:px-4 pt-4 sm:pt-0">
-              <div class="flex items-center gap-2 text-[#F59E0B] mb-1">
-                <span class="material-symbols-outlined text-[20px]">speed</span>
-                <span class="text-[11px] font-bold tracking-widest uppercase font-headline">Công Suất Sấy</span>
+            <!-- Telemetry Card 3 -->
+            <div class="flex flex-col gap-3 md:px-4 pt-6 md:pt-0">
+              <div class="flex items-center justify-between">
+                <span class="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-md bg-white/10 text-emerald-300 text-[11px] font-bold tracking-wide uppercase font-headline">
+                  <span class="material-symbols-outlined text-[15px]">eco</span>
+                  Chuẩn OCOP 4 Sao
+                </span>
+                <span class="text-xs text-gray-400 font-mono">TÂY BẮC</span>
               </div>
-              <div class="text-4xl lg:text-5xl font-extrabold text-white font-headline tracking-tight">20 Tấn/mẻ</div>
-              <p class="text-xs text-gray-300 leading-snug">Hệ thống sấy Macca MS-20 vận hành thực tế tại Nùng Nàng, Tam Đường</p>
+              <div class="flex items-baseline gap-2">
+                <span class="text-4xl lg:text-5xl font-extrabold text-white font-headline tracking-tight">3 Vùng</span>
+                <span class="text-xs text-amber-400 font-semibold font-headline">Liên kết trồng</span>
+              </div>
+              <h4 class="text-sm font-bold text-white font-headline">Vùng Nguyên Liệu Bản Địa</h4>
+              <p class="text-xs text-gray-300 leading-relaxed">Vùng trồng hữu cơ tại Lai Châu, Điện Biên &amp; Lạng Sơn với thổ nhưỡng độ cao lý tưởng trên 800m.</p>
             </div>
 
-            <!-- Metric 4 -->
-            <div class="flex flex-col items-center lg:items-start text-center lg:text-left gap-2 sm:px-4 pt-4 sm:pt-0">
-              <div class="flex items-center gap-2 text-[#F59E0B] mb-1">
-                <span class="material-symbols-outlined text-[20px]">sync_saved_locally</span>
-                <span class="text-[11px] font-bold tracking-widest uppercase font-headline">Mô Hình</span>
+            <!-- Telemetry Card 4 -->
+            <div class="flex flex-col gap-3 md:px-4 pt-6 md:pt-0">
+              <div class="flex items-center justify-between">
+                <span class="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-md bg-white/10 text-emerald-300 text-[11px] font-bold tracking-wide uppercase font-headline">
+                  <span class="material-symbols-outlined text-[15px]">handshake</span>
+                  Hợp Chuẩn B2B
+                </span>
+                <span class="text-xs text-gray-400 font-mono">END-TO-END</span>
               </div>
-              <div class="text-4xl lg:text-5xl font-extrabold text-white font-headline tracking-tight">100%</div>
-              <p class="text-xs text-gray-300 leading-snug">Khép kín hoàn chỉnh: Cơ khí chế tạo — Chế biến sâu — Thương mại B2B</p>
+              <div class="flex items-baseline gap-2">
+                <span class="text-4xl lg:text-5xl font-extrabold text-white font-headline tracking-tight">100%</span>
+                <span class="text-xs text-amber-400 font-semibold font-headline">Khép kín</span>
+              </div>
+              <h4 class="text-sm font-bold text-white font-headline">Chuỗi Giá Trị Toàn Diện</h4>
+              <p class="text-xs text-gray-300 leading-relaxed">Tích hợp đồng bộ từ chế tạo cơ khí, quy hoạch vùng trồng, chế biến sâu đến thương mại xuất khẩu.</p>
             </div>
           </div>
         </div>
@@ -329,7 +391,7 @@
     </section>
 
     <!-- SECTION 3: 4 CORE COMPETENCIES (MODERN BENTO GRID) -->
-    <section class="py-16 lg:py-24 bg-slate-50/70 border-y border-gray-100">
+    <section class="py-16 lg:py-24 bg-slate-50/70 border-y border-gray-100" data-reveal="up">
       <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <!-- Section Header -->
         <div class="flex flex-col md:flex-row md:items-end justify-between gap-6 mb-12">
@@ -342,7 +404,7 @@
               4 Năng Lực Cốt Lõi Kiến Tạo Chuỗi Giá Trị
             </h2>
           </div>
-          <p class="text-sm sm:text-base text-gray-600 max-w-xl leading-relaxed">
+          <p class="text-sm sm:text-base text-slate-600 max-w-xl leading-relaxed">
             Mô hình liên kết đa tầng giữa giải pháp cơ khí hiện đại và chế biến sâu nông sản tự nhiên, chuẩn hóa tiêu chuẩn thương mại quốc tế.
           </p>
         </div>
@@ -351,7 +413,13 @@
         <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
           
           <!-- Card 1: Chế Tạo Máy -->
-          <div class="group bg-white rounded-2xl p-6 border border-gray-200/80 shadow-sm hover:shadow-xl transition-all duration-300 flex flex-col justify-between relative overflow-hidden">
+          <div class="group bg-white rounded-2xl border border-gray-200/80 shadow-sm hover:shadow-xl transition-all duration-300 flex flex-col justify-between relative overflow-hidden">
+            <div class="relative h-44 w-full overflow-hidden bg-gray-900">
+              <img class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" alt="Chế tạo máy móc cơ khí Inox SUS 304 Hải Phòng" src="https://lh3.googleusercontent.com/aida-public/AB6AXuArQKDyNiRiZd-dIZqsj088IZ4pgzDkVAirAWa0d8ATxVmoow9r8rovX_bvOyCoJmDK8hYETaEHfzSLb1ynlMPGEgJUiK615AzHQW8Vj19tIEhBDNzkbelox4p_nIWH7SlyV8lrO0JAzHlJn1lvVJUxz2loVIGVM5rJMIebNeK98AfhdZtPQaNp6_wFDfsGQ8rIafC8cGvieXmt53_tKX4aBp0by88gybqBeGVA524ifLyBo-tBiRrqqg">
+              <div class="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent"></div>
+              <span class="absolute bottom-2.5 left-3 px-2.5 py-0.5 rounded bg-[#0B3B24]/90 text-white text-[10px] font-bold uppercase tracking-wider">Xưởng Đình Vũ • 3.500m²</span>
+            </div>
+            <div class="p-6 flex flex-col justify-between flex-1 gap-4">
             <div class="absolute -right-4 -bottom-6 text-7xl font-extrabold text-gray-100 font-headline select-none group-hover:text-emerald-50 transition-colors">01</div>
             <div class="flex flex-col gap-4 relative z-10">
               <div class="w-12 h-12 rounded-xl bg-emerald-50 text-[#0B3B24] border border-emerald-200 flex items-center justify-center">
@@ -361,11 +429,12 @@
                 <span class="text-[11px] font-bold text-[#B45309] uppercase tracking-wider font-headline">Tiêu chuẩn Inox 304</span>
                 <h3 class="text-xl font-bold text-[#0B3B24] font-headline group-hover:text-[#144d32] transition-colors">Chế Tạo Máy Móc</h3>
               </div>
-              <p class="text-xs sm:text-sm text-gray-600 leading-relaxed">
+              <p class="text-xs sm:text-sm text-slate-600 leading-relaxed">
                 Nghiên cứu, chế tạo buồng sấy tĩnh, sấy đảo chiều, máy rang đa năng, máy tách vỏ hạt cứng và hệ thống điều khiển PLC số hóa.
               </p>
             </div>
-            <div class="pt-6 relative z-10">
+            </div>
+            <div class="pt-3 border-t border-gray-100 flex items-center justify-between">
               <a class="inline-flex items-center gap-1.5 text-xs font-bold text-[#0B3B24] group-hover:text-[#D97706] transition-colors" href="linh-vuc-cong-nghe.html">
                 <span>Xem chi tiết thiết bị</span>
                 <span class="material-symbols-outlined text-[16px] group-hover:translate-x-1 transition-transform">arrow_forward</span>
@@ -374,7 +443,13 @@
           </div>
 
           <!-- Card 2: Chế Biến Nông Sản -->
-          <div class="group bg-white rounded-2xl p-6 border border-gray-200/80 shadow-sm hover:shadow-xl transition-all duration-300 flex flex-col justify-between relative overflow-hidden">
+          <div class="group bg-white rounded-2xl border border-gray-200/80 shadow-sm hover:shadow-xl transition-all duration-300 flex flex-col justify-between relative overflow-hidden">
+            <div class="relative h-44 w-full overflow-hidden bg-gray-900">
+              <img class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" alt="Dây chuyền tuyển chọn hạt macca sấy nứt Tam Đường" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCdVa8pwWYigUTFiiyZL_ycrJJfX5fMutuIBObpZPvMnRNrEbwgrKRDK6n30awLYcTVLYdb31hEd568AiDuMyxazru0tbC_u4Ycyxsi79YxSs3KaByGm1ljYGlOLmzquPBQEq2oGFi1PaQ7m-xswaLaYpm1L20fDjOKNWI0iC6k4nMWsqpIp57PCIMClcuBCgYMqrC-wwuLTrpftPLA4K1JhYaOH9JITSmZSuyf99jqenW5u-uUU0Pe5w">
+              <div class="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent"></div>
+              <span class="absolute bottom-2.5 left-3 px-2.5 py-0.5 rounded bg-[#0B3B24]/90 text-white text-[10px] font-bold uppercase tracking-wider">Nhà Máy Tam Đường • 5.000m²</span>
+            </div>
+            <div class="p-6 flex flex-col justify-between flex-1 gap-4">
             <div class="absolute -right-4 -bottom-6 text-7xl font-extrabold text-gray-100 font-headline select-none group-hover:text-emerald-50 transition-colors">02</div>
             <div class="flex flex-col gap-4 relative z-10">
               <div class="w-12 h-12 rounded-xl bg-emerald-50 text-[#0B3B24] border border-emerald-200 flex items-center justify-center">
@@ -384,11 +459,12 @@
                 <span class="text-[11px] font-bold text-[#B45309] uppercase tracking-wider font-headline">Chuẩn ISO 22000 &amp; HACCP</span>
                 <h3 class="text-xl font-bold text-[#0B3B24] font-headline group-hover:text-[#144d32] transition-colors">Chế Biến Nông Sản</h3>
               </div>
-              <p class="text-xs sm:text-sm text-gray-600 leading-relaxed">
+              <p class="text-xs sm:text-sm text-slate-600 leading-relaxed">
                 Chế biến Hạt Macca sấy nứt tự nhiên công nghệ MS-20, Cà phê Arabica vùng cao, Quế ống sấy sạch, Hoa hồi Lạng Sơn đạt chuẩn độ ẩm.
               </p>
             </div>
-            <div class="pt-6 relative z-10">
+            </div>
+            <div class="pt-3 border-t border-gray-100 flex items-center justify-between">
               <a class="inline-flex items-center gap-1.5 text-xs font-bold text-[#0B3B24] group-hover:text-[#D97706] transition-colors" href="nong-san-chu-luc.html">
                 <span>Xem danh mục sản phẩm</span>
                 <span class="material-symbols-outlined text-[16px] group-hover:translate-x-1 transition-transform">arrow_forward</span>
@@ -397,7 +473,13 @@
           </div>
 
           <!-- Card 3: Thương Mại & Xuất Khẩu -->
-          <div class="group bg-white rounded-2xl p-6 border border-gray-200/80 shadow-sm hover:shadow-xl transition-all duration-300 flex flex-col justify-between relative overflow-hidden">
+          <div class="group bg-white rounded-2xl border border-gray-200/80 shadow-sm hover:shadow-xl transition-all duration-300 flex flex-col justify-between relative overflow-hidden">
+            <div class="relative h-44 w-full overflow-hidden bg-gray-900">
+              <img class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" alt="Đóng gói hút chân không xuất khẩu nông sản" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBNKYgFPJ2lUhTum3_4Qbf022FZFc9uEnOQQEL02y9dlRd9Q-d6ZBtNqPGHFfmuWNShjgHlIrJrbSHshRy8cEWjq1bTu_pW1i79quDNKCfZw0YWoBYcoIeuNMm4QQyPBEPZmoT-9gkGyT8YAdgeeawqEH4pD8uLLPmWbv1STWYlX6huzCdhXUJaZmVgDKo960cBTB5KMWiJF8SrL1KSD3LzR2ceTdOqougF9n9NclxFclaAACe4qCoCJg">
+              <div class="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent"></div>
+              <span class="absolute bottom-2.5 left-3 px-2.5 py-0.5 rounded bg-[#D97706]/90 text-white text-[10px] font-bold uppercase tracking-wider">Chuẩn ISO 22000 • OCOP 4★</span>
+            </div>
+            <div class="p-6 flex flex-col justify-between flex-1 gap-4">
             <div class="absolute -right-4 -bottom-6 text-7xl font-extrabold text-gray-100 font-headline select-none group-hover:text-emerald-50 transition-colors">03</div>
             <div class="flex flex-col gap-4 relative z-10">
               <div class="w-12 h-12 rounded-xl bg-amber-50 text-[#B45309] border border-amber-200 flex items-center justify-center">
@@ -407,11 +489,12 @@
                 <span class="text-[11px] font-bold text-[#B45309] uppercase tracking-wider font-headline">Xuất Khẩu Chính Ngạch</span>
                 <h3 class="text-xl font-bold text-[#0B3B24] font-headline group-hover:text-[#144d32] transition-colors">Thương Mại &amp; Phân Phối</h3>
               </div>
-              <p class="text-xs sm:text-sm text-gray-600 leading-relaxed">
+              <p class="text-xs sm:text-sm text-slate-600 leading-relaxed">
                 Cung ứng sỉ nông sản chất lượng cao cho chuỗi siêu thị, nhà máy bánh kẹo thực phẩm, đơn vị xuất khẩu và đối tác logistics toàn cầu.
               </p>
             </div>
-            <div class="pt-6 relative z-10">
+            </div>
+            <div class="pt-3 border-t border-gray-100 flex items-center justify-between">
               <a class="inline-flex items-center gap-1.5 text-xs font-bold text-[#0B3B24] group-hover:text-[#D97706] transition-colors" href="bao-gia-rfq.html">
                 <span>Nhận bảng giá bán buôn</span>
                 <span class="material-symbols-outlined text-[16px] group-hover:translate-x-1 transition-transform">arrow_forward</span>
@@ -420,7 +503,13 @@
           </div>
 
           <!-- Card 4: Chuyển Giao HTX -->
-          <div class="group bg-white rounded-2xl p-6 border border-gray-200/80 shadow-sm hover:shadow-xl transition-all duration-300 flex flex-col justify-between relative overflow-hidden">
+          <div class="group bg-white rounded-2xl border border-gray-200/80 shadow-sm hover:shadow-xl transition-all duration-300 flex flex-col justify-between relative overflow-hidden">
+            <div class="relative h-44 w-full overflow-hidden bg-gray-900">
+              <img class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" alt="Mô hình chuyển giao kỹ thuật thực tế cho HTX Tam Đường" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDZhV76m0jAowtKjMsgxXwyfEzRqAfzDt85g2OvUs0fZzG_rx-xP5hLJTngGB5t6HpqhQwtx1GpgF-n25XXQPLAkyegmXnfM74BLldghx_Ev4wLTx3MI5XvvyFSWEE4ghNoOwGXeglxdrzy4Wm-Uf1WYN-U-udLBwikKkbS9F0IL9Z-UAl4Ag8hUeFMrTcuLzxrELOjcsLsxlM0TZca-uR9gYZRFF705ytwRltfol5J2GgI6FZG7FOclA">
+              <div class="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent"></div>
+              <span class="absolute bottom-2.5 left-3 px-2.5 py-0.5 rounded bg-[#0B3B24]/90 text-white text-[10px] font-bold uppercase tracking-wider">Hợp Tác Xã Xanh • 24+ HTX</span>
+            </div>
+            <div class="p-6 flex flex-col justify-between flex-1 gap-4">
             <div class="absolute -right-4 -bottom-6 text-7xl font-extrabold text-gray-100 font-headline select-none group-hover:text-emerald-50 transition-colors">04</div>
             <div class="flex flex-col gap-4 relative z-10">
               <div class="w-12 h-12 rounded-xl bg-emerald-50 text-[#0B3B24] border border-emerald-200 flex items-center justify-center">
@@ -430,11 +519,12 @@
                 <span class="text-[11px] font-bold text-[#B45309] uppercase tracking-wider font-headline">Chuẩn Hóa OCOP</span>
                 <h3 class="text-xl font-bold text-[#0B3B24] font-headline group-hover:text-[#144d32] transition-colors">Chuyển Giao Công Nghệ</h3>
               </div>
-              <p class="text-xs sm:text-sm text-gray-600 leading-relaxed">
+              <p class="text-xs sm:text-sm text-slate-600 leading-relaxed">
                 Đồng hành cùng các Hợp tác xã (HTX) địa phương thiết kế nhà xưởng, chuyển giao quy trình vận hành và kiểm soát chất lượng sau thu hoạch.
               </p>
             </div>
-            <div class="pt-6 relative z-10">
+            </div>
+            <div class="pt-3 border-t border-gray-100 flex items-center justify-between">
               <a class="inline-flex items-center gap-1.5 text-xs font-bold text-[#0B3B24] group-hover:text-[#D97706] transition-colors" href="du-an-htx.html">
                 <span>Khám phá mô hình HTX</span>
                 <span class="material-symbols-outlined text-[16px] group-hover:translate-x-1 transition-transform">arrow_forward</span>
@@ -447,7 +537,7 @@
     </section>
 
     <!-- SECTION 4: FLAGSHIP INNOVATION - MS-20 MACADAMIA DRYING PLANT -->
-    <section class="py-16 lg:py-24 bg-white" id="cong-nghe-ms20">
+    <section class="py-16 lg:py-24 bg-white" data-reveal="up" id="cong-nghe-ms20">
       <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div class="rounded-3xl bg-slate-50 border border-gray-200/90 p-8 lg:p-12 shadow-lg">
           <div class="grid grid-cols-1 lg:grid-cols-12 gap-10 items-center">
@@ -472,7 +562,7 @@
                 </span>
               </div>
 
-              <p class="text-sm sm:text-base text-gray-600 leading-relaxed">
+              <p class="text-sm sm:text-base text-slate-600 leading-relaxed">
                 Hệ thống sấy công nghiệp chuyên dụng cho hạt có dầu cao cấp. Chế tạo 100% bằng vật liệu Inox SUS 304 chuẩn an toàn thực phẩm, tối ưu luồng khí nhiệt tuần hoàn khép kín và kiểm soát độ ẩm điện tử tự động.
               </p>
 
@@ -481,25 +571,25 @@
                 <div class="bg-white p-4 rounded-xl border border-gray-200 shadow-sm flex flex-col gap-1.5">
                   <div class="flex items-center gap-1.5 text-[#16a34a]">
                     <span class="material-symbols-outlined text-[20px]">energy_savings_leaf</span>
-                    <span class="text-xs font-bold uppercase font-headline text-gray-900">Tiết Kiệm 30%</span>
+                    <span class="text-xs font-bold uppercase font-headline text-slate-900">Tiết Kiệm 40%</span>
                   </div>
-                  <p class="text-xs text-gray-500">Tuần hoàn luồng khí nóng khép kín giảm tối đa chi phí điện năng.</p>
+                  <p class="text-xs text-slate-500">Tuần hoàn luồng khí nóng khép kín giảm tối đa chi phí điện năng.</p>
                 </div>
 
                 <div class="bg-white p-4 rounded-xl border border-gray-200 shadow-sm flex flex-col gap-1.5">
                   <div class="flex items-center gap-1.5 text-[#B45309]">
                     <span class="material-symbols-outlined text-[20px]">nest_cam_floodlight</span>
-                    <span class="text-xs font-bold uppercase font-headline text-gray-900">Bảo Toàn Tinh Dầu</span>
+                    <span class="text-xs font-bold uppercase font-headline text-slate-900">Bảo Toàn Tinh Dầu</span>
                   </div>
-                  <p class="text-xs text-gray-500">Nhiệt sấy thấp phân tầng, không biến tính lipid và vị béo macca.</p>
+                  <p class="text-xs text-slate-500">Nhiệt sấy thấp phân tầng, không biến tính lipid và vị béo macca.</p>
                 </div>
 
                 <div class="bg-white p-4 rounded-xl border border-gray-200 shadow-sm flex flex-col gap-1.5">
                   <div class="flex items-center gap-1.5 text-[#0B3B24]">
                     <span class="material-symbols-outlined text-[20px]">engineering</span>
-                    <span class="text-xs font-bold uppercase font-headline text-gray-900">Vận Hành 24/7</span>
+                    <span class="text-xs font-bold uppercase font-headline text-slate-900">Vận Hành 24/7</span>
                   </div>
-                  <p class="text-xs text-gray-500">Khung chịu lực Inox 304 bền bỉ xuyên suốt mùa vụ thu hoạch cao điểm.</p>
+                  <p class="text-xs text-slate-500">Khung chịu lực Inox 304 bền bỉ xuyên suốt mùa vụ thu hoạch cao điểm.</p>
                 </div>
               </div>
 
@@ -509,7 +599,7 @@
                   <span>Xem Bảng Thông Số Kỹ Thuật MS-20</span>
                   <span class="material-symbols-outlined text-[18px]">arrow_forward</span>
                 </a>
-                <a class="inline-flex items-center gap-2 px-5 py-3 rounded-full bg-white hover:bg-gray-50 text-gray-800 font-semibold text-sm border border-gray-300 shadow-sm transition-all" href="bao-gia-rfq.html">
+                <a class="inline-flex items-center gap-2 px-5 py-3 rounded-full bg-white hover:bg-gray-50 text-slate-800 font-semibold text-sm border border-gray-300 shadow-sm transition-all" href="bao-gia-rfq.html">
                   <span class="material-symbols-outlined text-[18px] text-[#D97706]">receipt_long</span>
                   <span>Yêu cầu dự toán lắp đặt</span>
                 </a>
@@ -541,7 +631,7 @@
     </section>
 
     <!-- SECTION 5: SPECIALTY NORTHWEST AGRO-PRODUCTS (B2B EXPORT SHOWCASE) -->
-    <section class="py-16 lg:py-24 bg-slate-50/70 border-t border-gray-100">
+    <section class="py-16 lg:py-24 bg-slate-50/70 border-t border-gray-100" data-reveal="up">
       <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <!-- Header -->
         <div class="flex flex-col md:flex-row md:items-end justify-between gap-6 mb-12">
@@ -554,7 +644,7 @@
               Nông Sản Chủ Lực Chuẩn Xuất Khẩu
             </h2>
           </div>
-          <p class="text-sm sm:text-base text-gray-600 max-w-xl leading-relaxed">
+          <p class="text-sm sm:text-base text-slate-600 max-w-xl leading-relaxed">
             Thu hoạch từ thổ nhưỡng cao nguyên trù phú Lai Châu — Điện Biên — Lạng Sơn, chế biến sâu ngay tại chỗ bằng công nghệ MS-20 giúp lưu giữ trọn vẹn hương vị tự nhiên.
           </p>
         </div>
@@ -565,7 +655,7 @@
           <!-- Product 1: Macca -->
           <div class="bg-white rounded-2xl border border-gray-200/90 shadow-sm hover:shadow-xl transition-all duration-300 flex flex-col overflow-hidden group">
             <div class="relative h-60 overflow-hidden bg-gray-100">
-              <img class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" alt="Hạt Mắc-ca sấy nứt tự nhiên Lai Châu" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAKcOC95fZqzYYoBg5Se5GYv4CFTU9o9b7w215z70x0x">
+              <img class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" alt="Hạt Mắc-ca sấy nứt tự nhiên Lai Châu" src="https://lh3.googleusercontent.com/aida-public/AB6AXuC4Xex2-iIYa8vQ5sBZf3_JDxbT31c73BKj4VihgZzVLE6bXHWHSFu1M5tV1DXSMBq6xDCsW9POYb7TaUhS_XykjAWTdyZZ1-8Q-P_SLLx0sYwP4j4htrXU1s-YkaunYEKCWWDHlzNt1lURMqWtFMkQNoblAHDKCtlXFO2rERi6_fm-kwbrFSlXu9G32am1UBghMGjsrxa9S9r73sBunlN-D3wQr9hg8ZgCGMLRqokEF-soAp6d_XF25Q">
               <span class="absolute top-3 left-3 px-3 py-1 bg-[#0B3B24] text-white text-xs font-bold rounded-full uppercase tracking-wider font-headline">
                 Lai Châu • OCOP 4 Sao
               </span>
@@ -576,13 +666,13 @@
                   <h3 class="text-xl font-bold text-[#0B3B24] font-headline">Hạt Mắc-ca Tây Bắc</h3>
                   <span class="text-xs font-bold text-[#B45309] bg-amber-50 px-2 py-0.5 rounded">Sấy nứt tự nhiên</span>
                 </div>
-                <p class="text-xs sm:text-sm text-gray-600 leading-relaxed">
+                <p class="text-xs sm:text-sm text-slate-600 leading-relaxed">
                   Sản phẩm chủ lực sấy nứt tự nhiên bằng công nghệ MS-20. Hạt nhân căng mẩy, vị béo bùi, giàu Omega 3-6-9 và vitamin thiết yếu.
                 </p>
-                <div class="p-3 bg-gray-50 rounded-xl space-y-1.5 text-xs text-gray-600">
-                  <div class="flex justify-between"><span>Kích thước hạt:</span><strong class="text-gray-900 font-semibold">22mm - 26mm+ (VIP)</strong></div>
+                <div class="p-3 bg-gray-50 rounded-xl space-y-1.5 text-xs text-slate-600">
+                  <div class="flex justify-between"><span>Kích thước hạt:</span><strong class="text-slate-900 font-semibold">22mm - 26mm+ (VIP)</strong></div>
                   <div class="flex justify-between"><span>Độ ẩm đạt:</span><strong class="text-emerald-700 font-semibold">≤ 1.5% (Chuẩn Quốc Tế)</strong></div>
-                  <div class="flex justify-between"><span>Quy cách đóng gói:</span><strong class="text-gray-900 font-semibold">Hút chân không 500g / Thùng sỉ</strong></div>
+                  <div class="flex justify-between"><span>Quy cách đóng gói:</span><strong class="text-slate-900 font-semibold">Hút chân không 500g / Thùng sỉ</strong></div>
                 </div>
               </div>
               <a class="w-full py-2.5 rounded-xl bg-[#0B3B24] hover:bg-[#144d32] text-white font-bold text-xs sm:text-sm flex items-center justify-center gap-1.5 transition-colors" href="bao-gia-rfq.html">
@@ -595,7 +685,7 @@
           <!-- Product 2: Cà phê -->
           <div class="bg-white rounded-2xl border border-gray-200/90 shadow-sm hover:shadow-xl transition-all duration-300 flex flex-col overflow-hidden group">
             <div class="relative h-60 overflow-hidden bg-gray-100">
-              <img class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" alt="Cà phê Arabica Núi Cao Điện Biên" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAXeDJUdxcnywvui9MHhSs7tImBFx10z7u2">
+              <img class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" alt="Cà phê Arabica Núi Cao Điện Biên" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBRESmZ7Alj_kzfy2Sh2A06H-ivtkB3QqHeHiwUIu1OpVOo_-8QDzO4M-BakS3XLk50xvlcmIROJbgcaBkB5PKAbyEFb1l8KTioVaLUaL0J9U8SKuZSmmVTKwMrTafwkmjnHw8ah95uWqEN8NlgSMpd7qkW92R_3mMcKIdtngxJrcK1ZVvbyw002h4kbfIP1kkAKZNFG3Exxg59VdNI6-kNkY4LwZ76GnrUy52t3q6Ydsb5X6xhxtFbhw">
               <span class="absolute top-3 left-3 px-3 py-1 bg-[#0B3B24] text-white text-xs font-bold rounded-full uppercase tracking-wider font-headline">
                 Điện Biên • &gt;1.200m
               </span>
@@ -606,13 +696,13 @@
                   <h3 class="text-xl font-bold text-[#0B3B24] font-headline">Cà Phê Arabica Núi Cao</h3>
                   <span class="text-xs font-bold text-[#B45309] bg-amber-50 px-2 py-0.5 rounded">Rang mộc vi sai</span>
                 </div>
-                <p class="text-xs sm:text-sm text-gray-600 leading-relaxed">
+                <p class="text-xs sm:text-sm text-slate-600 leading-relaxed">
                   Arabica được canh tác trên độ cao trên 1.200m. Thu hái chọn lọc quả chín 100%, sơ chế ướt và rang mộc vi sai chuẩn vị đặc sản.
                 </p>
-                <div class="p-3 bg-gray-50 rounded-xl space-y-1.5 text-xs text-gray-600">
-                  <div class="flex justify-between"><span>Giống thuần chủng:</span><strong class="text-gray-900 font-semibold">Catimor / Typica</strong></div>
+                <div class="p-3 bg-gray-50 rounded-xl space-y-1.5 text-xs text-slate-600">
+                  <div class="flex justify-between"><span>Giống thuần chủng:</span><strong class="text-slate-900 font-semibold">Catimor / Typica</strong></div>
                   <div class="flex justify-between"><span>Hương vị chủ đạo:</span><strong class="text-emerald-700 font-semibold">Quả mọng, hậu mật ong</strong></div>
-                  <div class="flex justify-between"><span>Phân loại:</span><strong class="text-gray-900 font-semibold">Nhân xanh sàn 16/18 • Hạt rang mộc</strong></div>
+                  <div class="flex justify-between"><span>Phân loại:</span><strong class="text-slate-900 font-semibold">Nhân xanh sàn 16/18 • Hạt rang mộc</strong></div>
                 </div>
               </div>
               <a class="w-full py-2.5 rounded-xl bg-[#0B3B24] hover:bg-[#144d32] text-white font-bold text-xs sm:text-sm flex items-center justify-center gap-1.5 transition-colors" href="bao-gia-rfq.html">
@@ -625,7 +715,7 @@
           <!-- Product 3: Quế & Hồi -->
           <div class="bg-white rounded-2xl border border-gray-200/90 shadow-sm hover:shadow-xl transition-all duration-300 flex flex-col overflow-hidden group">
             <div class="relative h-60 overflow-hidden bg-gray-100">
-              <img class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" alt="Quế rừng tự nhiên và Hoa hồi Lạng Sơn" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDaeGF-u-TOXQ6YJtvhPDbkDATpub20b6x">
+              <img class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" alt="Quế rừng tự nhiên và Hoa hồi Lạng Sơn" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBGVzByMfa9wRnjN3atOiarFf-NTEnLEHSPFd4Jol3nG6Ai8r1aJISBxK5OcEaNEpm_ax1b6fD7m7t3_rq2C3YAd0m7j56cXcRxeGMQMlOsO-l5gpS8knihn6VVlhqUc1lyfPTaGVXD9sltc5MAKCv__ubdtfWfhCySi6Nc6-4IFdFuqZe89HPuhyOo7xwNeWYnuLFF8sQNIeb_nGADSxjfOytCKyjErOMHRij96Q2yZ2_VUuSGiRIy7Q">
               <span class="absolute top-3 left-3 px-3 py-1 bg-[#0B3B24] text-white text-xs font-bold rounded-full uppercase tracking-wider font-headline">
                 Lạng Sơn • Tinh Dầu Cao
               </span>
@@ -636,13 +726,13 @@
                   <h3 class="text-xl font-bold text-[#0B3B24] font-headline">Quế Rừng &amp; Hoa Hồi</h3>
                   <span class="text-xs font-bold text-[#B45309] bg-amber-50 px-2 py-0.5 rounded">Chuẩn xuất khẩu</span>
                 </div>
-                <p class="text-xs sm:text-sm text-gray-600 leading-relaxed">
+                <p class="text-xs sm:text-sm text-slate-600 leading-relaxed">
                   Vỏ quế già nhiều năm tuổi, sấy nhiệt sạch vô trùng không ẩm mốc. Hoa hồi Lạng Sơn cánh to đều, hàm lượng tinh dầu dược tính đậm đặc.
                 </p>
-                <div class="p-3 bg-gray-50 rounded-xl space-y-1.5 text-xs text-gray-600">
+                <div class="p-3 bg-gray-50 rounded-xl space-y-1.5 text-xs text-slate-600">
                   <div class="flex justify-between"><span>Hàm lượng tinh dầu:</span><strong class="text-emerald-700 font-semibold">≥ 3.5% - 4.5%</strong></div>
-                  <div class="flex justify-between"><span>Độ sạch &amp; ẩm:</span><strong class="text-gray-900 font-semibold">Khử khuẩn nhiệt, không ẩm mốc</strong></div>
-                  <div class="flex justify-between"><span>Dòng sản phẩm:</span><strong class="text-gray-900 font-semibold">Quế sáo, quế ống điếu, hồi cánh</strong></div>
+                  <div class="flex justify-between"><span>Độ sạch &amp; ẩm:</span><strong class="text-slate-900 font-semibold">Khử khuẩn nhiệt, không ẩm mốc</strong></div>
+                  <div class="flex justify-between"><span>Dòng sản phẩm:</span><strong class="text-slate-900 font-semibold">Quế sáo, quế ống điếu, hồi cánh</strong></div>
                 </div>
               </div>
               <a class="w-full py-2.5 rounded-xl bg-[#0B3B24] hover:bg-[#144d32] text-white font-bold text-xs sm:text-sm flex items-center justify-center gap-1.5 transition-colors" href="bao-gia-rfq.html">
@@ -656,118 +746,81 @@
       </div>
     </section>
 
-    <!-- SECTION 6: HIGH-CONVERSION B2B RFQ CONSULTATION PORTAL -->
-    <section class="py-16 lg:py-24 bg-white" id="rfq-section">
+    <!-- SECTION 6: EXECUTIVE B2B CONSULTATION & RFQ CTA BANNER -->
+    <section class="py-16 lg:py-24 bg-white" data-reveal="up" id="rfq-section">
       <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div class="rounded-3xl bg-gradient-to-r from-[#0B3B24] via-[#0E492D] to-[#0B3B24] text-white p-8 lg:p-14 shadow-2xl border border-[#144d32]">
-          <div class="grid grid-cols-1 lg:grid-cols-12 gap-10 items-center">
+        <div class="rounded-3xl bg-gradient-to-r from-[#0B3B24] via-[#0E492D] to-[#0B3B24] text-white p-8 sm:p-12 lg:p-16 shadow-2xl border border-[#144d32] relative overflow-hidden">
+          <!-- Background decoration -->
+          <div class="absolute -right-24 -top-24 w-96 h-96 bg-emerald-500/10 rounded-full blur-3xl pointer-events-none"></div>
+          <div class="absolute -left-24 -bottom-24 w-96 h-96 bg-amber-500/10 rounded-full blur-3xl pointer-events-none"></div>
+
+          <div class="relative z-10 grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 items-center">
             
-            <!-- Left Info (5 cols) -->
-            <div class="lg:col-span-5 flex flex-col gap-6">
-              <span class="text-xs font-bold uppercase tracking-widest text-[#F59E0B] font-headline flex items-center gap-2">
+            <!-- Left Info (7 cols) -->
+            <div class="lg:col-span-7 flex flex-col gap-6">
+              <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-white/10 backdrop-blur-md border border-white/15 w-fit">
                 <span class="w-2 h-2 rounded-full bg-[#F59E0B] animate-pulse"></span>
-                TƯ VẤN KỸ THUẬT &amp; DỰ TOÁN B2B
-              </span>
-              <h2 class="text-3xl lg:text-4xl font-extrabold text-white tracking-tight font-headline leading-tight">
-                Sẵn Sàng Chuẩn Hóa Quy Trình Cùng Cường Thịnh?
+                <span class="text-xs font-bold tracking-widest uppercase text-amber-300 font-headline">Cổng Tiếp Nhận B2B • Phản Hồi Trong 2 Giờ</span>
+              </div>
+
+              <h2 class="text-3xl sm:text-4xl lg:text-5xl font-extrabold text-white tracking-tight font-headline leading-tight">
+                Sẵn Sàng Chuẩn Hóa Chuỗi Giá Trị Cùng Cường Thịnh?
               </h2>
-              <p class="text-sm text-gray-300 leading-relaxed">
-                Đội ngũ kỹ sư cơ điện và chuyên viên xuất nhập khẩu nông sản Cường Thịnh sẵn sàng phân tích dự toán, cung cấp hồ sơ kỹ thuật và đồng hành thực địa cùng Quý Doanh nghiệp &amp; Hợp tác xã.
+
+              <p class="text-base sm:text-lg text-gray-200 leading-relaxed max-w-2xl">
+                Quý Doanh nghiệp và Hợp tác xã cần tư vấn thiết kế dây chuyền sấy MS-20 công suất lớn hoặc tìm nguồn cung ứng sỉ nông sản Tây Bắc đạt chuẩn xuất khẩu? Đội ngũ kỹ sư trưởng và chuyên viên thương mại sẵn sàng cung cấp giải pháp dự toán tối ưu.
               </p>
 
-              <div class="space-y-3 pt-2 text-xs sm:text-sm text-gray-200">
-                <div class="flex items-center gap-2.5">
-                  <span class="material-symbols-outlined text-[18px] text-[#F59E0B]">schedule</span>
-                  <span>Phản hồi báo giá chính thức trong vòng <strong>24 giờ làm việc</strong></span>
+              <!-- 3 SLA Commitments -->
+              <div class="grid grid-cols-1 sm:grid-cols-3 gap-3 pt-2">
+                <div class="flex items-center gap-2.5 p-3 rounded-xl bg-white/5 border border-white/10">
+                  <span class="material-symbols-outlined text-[20px] text-[#F59E0B] shrink-0">timer</span>
+                  <span class="text-xs text-gray-200 font-medium">Báo giá chi tiết trong <strong>2 giờ</strong></span>
                 </div>
-                <div class="flex items-center gap-2.5">
-                  <span class="material-symbols-outlined text-[18px] text-[#F59E0B]">verified_user</span>
-                  <span>Cam kết bảo mật công nghệ và thông số theo điều khoản NDA</span>
+                <div class="flex items-center gap-2.5 p-3 rounded-xl bg-white/5 border border-white/10">
+                  <span class="material-symbols-outlined text-[20px] text-[#F59E0B] shrink-0">location_searching</span>
+                  <span class="text-xs text-gray-200 font-medium">Khảo sát xưởng <strong>tận nơi</strong></span>
                 </div>
-                <div class="flex items-center gap-2.5">
-                  <span class="material-symbols-outlined text-[18px] text-[#F59E0B]">call</span>
-                  <span>Hotline trực tiếp Giám đốc Kỹ thuật: <strong class="text-white">0932.050101</strong></span>
+                <div class="flex items-center gap-2.5 p-3 rounded-xl bg-white/5 border border-white/10">
+                  <span class="material-symbols-outlined text-[20px] text-[#F59E0B] shrink-0">lock</span>
+                  <span class="text-xs text-gray-200 font-medium">Cam kết bảo mật <strong>NDA 100%</strong></span>
                 </div>
               </div>
             </div>
 
-            <!-- Right Interactive Form (7 cols) -->
-            <div class="lg:col-span-7 bg-white text-gray-800 p-6 sm:p-8 rounded-2xl shadow-xl border border-gray-100">
-              <form id="rfqHomeForm" onsubmit="event.preventDefault(); document.getElementById('rfqHomeSuccess').classList.remove('hidden'); document.getElementById('rfqHomeFields').classList.add('hidden');">
-                <div id="rfqHomeFields" class="flex flex-col gap-4">
-                  <div class="flex items-center justify-between pb-3 border-b border-gray-200">
-                    <span class="font-headline font-bold text-base text-[#0B3B24]">Phiếu Tiếp Nhận Báo Giá B2B</span>
-                    <span class="text-[11px] text-gray-500 font-medium">* Bắt buộc nhập</span>
-                  </div>
-
-                  <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
-                    <div class="flex flex-col gap-1.5">
-                      <label class="text-xs font-bold text-gray-700 font-headline" for="rfqName">Họ và tên đại diện *</label>
-                      <input class="w-full px-3.5 py-2.5 text-xs sm:text-sm rounded-xl border border-gray-300 focus:outline-none focus:ring-2 focus:ring-[#0B3B24] focus:border-transparent bg-gray-50/50" id="rfqName" placeholder="Nguyễn Văn A" required type="text">
-                    </div>
-                    <div class="flex flex-col gap-1.5">
-                      <label class="text-xs font-bold text-gray-700 font-headline" for="rfqCompany">Doanh nghiệp / HTX *</label>
-                      <input class="w-full px-3.5 py-2.5 text-xs sm:text-sm rounded-xl border border-gray-300 focus:outline-none focus:ring-2 focus:ring-[#0B3B24] focus:border-transparent bg-gray-50/50" id="rfqCompany" placeholder="Công ty CP Nông sản..." required type="text">
-                    </div>
-                  </div>
-
-                  <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
-                    <div class="flex flex-col gap-1.5">
-                      <label class="text-xs font-bold text-gray-700 font-headline" for="rfqPhone">Số điện thoại / Zalo *</label>
-                      <input class="w-full px-3.5 py-2.5 text-xs sm:text-sm rounded-xl border border-gray-300 focus:outline-none focus:ring-2 focus:ring-[#0B3B24] focus:border-transparent bg-gray-50/50" id="rfqPhone" placeholder="09xx xxx xxx" required type="tel">
-                    </div>
-                    <div class="flex flex-col gap-1.5">
-                      <label class="text-xs font-bold text-gray-700 font-headline" for="rfqCategory">Nhu cầu trọng tâm *</label>
-                      <select class="w-full px-3.5 py-2.5 text-xs sm:text-sm rounded-xl border border-gray-300 focus:outline-none focus:ring-2 focus:ring-[#0B3B24] focus:border-transparent bg-gray-50/50" id="rfqCategory">
-                        <option value="dryer">Đầu tư Máy sấy Macca MS-20 (20 Tấn/mẻ)</option>
-                        <option value="machinery">Hệ thống bóc vỏ, máy rang &amp; đóng gói</option>
-                        <option value="wholesale-macca">Thu mua sỉ Hạt Macca Lai Châu sấy nứt</option>
-                        <option value="wholesale-coffee">Thu mua sỉ Cà phê Arabica / Hồi Quế</option>
-                        <option value="coop-transfer">Tư vấn chuyển giao công nghệ HTX / OCOP</option>
-                      </select>
-                    </div>
-                  </div>
-
-                  <div class="flex flex-col gap-1.5">
-                    <label class="text-xs font-bold text-gray-700 font-headline" for="rfqNote">Thông số yêu cầu chi tiết (Công suất mẻ, địa điểm lắp đặt hoặc số lượng sỉ)</label>
-                    <textarea class="w-full px-3.5 py-2.5 text-xs sm:text-sm rounded-xl border border-gray-300 focus:outline-none focus:ring-2 focus:ring-[#0B3B24] focus:border-transparent bg-gray-50/50" id="rfqNote" rows="2" placeholder="Ví dụ: Cần báo giá hệ thống máy sấy Macca 10-20 tấn/mẻ tại huyện Phong Thổ, hoặc đơn giá 15 tấn hạt Macca nứt vỏ giao tại cảng Hải Phòng..."></textarea>
-                  </div>
-
-                  <div class="flex flex-col sm:flex-row items-center justify-between gap-3 pt-2">
-                    <label class="flex items-center gap-2 text-xs text-gray-600 cursor-pointer">
-                      <input type="checkbox" checked class="rounded text-[#0B3B24] focus:ring-[#0B3B24]">
-                      <span>Nhận bản vẽ kỹ thuật &amp; Catalog qua Zalo/Email</span>
-                    </label>
-
-                    <button type="submit" class="w-full sm:w-auto px-6 py-3 rounded-full bg-gradient-to-r from-[#D97706] to-[#B45309] hover:from-[#B45309] hover:to-[#92400E] text-white font-bold text-sm shadow-md hover:shadow-lg transition-all flex items-center justify-center gap-2">
-                      <span class="material-symbols-outlined text-[18px]">send</span>
-                      <span>Gửi Yêu Cầu Báo Giá</span>
-                    </button>
-                  </div>
+            <!-- Right Action Box (5 cols) -->
+            <div class="lg:col-span-5 flex flex-col gap-4 bg-white/10 backdrop-blur-md p-6 sm:p-8 rounded-2xl border border-white/20 shadow-xl">
+              <span class="text-xs font-bold uppercase tracking-wider text-amber-300 font-headline">Hành Động Trọng Tâm</span>
+              
+              <a href="bao-gia-rfq.html" class="flex items-center justify-between px-6 py-4 rounded-xl bg-gradient-to-r from-[#D97706] to-[#B45309] hover:from-[#B45309] hover:to-[#92400E] text-white font-bold text-base shadow-lg hover:shadow-xl transition-all transform hover:-translate-y-0.5 group">
+                <div class="flex items-center gap-3">
+                  <span class="material-symbols-outlined text-[24px]">assignment_turned_in</span>
+                  <span>Mở Cổng Báo Giá RFQ Trực Tuyến</span>
                 </div>
+                <span class="material-symbols-outlined text-[20px] group-hover:translate-x-1 transition-transform">arrow_forward</span>
+              </a>
 
-                <!-- Success State -->
-                <div id="rfqHomeSuccess" class="hidden py-8 text-center flex-col items-center gap-3">
-                  <div class="w-14 h-14 rounded-full bg-emerald-100 text-[#0B3B24] flex items-center justify-center mx-auto mb-2">
-                    <span class="material-symbols-outlined text-[32px]">task_alt</span>
-                  </div>
-                  <h4 class="text-xl font-bold text-[#0B3B24] font-headline">Tiếp Nhận Thành Công!</h4>
-                  <p class="text-xs sm:text-sm text-gray-600 max-w-md mx-auto">
-                    Kỹ sư trưởng phụ trách khu vực của Cường Thịnh Tech &amp; Agro sẽ liên hệ lại trực tiếp qua Số điện thoại của Quý đối tác trong vòng 24 giờ.
-                  </p>
-                  <button type="button" class="mt-4 px-5 py-2 bg-[#0B3B24] text-white rounded-full text-xs font-bold" onclick="document.getElementById('rfqHomeSuccess').classList.add('hidden'); document.getElementById('rfqHomeFields').classList.remove('hidden');">
-                    Gửi thêm yêu cầu khác
-                  </button>
+              <a href="gioi-thieu.html#ho-so-nang-luc" class="flex items-center justify-between px-6 py-4 rounded-xl bg-white text-slate-800 hover:bg-slate-100 font-bold text-sm sm:text-base border border-gray-200 shadow-md transition-all group">
+                <div class="flex items-center gap-3">
+                  <span class="material-symbols-outlined text-[22px] text-[#0B3B24]">download</span>
+                  <span>Tải Hồ Sơ Năng Lực &amp; Catalogue PDF</span>
                 </div>
-              </form>
+                <span class="material-symbols-outlined text-[18px] text-slate-400 group-hover:translate-x-1 transition-transform">arrow_forward</span>
+              </a>
+
+              <div class="flex items-center justify-between pt-2 border-t border-white/15 text-xs text-gray-300">
+                <span>Cần trao đổi kỹ thuật gấp?</span>
+                <a href="tel:0932050101" class="text-amber-300 hover:text-white font-bold inline-flex items-center gap-1">
+                  <span class="material-symbols-outlined text-[16px]">call</span>
+                  0932.050101
+                </a>
+              </div>
             </div>
 
           </div>
         </div>
       </div>
-    </section>
-
-  </main>
+    </section></main>
 
   <!-- ==================== MASTER UNIFIED 4-COLUMN FOOTER ==================== -->
   <footer class="w-full bg-[#111827] text-gray-300 mt-0 pt-16 pb-8 shadow-[0_-2px_12px_rgba(0,0,0,0.06)] border-t border-gray-800">
@@ -860,14 +913,14 @@
             </div>
             <div class="flex items-center gap-2">
               <span class="material-symbols-outlined text-[16px] text-[#F59E0B]">verified_user</span>
-              <span>Bảo hành toàn diện 12 tháng tận xưởng</span>
+              <span>Bảo hành toàn diện 24 tháng tận xưởng</span>
             </div>
           </div>
         </div>
       </div>
 
       <!-- Bottom Copyright -->
-      <div class="pt-6 flex flex-col sm:flex-row items-center justify-between gap-3 text-center sm:text-left text-xs text-gray-500">
+      <div class="pt-6 flex flex-col sm:flex-row items-center justify-between gap-3 text-center sm:text-left text-xs text-slate-500">
         <div>© 2026 CÔNG TY TNHH SẢN XUẤT VÀ ỨNG DỤNG CÔNG NGHỆ THỰC PHẨM CƯỜNG THỊNH. Tất cả quyền được bảo lưu.</div>
         <div class="text-[#86efac] font-medium">Hệ thống Cổng thông tin Cơ khí Chế tạo &amp; Nông sản Tây Bắc</div>
       </div>
@@ -883,7 +936,7 @@
             <div class="w-8 h-8 rounded-lg bg-[#0B3B24] text-white flex items-center justify-center font-bold text-sm">CT</div>
             <span class="font-headline font-bold text-[#0B3B24] text-base">CƯỜNG THỊNH</span>
           </div>
-          <button id="mobile-menu-close" class="p-1.5 rounded-lg text-gray-500 hover:bg-gray-100 transition-colors">
+          <button id="mobile-menu-close" class="p-1.5 rounded-lg text-slate-500 hover:bg-gray-100 transition-colors">
             <span class="material-symbols-outlined text-[24px]">close</span>
           </button>
         </div>
@@ -942,5 +995,129 @@
       }
     })();
   </script>
+  <!-- Smart Shrink on Scroll Script -->
+  <script>
+    (function() {
+      let isShrunk = false;
+      const topBar = document.getElementById('header-top-bar');
+      const mainBar = document.getElementById('header-main-bar');
+      
+      window.addEventListener('scroll', function() {
+        const scrolled = window.scrollY > 40;
+        if (scrolled !== isShrunk) {
+          isShrunk = scrolled;
+          if (isShrunk) {
+            if (topBar) {
+              topBar.style.maxHeight = '0px';
+              topBar.style.opacity = '0';
+              topBar.style.paddingTop = '0px';
+              topBar.style.paddingBottom = '0px';
+              topBar.style.borderBottomWidth = '0px';
+            }
+            if (mainBar) {
+              mainBar.classList.remove('h-20');
+              mainBar.classList.add('h-16');
+            }
+          } else {
+            if (topBar) {
+              topBar.style.maxHeight = '50px';
+              topBar.style.opacity = '1';
+              topBar.style.paddingTop = '';
+              topBar.style.paddingBottom = '';
+              topBar.style.borderBottomWidth = '';
+            }
+            if (mainBar) {
+              mainBar.classList.remove('h-16');
+              mainBar.classList.add('h-20');
+            }
+          }
+        }
+      });
+    })();
+  </script>
+
+
+    <!-- Native Cinematic Scroll Reveal & Telemetry Engine -->
+  <script>
+    (function() {
+      // 1. Reading Progress Bar
+      const progBar = document.getElementById('scroll-progress-bar');
+      window.addEventListener('scroll', function() {
+        const totalHeight = document.documentElement.scrollHeight - window.innerHeight;
+        if (totalHeight > 0 && progBar) {
+          const prog = (window.scrollY / totalHeight) * 100;
+          progBar.style.width = Math.min(prog, 100) + '%';
+        }
+      });
+
+      // 2. Optical Blur-to-Focus Reveal via IntersectionObserver
+      const revealItems = document.querySelectorAll('[data-reveal]');
+      if ('IntersectionObserver' in window && revealItems.length > 0) {
+        const revealObserver = new IntersectionObserver(function(entries, observer) {
+          entries.forEach(function(entry) {
+            if (entry.isIntersecting) {
+              const el = entry.target;
+              const delay = parseInt(el.getAttribute('data-reveal-delay') || '0', 10);
+              setTimeout(function() {
+                el.classList.add('revealed');
+              }, delay);
+              observer.unobserve(el);
+            }
+          });
+        }, {
+          threshold: 0.12,
+          rootMargin: '0px 0px -40px 0px'
+        });
+
+        revealItems.forEach(function(item) {
+          revealObserver.observe(item);
+        });
+      } else {
+        revealItems.forEach(function(item) {
+          item.classList.add('revealed');
+        });
+      }
+
+      // 3. Telemetry Number Counter Animation
+      const counterItems = document.querySelectorAll('[data-counter]');
+      if ('IntersectionObserver' in window && counterItems.length > 0) {
+        const counterObserver = new IntersectionObserver(function(entries, observer) {
+          entries.forEach(function(entry) {
+            if (entry.isIntersecting) {
+              const el = entry.target;
+              const targetVal = parseInt(el.getAttribute('data-counter'), 10);
+              const prefix = el.getAttribute('data-counter-prefix') || '';
+              const suffix = el.getAttribute('data-counter-suffix') || '';
+              const duration = 1500;
+              const startTimestamp = performance.now();
+
+              function step(now) {
+                const elapsed = now - startTimestamp;
+                const progress = Math.min(elapsed / duration, 1);
+                // EaseOutCubic
+                const easeVal = 1 - Math.pow(1 - progress, 3);
+                const currentVal = Math.floor(easeVal * targetVal);
+                el.textContent = prefix + currentVal.toLocaleString('en-US') + suffix;
+
+                if (progress < 1) {
+                  requestAnimationFrame(step);
+                } else {
+                  el.textContent = prefix + targetVal.toLocaleString('en-US') + suffix;
+                }
+              }
+              requestAnimationFrame(step);
+              observer.unobserve(el);
+            }
+          });
+        }, { threshold: 0.2 });
+
+        counterItems.forEach(function(item) {
+          counterObserver.observe(item);
+        });
+      }
+    })();
+  </script>
+
+
 </body>
 </html>
