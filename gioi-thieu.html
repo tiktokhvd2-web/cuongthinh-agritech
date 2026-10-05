@@ -57,9 +57,10 @@
 <body class="bg-white text-gray-800 antialiased selection:bg-brand-900 selection:text-white">
 
   <!-- ==================== 1. MASTER EXECUTIVE HEADER ==================== -->
+    <!-- ==================== 1. MASTER ENTERPRISE B2B HEADER ==================== -->
   <header class="fixed top-0 left-0 right-0 z-50 bg-white/95 backdrop-blur-md border-b border-gray-200/80 shadow-[0_4px_20px_rgba(0,0,0,0.03)] transition-all">
-    <!-- Top Bar -->
-    <div class="bg-[#0B3B24] text-white py-1.5 px-4 sm:px-6 lg:px-8 border-b border-[#144d32]">
+    <!-- Top Bar with Smart Collapse -->
+    <div id="header-top-bar" class="bg-[#0B3B24] text-white py-1.5 px-4 sm:px-6 lg:px-8 border-b border-[#144d32] transition-all duration-300 overflow-hidden" style="max-height: 50px;">
       <div class="max-w-7xl mx-auto flex flex-col md:flex-row justify-between items-center gap-1.5 text-xs font-medium tracking-wide">
         <div class="flex flex-wrap items-center justify-center md:justify-start gap-2 sm:gap-3 text-center md:text-left">
           <span class="flex items-center gap-1.5">
@@ -74,73 +75,90 @@
           <span class="hidden lg:inline text-gray-300">Nhà máy: Bản Nùng Nàng, Tam Đường, Lai Châu</span>
         </div>
         <div class="flex items-center gap-3 sm:gap-4 text-gray-200 text-xs">
-          <a class="hover:text-white transition-colors flex items-center gap-1" href="tel:0932050101">
-            <span class="material-symbols-outlined text-[15px] text-[#F59E0B]">call</span>
-            <span>Hotline B2B: <strong class="text-white font-semibold">0932.050101</strong></span>
+          <a class="hover:text-amber-400 transition-colors flex items-center gap-1" href="tel:0932050101">
+            <span class="material-symbols-outlined text-[14px] text-[#F59E0B]">call</span>
+            <span>Hotline B2B: <strong class="text-white font-bold tracking-wider">0932.050101</strong></span>
           </a>
-          <span class="opacity-40 hidden sm:inline">|</span>
-          <a class="hover:text-white transition-colors hidden sm:flex items-center gap-1" href="mailto:contact@cuongthinhagri.vn">
-            <span class="material-symbols-outlined text-[15px]">mail</span>
+          <span class="opacity-40 hidden sm:inline">•</span>
+          <a class="hover:text-amber-400 transition-colors hidden sm:flex items-center gap-1" href="mailto:contact@cuongthinhagri.vn">
+            <span class="material-symbols-outlined text-[14px] text-[#F59E0B]">mail</span>
             <span>contact@cuongthinhagri.vn</span>
           </a>
         </div>
       </div>
     </div>
 
-    <!-- Main Navigation Bar (Centered Capsule Balance) -->
-    <div class="max-w-7xl mx-auto h-20 px-4 sm:px-6 lg:px-8 flex items-center justify-between gap-4">
-      <!-- Left: Brand Logo -->
+    <!-- Main Navigation Bar (Dynamic Shrink on Scroll) -->
+    <div id="header-main-bar" class="max-w-7xl mx-auto h-20 px-4 sm:px-6 lg:px-8 flex items-center justify-between gap-4 transition-all duration-300">
+      
+      <!-- Brand Logo Mark with Industrial Metallic Badge -->
       <a href="index.html" class="flex items-center gap-3 shrink-0 group transition-transform hover:scale-[1.01]" aria-label="Cường Thịnh - Về Trang chủ">
-        <div class="w-11 h-11 rounded-xl bg-[#0B3B24] flex items-center justify-center shadow-sm group-hover:bg-[#144d32] transition-colors shrink-0">
-          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 40 40" class="w-7 h-7" fill="none">
-            <rect width="40" height="40" rx="8" fill="none"/>
-            <path d="M20 7L29 16L20 25L11 16Z" stroke="#F6F4E6" stroke-width="2.5" stroke-linejoin="round"/>
-            <circle cx="20" cy="16" r="3.5" fill="#D97706"/>
-            <path d="M12 28C15 24 25 24 28 28" stroke="#D97706" stroke-width="2.5" stroke-linecap="round"/>
-            <path d="M8 33C14 29 26 29 32 33" stroke="#F6F4E6" stroke-width="2" stroke-linecap="round" stroke-dasharray="2 3"/>
-          </svg>
+        <div class="relative w-11 h-11 rounded-xl bg-gradient-to-br from-[#0B3B24] via-[#144d32] to-[#0B3B24] p-[1.5px] shadow-sm group-hover:scale-105 transition-transform duration-200">
+          <div class="w-full h-full rounded-[10px] bg-[#0B3B24] flex items-center justify-center border border-[#F59E0B]/30">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 40 40" class="w-6 h-6" fill="none">
+              <path d="M20 6L30 16L20 26L10 16Z" stroke="#F6F4E6" stroke-width="2.5" stroke-linejoin="round"/>
+              <circle cx="20" cy="16" r="3.5" fill="#D97706"/>
+              <path d="M12 29C15 25 25 25 28 29" stroke="#D97706" stroke-width="2.5" stroke-linecap="round"/>
+              <path d="M8 34C14 30 26 30 32 34" stroke="#86efac" stroke-width="2" stroke-linecap="round" stroke-dasharray="2 3"/>
+            </svg>
+          </div>
+          <div class="absolute -bottom-0.5 -right-0.5 w-3.5 h-3.5 rounded-full bg-[#D97706] border-2 border-white flex items-center justify-center text-[7px] text-white font-extrabold shadow-xs">★</div>
         </div>
         <div class="flex flex-col">
-          <span class="font-headline text-lg md:text-xl font-bold tracking-tight text-[#0B3B24] leading-tight uppercase group-hover:text-[#144d32] transition-colors">
-            CƯỜNG THỊNH
-          </span>
-          <span class="text-[10px] md:text-[11px] tracking-widest uppercase font-bold text-[#B45309] leading-tight mt-0.5">
-            CÔNG NGHỆ &amp; NÔNG SẢN TÂY BẮC
+          <div class="flex items-center gap-1.5">
+            <span class="font-headline text-lg sm:text-xl font-extrabold tracking-tight text-[#0B3B24] leading-tight uppercase group-hover:text-[#144d32] transition-colors">
+              CƯỜNG THỊNH
+            </span>
+            <span class="px-1.5 py-0.5 rounded text-[9.5px] font-bold bg-[#D97706]/10 text-[#D97706] tracking-wider uppercase border border-[#D97706]/20">
+              TECH &amp; AGRO
+            </span>
+          </div>
+          <span class="text-[9.5px] sm:text-[10px] tracking-widest uppercase font-semibold text-gray-500 leading-tight mt-0.5">
+            Cơ Điện Chế Tạo &amp; Nông Sản Tây Bắc • Est. 2018
           </span>
         </div>
       </a>
 
-      <!-- Center: Floating Capsule Navigation Tabs -->
-      <nav class="hidden xl:flex items-center gap-1 bg-gray-100/90 p-1.5 rounded-full border border-gray-200/80 shadow-[inset_0_1px_3px_rgba(0,0,0,0.04)]">
-        <a class="px-4 py-2 text-[13.5px] text-gray-600 hover:text-[#0B3B24] hover:bg-white font-medium rounded-full transition-all duration-200 whitespace-nowrap" href="index.html">
+      <!-- Center: Frosted Glass Capsule Navigation (5 Core Pillars) -->
+      <nav class="hidden xl:flex items-center gap-1 bg-slate-100/80 backdrop-blur-md p-1.5 rounded-full border border-slate-200/90 shadow-[inset_0_1px_2px_rgba(0,0,0,0.03)]">
+        <a class="px-3 sm:px-3.5 py-1.5 text-[13px] text-gray-600 hover:text-[#0B3B24] hover:bg-white/90 font-medium rounded-full transition-all duration-200 whitespace-nowrap" href="index.html">
           Trang chủ
         </a>
-        <a class="px-4 py-2 text-[13.5px] bg-[#0B3B24] text-white font-bold shadow-md rounded-full transition-all duration-200 whitespace-nowrap" href="gioi-thieu.html">
-          Giới thiệu
+        <a class="px-3.5 sm:px-4 py-1.5 text-[13px] bg-white text-[#0B3B24] font-bold shadow-xs rounded-full border border-gray-200/80 flex items-center gap-1.5 whitespace-nowrap transition-all duration-200" href="gioi-thieu.html">
+          <span class="w-1.5 h-1.5 rounded-full bg-emerald-500 animate-pulse"></span>
+          <span>Giới thiệu</span>
         </a>
-        <a class="px-4 py-2 text-[13.5px] text-gray-600 hover:text-[#0B3B24] hover:bg-white font-medium rounded-full transition-all duration-200 whitespace-nowrap" href="linh-vuc-cong-nghe.html">
-          Lĩnh vực &amp; Công nghệ
+        <a class="px-3 sm:px-3.5 py-1.5 text-[13px] text-gray-600 hover:text-[#0B3B24] hover:bg-white/90 font-medium rounded-full transition-all duration-200 whitespace-nowrap" href="linh-vuc-cong-nghe.html">
+          Lĩnh vực & Công nghệ
         </a>
-        <a class="px-4 py-2 text-[13.5px] text-gray-600 hover:text-[#0B3B24] hover:bg-white font-medium rounded-full transition-all duration-200 whitespace-nowrap" href="nong-san-chu-luc.html">
+        <a class="px-3 sm:px-3.5 py-1.5 text-[13px] text-gray-600 hover:text-[#0B3B24] hover:bg-white/90 font-medium rounded-full transition-all duration-200 whitespace-nowrap" href="nong-san-chu-luc.html">
           Nông sản chủ lực
         </a>
-        <a class="px-4 py-2 text-[13.5px] text-gray-600 hover:text-[#0B3B24] hover:bg-white font-medium rounded-full transition-all duration-200 whitespace-nowrap" href="du-an-htx.html">
-          Dự án &amp; HTX
+        <a class="px-3 sm:px-3.5 py-1.5 text-[13px] text-gray-600 hover:text-[#0B3B24] hover:bg-white/90 font-medium rounded-full transition-all duration-200 whitespace-nowrap" href="du-an-htx.html">
+          Dự án & HTX
         </a>
-        
       </nav>
 
-      <!-- Right: Action Cluster -->
-      <div class="flex items-center gap-3 shrink-0">
-        <a class="hidden sm:inline-flex items-center gap-1.5 px-3.5 py-2 text-xs font-semibold text-[#0B3B24] bg-emerald-50 hover:bg-emerald-100 border border-emerald-200 rounded-full transition-colors" href="#ho-so-nang-luc">
-          <span class="material-symbols-outlined text-[16px] text-[#0B3B24]">description</span>
-          <span>Catalogue PDF</span>
+      <!-- Right: Action Cluster (Language Switcher + Hotline + Glowing RFQ CTA) -->
+      <div class="flex items-center gap-2.5 sm:gap-3 shrink-0">
+        <!-- International Language Switcher -->
+        <div class="hidden lg:inline-flex items-center bg-slate-100 p-0.5 rounded-full border border-gray-200/80 text-[11px] font-bold" title="Chọn ngôn ngữ hiển thị">
+          <span class="px-2 py-0.5 rounded-full bg-[#0B3B24] text-white shadow-xs">VN</span>
+          <span class="px-2 py-0.5 text-gray-500 hover:text-gray-900 cursor-pointer transition-colors" onclick="alert('English version will be available in next release / Phiên bản Tiếng Anh đang hoàn thiện.');">EN</span>
+        </div>
+
+        <a class="hidden sm:inline-flex items-center gap-1.5 px-3 py-1.5 text-xs font-semibold text-[#0B3B24] bg-emerald-50 hover:bg-emerald-100 border border-emerald-200/80 rounded-full transition-colors" href="tel:0932050101">
+          <span class="material-symbols-outlined text-[15px] text-[#0B3B24]">headset_mic</span>
+          <span class="font-mono font-bold">0932.050101</span>
         </a>
-        <a class="inline-flex items-center gap-2 px-5 py-2.5 bg-gradient-to-r from-[#D97706] to-[#B45309] hover:from-[#B45309] hover:to-[#92400E] text-white rounded-full text-xs sm:text-sm font-bold shadow-md hover:shadow-lg transition-all duration-200 transform hover:-translate-y-0.5" href="bao-gia-rfq.html">
-          <span class="material-symbols-outlined text-[18px]">request_quote</span>
+
+        <!-- Glowing Amber RFQ Button -->
+        <a class="inline-flex items-center gap-1.5 sm:gap-2 px-4 sm:px-5 py-2 sm:py-2.5 bg-gradient-to-r from-[#D97706] to-[#B45309] hover:from-[#B45309] hover:to-[#92400E] text-white rounded-full text-xs sm:text-sm font-bold shadow-md hover:shadow-lg ring-2 ring-[#D97706]/20 hover:ring-[#D97706]/40 transition-all duration-200 transform hover:-translate-y-0.5" href="bao-gia-rfq.html">
+          <span class="material-symbols-outlined text-[17px] text-amber-200">request_quote</span>
           <span>Yêu cầu báo giá RFQ</span>
         </a>
-        <button id="mobile-menu-toggle" class="xl:hidden flex items-center justify-center p-2 rounded-lg text-[#0B3B24] hover:bg-gray-100 transition-colors" aria-label="Mở menu">
+
+        <button id="mobile-menu-toggle" class="xl:hidden flex items-center justify-center p-2 rounded-lg text-[#0B3B24] hover:bg-gray-100 transition-colors" aria-label="Mở menu điều hướng">
           <span class="material-symbols-outlined text-[26px]">menu</span>
         </button>
       </div>
@@ -1169,6 +1187,47 @@
           if (e.target === drawer) drawer.classList.add('hidden');
         });
       }
+    })();
+  </script>
+
+  <!-- Smart Shrink on Scroll Script -->
+  <script>
+    (function() {
+      let isShrunk = false;
+      const topBar = document.getElementById('header-top-bar');
+      const mainBar = document.getElementById('header-main-bar');
+      
+      window.addEventListener('scroll', function() {
+        const scrolled = window.scrollY > 40;
+        if (scrolled !== isShrunk) {
+          isShrunk = scrolled;
+          if (isShrunk) {
+            if (topBar) {
+              topBar.style.maxHeight = '0px';
+              topBar.style.opacity = '0';
+              topBar.style.paddingTop = '0px';
+              topBar.style.paddingBottom = '0px';
+              topBar.style.borderBottomWidth = '0px';
+            }
+            if (mainBar) {
+              mainBar.classList.remove('h-20');
+              mainBar.classList.add('h-16');
+            }
+          } else {
+            if (topBar) {
+              topBar.style.maxHeight = '50px';
+              topBar.style.opacity = '1';
+              topBar.style.paddingTop = '';
+              topBar.style.paddingBottom = '';
+              topBar.style.borderBottomWidth = '';
+            }
+            if (mainBar) {
+              mainBar.classList.remove('h-16');
+              mainBar.classList.add('h-20');
+            }
+          }
+        }
+      });
     })();
   </script>
 
