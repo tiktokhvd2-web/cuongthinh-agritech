@@ -258,43 +258,90 @@
       <div class="absolute inset-0 bg-[radial-gradient(#e5e7eb_1px,transparent_1px)] [background-size:20px_20px] opacity-60 pointer-events-none"></div>
       
       <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-        <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-end pb-8">
+        <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 items-center pb-8">
           
-          <div class="lg:col-span-8 flex flex-col gap-4">
+          <!-- Left: Headline & Manifesto (7 cols) -->
+          <div class="lg:col-span-7 flex flex-col gap-5" data-reveal="left">
             <div class="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-emerald-50 border border-emerald-200/70 text-[#0B3B24] text-xs font-bold uppercase tracking-wider self-start shadow-xs">
-              <span class="material-symbols-outlined text-[16px] text-[#D97706]">inventory_2</span>
+              <span class="w-2 h-2 rounded-full bg-[#D97706] animate-pulse"></span>
               DANH MỤC NÔNG SẢN B2B &amp; XUẤT KHẨU CHÍNH NGẠCH
             </div>
 
             <h1 class="font-headline text-3xl sm:text-4xl lg:text-5xl font-extrabold text-slate-950 leading-[1.15] tracking-tight">
-              Nông Sản Chủ Lực Vùng Cao Tây Bắc
+              Nông Sản Chủ Lực <br class="hidden sm:inline">
+              <span class="text-[#0B3B24]">Vùng Cao Tây Bắc</span>
             </h1>
 
-            <p class="text-base sm:text-lg text-slate-600 leading-relaxed max-w-3xl">
+            <p class="text-base sm:text-lg text-slate-600 leading-relaxed max-w-2xl">
               Thu hoạch từ thổ nhưỡng cao nguyên trù phú Lai Châu — Điện Biên — Lạng Sơn. Sấy sâu &amp; chế biến tại chỗ bằng công nghệ buồng sấy độc quyền MS-20 giúp giữ trọn vẹn hương vị, tinh dầu béo và dược tính tự nhiên đạt chuẩn thị trường quốc tế.
             </p>
+
+            <!-- 2 Quick Action Buttons -->
+            <div class="flex flex-wrap items-center gap-3 pt-2">
+              <a href="../b_o_gi_rfq_li_n_h_c_ng_th_nh_tech_agro/code.html" class="inline-flex items-center gap-2 px-5 py-3 rounded-xl bg-[#0B3B24] hover:bg-[#144d32] text-white font-bold text-xs sm:text-sm shadow-md hover:shadow-lg transition-all transform hover:-translate-y-0.5">
+                <span class="material-symbols-outlined text-[18px] text-[#F59E0B]">request_quote</span>
+                <span>Nhận Báo Giá Sỉ &amp; Mẫu Thử</span>
+              </a>
+              <a href="#wholesale-policy" class="inline-flex items-center gap-2 px-5 py-3 rounded-xl bg-white border border-gray-300 hover:border-gray-400 text-slate-800 font-semibold text-xs sm:text-sm shadow-xs hover:bg-gray-50 transition-all">
+                <span class="material-symbols-outlined text-[18px] text-[#D97706]">verified</span>
+                <span>Xem Tiêu Chuẩn &amp; Chính Sách B2B</span>
+              </a>
+            </div>
           </div>
 
-          <div class="lg:col-span-4 flex flex-col sm:flex-row lg:flex-col justify-end gap-3">
-            <a class="flex items-center justify-between px-5 py-3.5 bg-[#0B3B24] hover:bg-[#144d32] text-white rounded-xl text-xs font-bold shadow-md hover:shadow-lg transition-all" href="#rfq-section">
-              <span class="flex items-center gap-2">
-                <span class="material-symbols-outlined text-[18px] text-[#F59E0B]">mark_email_read</span>
-                <span>Yêu Cầu Hồ Sơ Kỹ Thuật &amp; CoA</span>
-              </span>
-              <span class="material-symbols-outlined text-[16px]">arrow_forward</span>
-            </a>
-            <a class="flex items-center justify-between px-5 py-3 bg-white border border-gray-300 hover:border-gray-400 text-slate-800 rounded-xl text-xs font-semibold shadow-xs hover:bg-gray-50 transition-all" href="tel:0932050101">
-              <span class="flex items-center gap-2">
-                <span class="material-symbols-outlined text-[18px] text-[#D97706]">phone_in_talk</span>
-                <span>Tư Vấn Định Lượng Xuất Khẩu</span>
-              </span>
-              <span class="font-bold text-[#0B3B24]">0932.050101</span>
-            </a>
+          <!-- Right: Authentic Plant Selection Visual & Badges (5 cols) -->
+          <div class="lg:col-span-5 relative" data-reveal="right">
+            <div class="relative rounded-2xl overflow-hidden shadow-2xl border border-gray-200/90 bg-gray-900 group">
+              <!-- Top bar indicator on image -->
+              <div class="absolute top-0 left-0 right-0 z-20 px-4 py-2.5 bg-black/60 backdrop-blur-md text-white flex items-center justify-between text-xs font-semibold tracking-wider uppercase">
+                <span class="flex items-center gap-1.5 text-[#86efac]">
+                  <span class="material-symbols-outlined text-[14px]">verified</span>
+                  Nhà máy Chế Biến Tam Đường
+                </span>
+                <span class="text-gray-300">Lai Châu #01</span>
+              </div>
+
+              <!-- Real Plant Image -->
+              <div class="aspect-[4/3] w-full overflow-hidden">
+                <img class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" 
+                     alt="Dây chuyền tuyển chọn hạt Macca sấy nứt tại nhà máy Cường Thịnh Tam Đường Lai Châu" 
+                     src="https://lh3.googleusercontent.com/aida-public/AB6AXuCdVa8pwWYigUTFiiyZL_ycrJJfX5fMutuIBObpZPvMnRNrEbwgrKRDK6n30awLYcTVLYdb31hEd568AiDuMyxazru0tbC_u4Ycyxsi79YxSs3KaByGm1ljYGlOLmzquPBQEq2oGFi1PaQ7m-xswaLaYpm1L20fDjOKNWI0iC6k4nMWsqpIp57PCIMClcuBCgYMqrC-wwuLTrpftPLA4K1JhYaOH9JITSmZSuyf99jqenW5u-uUU0Pe5w">
+              </div>
+
+              <!-- Floating Glass Badge 1 (Bottom Left) -->
+              <div class="absolute bottom-4 left-4 z-20 px-3.5 py-2 rounded-xl bg-white/95 backdrop-blur-md text-[#0B3B24] border border-white/50 shadow-lg flex items-center gap-2">
+                <div class="w-7 h-7 rounded-lg bg-[#0B3B24] text-white flex items-center justify-center shrink-0 font-bold text-xs">OCOP</div>
+                <div class="flex flex-col">
+                  <span class="text-[11px] font-bold uppercase leading-tight font-headline">Chuẩn OCOP 4 Sao</span>
+                  <span class="text-[10px] text-slate-500 leading-tight">Độ cao canh tác &gt; 800m</span>
+                </div>
+              </div>
+
+              <!-- Floating Glass Badge 2 (Bottom Right) -->
+              <div class="absolute bottom-4 right-4 z-20 px-3 py-2 rounded-xl bg-[#0B3B24]/90 backdrop-blur-md text-white border border-[#144d32] shadow-lg flex items-center gap-1.5 text-xs font-semibold">
+                <span class="material-symbols-outlined text-[16px] text-[#F59E0B]">check_circle</span>
+                <span>ISO 22000 &amp; HACCP</span>
+              </div>
+            </div>
+
+            <!-- 3 Agricultural Anchors Below Image -->
+            <div class="mt-4 grid grid-cols-3 gap-2.5 text-center">
+              <div class="p-2.5 rounded-xl bg-white border border-gray-200/80 shadow-xs">
+                <span class="block text-xs font-bold text-[#0B3B24] font-headline">Lai Châu</span>
+                <span class="text-[10px] text-slate-500">Mắc-ca Sấy Nứt</span>
+              </div>
+              <div class="p-2.5 rounded-xl bg-white border border-gray-200/80 shadow-xs">
+                <span class="block text-xs font-bold text-[#B45309] font-headline">Điện Biên</span>
+                <span class="text-[10px] text-slate-500">Arabica Núi Cao</span>
+              </div>
+              <div class="p-2.5 rounded-xl bg-white border border-gray-200/80 shadow-xs">
+                <span class="block text-xs font-bold text-emerald-700 font-headline">Lạng Sơn</span>
+                <span class="text-[10px] text-slate-500">Quế &amp; Hoa Hồi</span>
+              </div>
+            </div>
           </div>
 
-        </div>
-
-        <!-- Quick Filter / Section Jump Anchor Bar -->
+        </div><!-- Quick Filter / Section Jump Anchor Bar -->
         <div class="w-full bg-slate-100/80 border border-gray-200/80 rounded-2xl p-1.5 flex flex-wrap items-center gap-1.5 shadow-inner text-xs">
           <a class="px-4 py-2 rounded-xl bg-white text-[#0B3B24] font-bold shadow-xs transition-colors" href="#all-catalog">
             Tất cả danh mục (03 Chủ lực)
@@ -646,7 +693,7 @@
         <!-- 4 Badges Grid -->
         <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
           
-          <div class="bg-white p-6 rounded-2xl border border-gray-200/90 shadow-sm flex flex-col justify-between gap-4 hover:shadow-md transition-shadow">
+          <div class="bg-white p-6 rounded-2xl border border-gray-200/90 shadow-sm flex flex-col justify-between gap-4 hover:shadow-md transition-shadow" data-reveal="up" data-reveal-delay="100">
             <div class="w-12 h-12 rounded-xl bg-emerald-50 text-[#0B3B24] flex items-center justify-center">
               <span class="material-symbols-outlined text-[28px]">verified</span>
             </div>
@@ -662,7 +709,7 @@
             </div>
           </div>
 
-          <div class="bg-white p-6 rounded-2xl border border-gray-200/90 shadow-sm flex flex-col justify-between gap-4 hover:shadow-md transition-shadow">
+          <div class="bg-white p-6 rounded-2xl border border-gray-200/90 shadow-sm flex flex-col justify-between gap-4 hover:shadow-md transition-shadow" data-reveal="up" data-reveal-delay="200">
             <div class="w-12 h-12 rounded-xl bg-emerald-50 text-[#0B3B24] flex items-center justify-center">
               <span class="material-symbols-outlined text-[28px]">health_and_safety</span>
             </div>
@@ -678,7 +725,7 @@
             </div>
           </div>
 
-          <div class="bg-white p-6 rounded-2xl border border-gray-200/90 shadow-sm flex flex-col justify-between gap-4 hover:shadow-md transition-shadow">
+          <div class="bg-white p-6 rounded-2xl border border-gray-200/90 shadow-sm flex flex-col justify-between gap-4 hover:shadow-md transition-shadow" data-reveal="up" data-reveal-delay="300">
             <div class="w-12 h-12 rounded-xl bg-amber-50 text-[#D97706] flex items-center justify-center">
               <span class="material-symbols-outlined text-[28px]">military_tech</span>
             </div>
@@ -694,7 +741,7 @@
             </div>
           </div>
 
-          <div class="bg-white p-6 rounded-2xl border border-gray-200/90 shadow-sm flex flex-col justify-between gap-4 hover:shadow-md transition-shadow">
+          <div class="bg-white p-6 rounded-2xl border border-gray-200/90 shadow-sm flex flex-col justify-between gap-4 hover:shadow-md transition-shadow" data-reveal="up" data-reveal-delay="400">
             <div class="w-12 h-12 rounded-xl bg-emerald-50 text-[#0B3B24] flex items-center justify-center">
               <span class="material-symbols-outlined text-[28px]">biotech</span>
             </div>
@@ -752,7 +799,7 @@
 
         <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
           
-          <div class="bg-slate-50/80 p-7 rounded-2xl border border-gray-200/80 hover:border-emerald-300 hover:shadow-md transition-all flex flex-col gap-3 group">
+          <div class="bg-slate-50/80 p-7 rounded-2xl border border-gray-200/80 hover:border-emerald-300 hover:shadow-md transition-all flex flex-col gap-3 group" data-reveal="up" data-reveal-delay="100">
             <div class="font-headline text-4xl font-extrabold text-[#0B3B24]/20 group-hover:text-[#0B3B24] transition-colors">01</div>
             <h3 class="font-headline text-lg font-bold text-slate-950">Mẫu Thử Miễn Phí 48H</h3>
             <p class="text-xs sm:text-sm text-slate-600 leading-relaxed">
@@ -760,7 +807,7 @@
             </p>
           </div>
 
-          <div class="bg-slate-50/80 p-7 rounded-2xl border border-gray-200/80 hover:border-emerald-300 hover:shadow-md transition-all flex flex-col gap-3 group">
+          <div class="bg-slate-50/80 p-7 rounded-2xl border border-gray-200/80 hover:border-emerald-300 hover:shadow-md transition-all flex flex-col gap-3 group" data-reveal="up" data-reveal-delay="200">
             <div class="font-headline text-4xl font-extrabold text-[#0B3B24]/20 group-hover:text-[#0B3B24] transition-colors">02</div>
             <h3 class="font-headline text-lg font-bold text-slate-950">Gia Công OEM &amp; Private Label</h3>
             <p class="text-xs sm:text-sm text-slate-600 leading-relaxed">
@@ -768,7 +815,7 @@
             </p>
           </div>
 
-          <div class="bg-slate-50/80 p-7 rounded-2xl border border-gray-200/80 hover:border-amber-300 hover:shadow-md transition-all flex flex-col gap-3 group">
+          <div class="bg-slate-50/80 p-7 rounded-2xl border border-gray-200/80 hover:border-emerald-300 hover:shadow-md transition-all flex flex-col gap-3 group" data-reveal="up" data-reveal-delay="300">
             <div class="font-headline text-4xl font-extrabold text-[#D97706]/30 group-hover:text-[#D97706] transition-colors">03</div>
             <h3 class="font-headline text-lg font-bold text-slate-950">Logistics Cảng &amp; Cửa Khẩu</h3>
             <p class="text-xs sm:text-sm text-slate-600 leading-relaxed">
@@ -776,7 +823,7 @@
             </p>
           </div>
 
-          <div class="bg-slate-50/80 p-7 rounded-2xl border border-gray-200/80 hover:border-emerald-300 hover:shadow-md transition-all flex flex-col gap-3 group">
+          <div class="bg-slate-50/80 p-7 rounded-2xl border border-gray-200/80 hover:border-emerald-300 hover:shadow-md transition-all flex flex-col gap-3 group" data-reveal="up" data-reveal-delay="400">
             <div class="font-headline text-4xl font-extrabold text-[#0B3B24]/20 group-hover:text-[#0B3B24] transition-colors">04</div>
             <h3 class="font-headline text-lg font-bold text-slate-950">Bình Ổn Giá Theo Niên Vụ</h3>
             <p class="text-xs sm:text-sm text-slate-600 leading-relaxed">
@@ -789,131 +836,81 @@
       </div>
     </section>
 
-    <!-- SECTION 5: B2B RFQ & SAMPLE REQUEST FORM -->
-    <section class="py-16 lg:py-24 bg-slate-50/70 border-t border-gray-200/80" data-reveal="up" id="rfq-section">
-      <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
-        
-        <div class="bg-white rounded-3xl border border-gray-200/90 shadow-xl overflow-hidden grid grid-cols-1 lg:grid-cols-12">
-          
-          <!-- Left Panel: Briefing (5 cols) -->
-          <div class="lg:col-span-5 bg-[#0B3B24] text-white p-8 sm:p-10 flex flex-col justify-between gap-6 relative overflow-hidden">
-            <div class="absolute -right-12 -bottom-12 w-64 h-64 bg-amber-500/10 rounded-full blur-2xl pointer-events-none"></div>
+    <!-- SECTION 5: EXECUTIVE B2B WHOLESALE & SAMPLE CTA BANNER -->
+    <section class="py-16 lg:py-24 bg-white" data-reveal="up" id="rfq-section">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="rounded-3xl bg-gradient-to-r from-[#0B3B24] via-[#0E492D] to-[#0B3B24] text-white p-8 sm:p-12 lg:p-16 shadow-2xl border border-[#144d32] relative overflow-hidden">
+          <!-- Ambient Glow -->
+          <div class="absolute -right-24 -top-24 w-96 h-96 bg-emerald-500/10 rounded-full blur-3xl pointer-events-none"></div>
+          <div class="absolute -left-24 -bottom-24 w-96 h-96 bg-amber-500/10 rounded-full blur-3xl pointer-events-none"></div>
 
-            <div class="relative z-10 flex flex-col gap-4">
-              <span class="text-xs font-mono font-bold uppercase tracking-widest text-[#F59E0B]">
-                TRUNG TÂM TIẾP NHẬN B2B
-              </span>
-              <h3 class="font-headline text-2xl font-bold leading-tight">
+          <div class="relative z-10 grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 items-center">
+            
+            <!-- Left Info (7 cols) -->
+            <div class="lg:col-span-7 flex flex-col gap-6">
+              <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-white/10 backdrop-blur-md border border-white/15 w-fit">
+                <span class="w-2 h-2 rounded-full bg-[#F59E0B] animate-pulse"></span>
+                <span class="text-xs font-bold tracking-widest uppercase text-amber-300 font-headline">Trung Tâm Phân Phối Sỉ &amp; Xuất Khẩu B2B</span>
+              </div>
+
+              <h2 class="text-3xl sm:text-4xl lg:text-5xl font-extrabold text-white tracking-tight font-headline leading-tight">
                 Đăng Ký Nhận Mẫu Thử &amp; Báo Giá Sỉ Đại Lý
-              </h3>
-              <p class="text-xs sm:text-sm text-emerald-100 leading-relaxed">
-                Vui lòng cung cấp thông tin nhu cầu của đơn vị. Chuyên viên phụ trách chuỗi cung ứng Tây Bắc của Cường Thịnh sẽ liên hệ gửi mẫu thực tế và biểu giá chiết khấu trong 02 giờ làm việc.
+              </h2>
+
+              <p class="text-base sm:text-lg text-gray-200 leading-relaxed max-w-2xl">
+                Cường Thịnh cung cấp chính sách giá sỉ tận gốc từ vùng trồng Tây Bắc, hỗ trợ gửi mẫu thực tế và cung cấp hồ sơ kiểm nghiệm COA, hóa đơn VAT đầy đủ cho các nhà phân phối, chuỗi siêu thị và đối tác xuất khẩu.
               </p>
 
-              <div class="flex flex-col gap-3 pt-3 text-xs text-emerald-100">
-                <div class="flex items-center gap-2.5">
-                  <span class="material-symbols-outlined text-[#F59E0B] text-[18px]">check_circle</span>
-                  <span>Miễn phí 100% chi phí chuyển phát mẫu</span>
+              <!-- 3 SLA Commitments -->
+              <div class="grid grid-cols-1 sm:grid-cols-3 gap-3 pt-2">
+                <div class="flex items-center gap-2.5 p-3 rounded-xl bg-white/5 border border-white/10">
+                  <span class="material-symbols-outlined text-[20px] text-[#F59E0B] shrink-0">timer</span>
+                  <span class="text-xs text-gray-200 font-medium">Báo giá chiết khấu trong <strong>2 giờ</strong></span>
                 </div>
-                <div class="flex items-center gap-2.5">
-                  <span class="material-symbols-outlined text-[#F59E0B] text-[18px]">check_circle</span>
-                  <span>Gửi kèm hồ sơ kiểm nghiệm COA mới nhất</span>
+                <div class="flex items-center gap-2.5 p-3 rounded-xl bg-white/5 border border-white/10">
+                  <span class="material-symbols-outlined text-[20px] text-[#F59E0B] shrink-0">local_shipping</span>
+                  <span class="text-xs text-gray-200 font-medium">Gửi mẫu thử <strong>miễn phí 100%</strong></span>
                 </div>
-                <div class="flex items-center gap-2.5">
-                  <span class="material-symbols-outlined text-[#F59E0B] text-[18px]">check_circle</span>
-                  <span>Tư vấn định mức phối trộn và bảo quản</span>
+                <div class="flex items-center gap-2.5 p-3 rounded-xl bg-white/5 border border-white/10">
+                  <span class="material-symbols-outlined text-[20px] text-[#F59E0B] shrink-0">verified</span>
+                  <span class="text-xs text-gray-200 font-medium">Hồ sơ COA &amp; VAT <strong>100%</strong></span>
                 </div>
               </div>
             </div>
 
-            <div class="relative z-10 pt-4 bg-white/5 border border-white/10 p-4 rounded-xl flex flex-col gap-1 text-xs">
-              <span class="text-emerald-200 uppercase tracking-wider font-semibold">Hỗ trợ khẩn cấp 24/7:</span>
-              <span class="font-headline text-base font-bold text-white">Hotline B2B: 0932.050101</span>
-              <span class="text-gray-300">Email: contact@cuongthinhagri.vn</span>
+            <!-- Right Action Box (5 cols) -->
+            <div class="lg:col-span-5 flex flex-col gap-4 bg-white/10 backdrop-blur-md p-6 sm:p-8 rounded-2xl border border-white/20 shadow-xl">
+              <span class="text-xs font-bold uppercase tracking-wider text-amber-300 font-headline">Hành Động Trọng Tâm</span>
+              
+              <a href="../b_o_gi_rfq_li_n_h_c_ng_th_nh_tech_agro/code.html" class="flex items-center justify-between px-6 py-4 rounded-xl bg-gradient-to-r from-[#D97706] to-[#B45309] hover:from-[#B45309] hover:to-[#92400E] text-white font-bold text-base shadow-lg hover:shadow-xl transition-all transform hover:-translate-y-0.5 group">
+                <div class="flex items-center gap-3">
+                  <span class="material-symbols-outlined text-[24px]">assignment_turned_in</span>
+                  <span>Mở Cổng Nhận Mẫu Thử &amp; Báo Giá Sỉ</span>
+                </div>
+                <span class="material-symbols-outlined text-[20px] group-hover:translate-x-1 transition-transform">arrow_forward</span>
+              </a>
+
+              <a href="../b_o_gi_rfq_li_n_h_c_ng_th_nh_tech_agro/code.html" class="flex items-center justify-between px-6 py-4 rounded-xl bg-white text-slate-800 hover:bg-slate-100 font-bold text-sm sm:text-base border border-gray-200 shadow-md transition-all group">
+                <div class="flex items-center gap-3">
+                  <span class="material-symbols-outlined text-[22px] text-[#0B3B24]">download</span>
+                  <span>Tải Bảng Giá Sỉ &amp; Tiêu Chuẩn Nông Sản</span>
+                </div>
+                <span class="material-symbols-outlined text-[18px] text-slate-400 group-hover:translate-x-1 transition-transform">arrow_forward</span>
+              </a>
+
+              <div class="flex items-center justify-between pt-2 border-t border-white/15 text-xs text-gray-300">
+                <span>Hotline Thu Mua &amp; Bán Buôn:</span>
+                <a href="tel:0932050101" class="text-amber-300 hover:text-white font-bold inline-flex items-center gap-1">
+                  <span class="material-symbols-outlined text-[16px]">call</span>
+                  0932.050101
+                </a>
+              </div>
             </div>
+
           </div>
-
-          <!-- Right Panel: Form Fields (7 cols) -->
-          <form class="lg:col-span-7 p-8 sm:p-10 flex flex-col gap-4 justify-center" id="b2b-rfq-form" onsubmit="event.preventDefault(); alert('Cường Thịnh Tech & Agro đã tiếp nhận thông tin yêu cầu mẫu thử của Quý công ty. Chúng tôi sẽ liên hệ trong 02 giờ.');">
-            
-            <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
-              <div class="flex flex-col gap-1.5">
-                <label class="text-xs font-semibold text-slate-900" for="rfq-name">Họ tên người đại diện <span class="text-[#D97706]">*</span></label>
-                <input class="px-3.5 py-2.5 bg-slate-50 border border-gray-200 rounded-xl text-xs text-slate-900 focus:outline-none focus:bg-white focus:ring-1 focus:ring-[#0B3B24]" id="rfq-name" placeholder="Nguyễn Văn A" required="" type="text">
-              </div>
-              <div class="flex flex-col gap-1.5">
-                <label class="text-xs font-semibold text-slate-900" for="rfq-company">Tên công ty / Doanh nghiệp <span class="text-[#D97706]">*</span></label>
-                <input class="px-3.5 py-2.5 bg-slate-50 border border-gray-200 rounded-xl text-xs text-slate-900 focus:outline-none focus:bg-white focus:ring-1 focus:ring-[#0B3B24]" id="rfq-company" placeholder="Công ty TNHH Thực Phẩm ABC" required="" type="text">
-              </div>
-            </div>
-
-            <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
-              <div class="flex flex-col gap-1.5">
-                <label class="text-xs font-semibold text-slate-900" for="rfq-phone">Số điện thoại / Zalo <span class="text-[#D97706]">*</span></label>
-                <input class="px-3.5 py-2.5 bg-slate-50 border border-gray-200 rounded-xl text-xs text-slate-900 focus:outline-none focus:bg-white focus:ring-1 focus:ring-[#0B3B24]" id="rfq-phone" placeholder="09xx xxx xxx" required="" type="tel">
-              </div>
-              <div class="flex flex-col gap-1.5">
-                <label class="text-xs font-semibold text-slate-900" for="rfq-email">Email doanh nghiệp</label>
-                <input class="px-3.5 py-2.5 bg-slate-50 border border-gray-200 rounded-xl text-xs text-slate-900 focus:outline-none focus:bg-white focus:ring-1 focus:ring-[#0B3B24]" id="rfq-email" placeholder="purchasing@company.com" type="email">
-              </div>
-            </div>
-
-            <!-- Product Checkboxes -->
-            <div class="flex flex-col gap-2 pt-1">
-              <label class="text-xs font-semibold text-slate-900">Sản phẩm quan tâm nhận mẫu &amp; Báo giá <span class="text-[#D97706]">*</span></label>
-              <div class="grid grid-cols-1 sm:grid-cols-3 gap-2 text-xs">
-                <label class="flex items-center gap-2 p-2.5 bg-slate-50 border border-gray-200 rounded-xl cursor-pointer hover:bg-slate-100 transition-colors">
-                  <input checked="" class="w-4 h-4 text-[#0B3B24] rounded" type="checkbox">
-                  <span>Hạt Mắc-ca Lai Châu</span>
-                </label>
-                <label class="flex items-center gap-2 p-2.5 bg-slate-50 border border-gray-200 rounded-xl cursor-pointer hover:bg-slate-100 transition-colors">
-                  <input class="w-4 h-4 text-[#0B3B24] rounded" type="checkbox">
-                  <span>Cà phê Arabica</span>
-                </label>
-                <label class="flex items-center gap-2 p-2.5 bg-slate-50 border border-gray-200 rounded-xl cursor-pointer hover:bg-slate-100 transition-colors">
-                  <input class="w-4 h-4 text-[#0B3B24] rounded" type="checkbox">
-                  <span>Quế &amp; Hoa Hồi</span>
-                </label>
-              </div>
-            </div>
-
-            <!-- Cooperation Model Radio -->
-            <div class="flex flex-col gap-2 pt-1">
-              <label class="text-xs font-semibold text-slate-900">Hình thức hợp tác chính</label>
-              <div class="grid grid-cols-1 sm:grid-cols-3 gap-2 text-xs">
-                <label class="flex items-center gap-2 p-2.5 bg-slate-50 border border-gray-200 rounded-xl cursor-pointer hover:bg-slate-100 transition-colors">
-                  <input checked="" class="w-4 h-4 text-[#0B3B24]" name="partnership" type="radio">
-                  <span>Mua sỉ phân phối</span>
-                </label>
-                <label class="flex items-center gap-2 p-2.5 bg-slate-50 border border-gray-200 rounded-xl cursor-pointer hover:bg-slate-100 transition-colors">
-                  <input class="w-4 h-4 text-[#0B3B24]" name="partnership" type="radio">
-                  <span>OEM Private Label</span>
-                </label>
-                <label class="flex items-center gap-2 p-2.5 bg-slate-50 border border-gray-200 rounded-xl cursor-pointer hover:bg-slate-100 transition-colors">
-                  <input class="w-4 h-4 text-[#0B3B24]" name="partnership" type="radio">
-                  <span>Hợp đồng xuất khẩu</span>
-                </label>
-              </div>
-            </div>
-
-            <div class="flex flex-col gap-1.5 pt-1">
-              <label class="text-xs font-semibold text-slate-900" for="rfq-notes">Địa chỉ nhận mẫu &amp; Ghi chú kỹ thuật cụ thể</label>
-              <textarea class="px-3.5 py-2.5 bg-slate-50 border border-gray-200 rounded-xl text-xs text-slate-900 focus:outline-none focus:bg-white focus:ring-1 focus:ring-[#0B3B24]" id="rfq-notes" placeholder="Ví dụ: Cần gửi mẫu Macca 500g và bảng phân tích ẩm độ tới Kho Quận 7, TP.HCM..." rows="2"></textarea>
-            </div>
-
-            <button class="w-full mt-2 py-3.5 bg-gradient-to-r from-[#D97706] to-[#B45309] hover:from-[#B45309] hover:to-[#92400E] text-white rounded-xl text-xs font-bold uppercase tracking-wider transition-all shadow-md flex items-center justify-center gap-2" type="submit">
-              <span class="material-symbols-outlined text-[18px]">send</span>
-              <span>Gửi Yêu Cầu Nhận Mẫu &amp; Báo Giá Trong 02 Giờ</span>
-            </button>
-
-          </form>
-
         </div>
-
       </div>
-    </section>
-
-  </main>
+    </section></main>
 
   <!-- ==================== MASTER 4-COLUMN FOOTER ==================== -->
   <footer class="w-full bg-[#111827] text-gray-300 pt-16 pb-8 shadow-[0_-2px_12px_rgba(0,0,0,0.06)] border-t border-gray-800">
