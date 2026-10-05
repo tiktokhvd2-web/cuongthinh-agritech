@@ -52,6 +52,37 @@
       backdrop-filter: blur(12px);
       -webkit-backdrop-filter: blur(12px);
     }
+  
+  /* High-Precision Scroll Reveal Styles */
+  [data-reveal] {
+    opacity: 0;
+    transition: opacity 0.75s cubic-bezier(0.16, 1, 0.3, 1), transform 0.75s cubic-bezier(0.16, 1, 0.3, 1);
+    will-change: opacity, transform;
+  }
+  [data-reveal="up"] {
+    transform: translateY(28px);
+  }
+  [data-reveal="left"] {
+    transform: translateX(-32px);
+  }
+  [data-reveal="right"] {
+    transform: translateX(32px);
+  }
+  [data-reveal="scale"] {
+    transform: scale(0.96);
+  }
+  [data-reveal].revealed {
+    opacity: 1 !important;
+    transform: translate(0, 0) scale(1) !important;
+  }
+  @media (prefers-reduced-motion: reduce) {
+    [data-reveal] {
+      opacity: 1 !important;
+      transform: none !important;
+      transition: none !important;
+    }
+  }
+
   </style>
 </head>
 <body class="bg-white text-gray-800 antialiased selection:bg-brand-900 selection:text-white">
@@ -197,7 +228,7 @@
     </section>
 
     <!-- SECTION 1: EDITORIAL HERO & STRATEGIC HIGHLIGHTS -->
-    <section class="py-16 lg:py-20 bg-gradient-to-b from-white via-slate-50/50 to-white relative overflow-hidden border-b border-gray-100">
+    <section class="py-16 lg:py-20 bg-gradient-to-b from-white via-slate-50/50 to-white relative overflow-hidden border-b border-gray-100" data-reveal="up">
       <div class="absolute inset-0 bg-[radial-gradient(#e5e7eb_1px,transparent_1px)] [background-size:20px_20px] opacity-60 pointer-events-none"></div>
       <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         <div class="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-12 items-center">
@@ -256,7 +287,7 @@
               <!-- 4 Metrics Grid -->
               <div class="grid grid-cols-2 gap-3.5 pt-4 border-t border-gray-100">
                 <div class="bg-white p-3.5 rounded-xl border border-gray-100 shadow-xs">
-                  <div class="font-headline text-2xl font-extrabold text-[#0B3B24]">3.500 m²</div>
+                  <div class="font-headline text-2xl font-extrabold text-[#0B3B24]" data-counter="3500" data-counter-suffix=" m²">3.500 m²</div>
                   <div class="text-xs text-gray-500 font-medium mt-0.5">Xưởng Cơ Khí Chế Tạo</div>
                 </div>
                 <div class="bg-white p-3.5 rounded-xl border border-gray-100 shadow-xs">
@@ -442,7 +473,7 @@
     </section>
 
     <!-- SECTION 3: TẦM NHÌN, SỨ MỆNH & 3 GIÁ TRỊ CỐT LÕI -->
-    <section class="py-16 lg:py-24 bg-white">
+    <section class="py-16 lg:py-24 bg-white" data-reveal="up">
       <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         
         <!-- Header -->
@@ -588,7 +619,7 @@
     </section>
 
     <!-- SECTION 4: HÀNH TRÌNH CHINH PHỤC (ROADMAP 2018 - 2030) -->
-    <section class="py-16 lg:py-24 bg-slate-50/70 border-y border-gray-200/80 relative">
+    <section class="py-16 lg:py-24 bg-slate-50/70 border-y border-gray-200/80 relative" data-reveal="up">
       <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         
         <!-- Header -->
@@ -704,7 +735,7 @@
     </section>
 
     <!-- SECTION 5: HẠ TẦNG KỸ THUẬT & HAI TRỤ CỘT CƠ SỞ SẢN XUẤT -->
-    <section class="py-16 lg:py-24 bg-white">
+    <section class="py-16 lg:py-24 bg-white" data-reveal="up">
       <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         
         <!-- Header -->
@@ -749,7 +780,7 @@
                 <div class="grid grid-cols-2 gap-3 text-xs pt-4 border-t border-gray-100">
                   <div class="bg-slate-50 p-3 rounded-xl">
                     <span class="text-gray-400 block font-medium">Quy mô mặt bằng:</span>
-                    <strong class="text-gray-900 font-bold text-sm">3.500 m²</strong>
+                    <strong class="text-gray-900 font-bold text-sm" data-counter="3500" data-counter-suffix=" m²">3.500 m²</strong>
                   </div>
                   <div class="bg-slate-50 p-3 rounded-xl">
                     <span class="text-gray-400 block font-medium">Năng lực sản xuất:</span>
@@ -801,7 +832,7 @@
                 <div class="grid grid-cols-2 gap-3 text-xs pt-4 border-t border-gray-100">
                   <div class="bg-slate-50 p-3 rounded-xl">
                     <span class="text-gray-400 block font-medium">Quy mô nhà máy:</span>
-                    <strong class="text-gray-900 font-bold text-sm">5.000 m²</strong>
+                    <strong class="text-gray-900 font-bold text-sm" data-counter="5000" data-counter-suffix=" m²">5.000 m²</strong>
                   </div>
                   <div class="bg-slate-50 p-3 rounded-xl">
                     <span class="text-gray-400 block font-medium">Công suất buồng sấy:</span>
@@ -858,7 +889,7 @@
     </section>
 
     <!-- SECTION 6: ĐỘI NGŨ KỸ SƯ BÁCH KHOA & CHUYÊN GIA NÔNG NGHIỆP TÂY BẮC -->
-    <section class="py-16 lg:py-24 bg-slate-50/70 border-t border-gray-200/80">
+    <section class="py-16 lg:py-24 bg-slate-50/70 border-t border-gray-200/80" data-reveal="up">
       <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         
         <div class="grid grid-cols-1 lg:grid-cols-12 gap-10 items-center">
@@ -1228,6 +1259,78 @@
           }
         }
       });
+    })();
+  </script>
+
+
+  <!-- Native High-Performance Scroll Reveal & Live Telemetry Counter Engine -->
+  <script>
+    (function() {
+      // 1. Scroll Reveal Engine via IntersectionObserver
+      const revealItems = document.querySelectorAll('[data-reveal]');
+      if ('IntersectionObserver' in window && revealItems.length > 0) {
+        const revealObserver = new IntersectionObserver(function(entries, observer) {
+          entries.forEach(function(entry) {
+            if (entry.isIntersecting) {
+              const el = entry.target;
+              const delay = parseInt(el.getAttribute('data-reveal-delay') || '0', 10);
+              setTimeout(function() {
+                el.classList.add('revealed');
+              }, delay);
+              observer.unobserve(el);
+            }
+          });
+        }, {
+          threshold: 0.12,
+          rootMargin: '0px 0px -40px 0px'
+        });
+
+        revealItems.forEach(function(item) {
+          revealObserver.observe(item);
+        });
+      } else {
+        revealItems.forEach(function(item) {
+          item.classList.add('revealed');
+        });
+      }
+
+      // 2. Telemetry Number Counter Animation
+      const counterItems = document.querySelectorAll('[data-counter]');
+      if ('IntersectionObserver' in window && counterItems.length > 0) {
+        const counterObserver = new IntersectionObserver(function(entries, observer) {
+          entries.forEach(function(entry) {
+            if (entry.isIntersecting) {
+              const el = entry.target;
+              const targetVal = parseInt(el.getAttribute('data-counter'), 10);
+              const prefix = el.getAttribute('data-counter-prefix') || '';
+              const suffix = el.getAttribute('data-counter-suffix') || '';
+              const duration = 1400; // ms
+              const startTimestamp = performance.now();
+
+              function step(now) {
+                const elapsed = now - startTimestamp;
+                const progress = Math.min(elapsed / duration, 1);
+                // Ease out cubic
+                const easeVal = 1 - Math.pow(1 - progress, 3);
+                const currentVal = Math.floor(easeVal * targetVal);
+                el.textContent = prefix + currentVal.toLocaleString('en-US') + suffix;
+
+                if (progress < 1) {
+                  requestAnimationFrame(step);
+                } else {
+                  el.textContent = prefix + targetVal.toLocaleString('en-US') + suffix;
+                }
+              }
+              requestAnimationFrame(step);
+              observer.unobserve(el);
+            }
+          });
+        }, { threshold: 0.2 });
+
+        counterItems.forEach(function(item) {
+          counterObserver.observe(item);
+        });
+      }
     })();
   </script>
 

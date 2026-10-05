@@ -47,6 +47,37 @@
   <style>
     body { font-family: 'Inter', sans-serif; }
     h1, h2, h3, h4, h5, .font-headline { font-family: 'Space Grotesk', sans-serif; }
+  
+  /* High-Precision Scroll Reveal Styles */
+  [data-reveal] {
+    opacity: 0;
+    transition: opacity 0.75s cubic-bezier(0.16, 1, 0.3, 1), transform 0.75s cubic-bezier(0.16, 1, 0.3, 1);
+    will-change: opacity, transform;
+  }
+  [data-reveal="up"] {
+    transform: translateY(28px);
+  }
+  [data-reveal="left"] {
+    transform: translateX(-32px);
+  }
+  [data-reveal="right"] {
+    transform: translateX(32px);
+  }
+  [data-reveal="scale"] {
+    transform: scale(0.96);
+  }
+  [data-reveal].revealed {
+    opacity: 1 !important;
+    transform: translate(0, 0) scale(1) !important;
+  }
+  @media (prefers-reduced-motion: reduce) {
+    [data-reveal] {
+      opacity: 1 !important;
+      transform: none !important;
+      transition: none !important;
+    }
+  }
+
   </style>
 </head>
 <body class="bg-white text-gray-800 antialiased selection:bg-brand-900 selection:text-white">
@@ -193,7 +224,7 @@
     </section>
 
     <!-- SECTION 1: HERO & THREE SLA TELEMETRY METRICS -->
-    <section class="py-14 lg:py-18 bg-gradient-to-b from-white via-slate-50/50 to-white relative overflow-hidden border-b border-gray-100">
+    <section class="py-14 lg:py-18 bg-gradient-to-b from-white via-slate-50/50 to-white relative overflow-hidden border-b border-gray-100" data-reveal="up">
       <div class="absolute inset-0 bg-[radial-gradient(#e5e7eb_1px,transparent_1px)] [background-size:20px_20px] opacity-60 pointer-events-none"></div>
 
       <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
@@ -267,7 +298,7 @@
     </section>
 
     <!-- SECTION 2: THE MAIN INTERACTIVE RFQ PORTAL -->
-    <section class="py-16 lg:py-24 bg-slate-50/70 border-b border-gray-200/80">
+    <section class="py-16 lg:py-24 bg-slate-50/70 border-b border-gray-200/80" data-reveal="up">
       <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         
         <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start">
@@ -523,7 +554,7 @@
     </section>
 
     <!-- SECTION 3: 4 GIAI ĐOẠN TIẾP NHẬN & PHÊ DUYỆT RFQ (EPC ENGAGEMENT PIPELINE) -->
-    <section class="py-16 lg:py-24 bg-white border-b border-gray-200/80">
+    <section class="py-16 lg:py-24 bg-white border-b border-gray-200/80" data-reveal="up">
       <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col gap-12">
         
         <div class="text-center max-w-2xl mx-auto flex flex-col gap-2">
@@ -606,7 +637,7 @@
     </section>
 
     <!-- SECTION 4: FREQUENTLY ASKED QUESTIONS (FAQ) -->
-    <section class="py-16 lg:py-24 bg-slate-50/70 border-b border-gray-200/80">
+    <section class="py-16 lg:py-24 bg-slate-50/70 border-b border-gray-200/80" data-reveal="up">
       <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col gap-10">
         
         <div class="text-center flex flex-col gap-2">
@@ -844,6 +875,78 @@
           }
         }
       });
+    })();
+  </script>
+
+
+  <!-- Native High-Performance Scroll Reveal & Live Telemetry Counter Engine -->
+  <script>
+    (function() {
+      // 1. Scroll Reveal Engine via IntersectionObserver
+      const revealItems = document.querySelectorAll('[data-reveal]');
+      if ('IntersectionObserver' in window && revealItems.length > 0) {
+        const revealObserver = new IntersectionObserver(function(entries, observer) {
+          entries.forEach(function(entry) {
+            if (entry.isIntersecting) {
+              const el = entry.target;
+              const delay = parseInt(el.getAttribute('data-reveal-delay') || '0', 10);
+              setTimeout(function() {
+                el.classList.add('revealed');
+              }, delay);
+              observer.unobserve(el);
+            }
+          });
+        }, {
+          threshold: 0.12,
+          rootMargin: '0px 0px -40px 0px'
+        });
+
+        revealItems.forEach(function(item) {
+          revealObserver.observe(item);
+        });
+      } else {
+        revealItems.forEach(function(item) {
+          item.classList.add('revealed');
+        });
+      }
+
+      // 2. Telemetry Number Counter Animation
+      const counterItems = document.querySelectorAll('[data-counter]');
+      if ('IntersectionObserver' in window && counterItems.length > 0) {
+        const counterObserver = new IntersectionObserver(function(entries, observer) {
+          entries.forEach(function(entry) {
+            if (entry.isIntersecting) {
+              const el = entry.target;
+              const targetVal = parseInt(el.getAttribute('data-counter'), 10);
+              const prefix = el.getAttribute('data-counter-prefix') || '';
+              const suffix = el.getAttribute('data-counter-suffix') || '';
+              const duration = 1400; // ms
+              const startTimestamp = performance.now();
+
+              function step(now) {
+                const elapsed = now - startTimestamp;
+                const progress = Math.min(elapsed / duration, 1);
+                // Ease out cubic
+                const easeVal = 1 - Math.pow(1 - progress, 3);
+                const currentVal = Math.floor(easeVal * targetVal);
+                el.textContent = prefix + currentVal.toLocaleString('en-US') + suffix;
+
+                if (progress < 1) {
+                  requestAnimationFrame(step);
+                } else {
+                  el.textContent = prefix + targetVal.toLocaleString('en-US') + suffix;
+                }
+              }
+              requestAnimationFrame(step);
+              observer.unobserve(el);
+            }
+          });
+        }, { threshold: 0.2 });
+
+        counterItems.forEach(function(item) {
+          counterObserver.observe(item);
+        });
+      }
     })();
   </script>
 
