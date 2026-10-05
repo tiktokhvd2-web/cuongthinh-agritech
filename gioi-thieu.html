@@ -260,7 +260,7 @@
         <div class="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-12 items-center">
           
           <!-- Left: Big Editorial Headline -->
-          <div class="lg:col-span-7 flex flex-col gap-6">
+          <div class="lg:col-span-7 flex flex-col gap-6" data-reveal="left">
             <div class="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-emerald-50 border border-emerald-200/70 text-[#0B3B24] text-xs font-bold uppercase tracking-wider self-start shadow-xs">
               <span class="material-symbols-outlined text-[16px] text-[#D97706]">verified_user</span>
               HỒ SƠ NĂNG LỰC &amp; HÀNH TRÌNH PHÁT TRIỂN
@@ -291,59 +291,59 @@
             </div>
           </div>
 
-          <!-- Right: Executive Operational Highlights Card -->
-          <div class="lg:col-span-5">
-            <div class="relative rounded-2xl bg-gradient-to-br from-white to-slate-50 border border-gray-200/90 p-7 sm:p-8 shadow-[0_12px_32px_rgba(0,0,0,0.06)] flex flex-col justify-between gap-6">
-              <!-- Decorative background glow -->
-              <div class="absolute -top-12 -right-12 w-48 h-48 bg-amber-500/10 rounded-full blur-3xl pointer-events-none"></div>
-
-              <div>
-                <span class="text-xs font-bold uppercase tracking-widest text-[#B45309] font-headline flex items-center gap-1.5 mb-2">
-                  <span class="material-symbols-outlined text-[16px]">sync_alt</span>
-                  ĐỊNH VỊ GIÁ TRỊ CỐT LÕI
+          <!-- Right: Executive Operational Visual & Glass Telemetry Badges -->
+          <div class="lg:col-span-5 relative" data-reveal="right">
+            <div class="relative rounded-2xl overflow-hidden shadow-2xl border border-gray-200/90 bg-gray-900 group">
+              <!-- Top bar indicator on image -->
+              <div class="absolute top-0 left-0 right-0 z-20 px-4 py-2.5 bg-black/60 backdrop-blur-md text-white flex items-center justify-between text-xs font-semibold tracking-wider uppercase">
+                <span class="flex items-center gap-1.5 text-[#86efac]">
+                  <span class="material-symbols-outlined text-[14px]">verified</span>
+                  Vận hành thực địa 2026
                 </span>
-                <h3 class="font-headline text-2xl font-bold text-slate-950 mb-3">
-                  Từ Bản Vẽ Kỹ Thuật Đến Bàn Ăn Toàn Cầu
-                </h3>
-                <p class="text-sm text-slate-600 leading-relaxed">
-                  Khép kín quy trình từ xưởng gia công cơ khí SUS 304 Hải Phòng đến hệ thống buồng sấy hoàn lưu nhiệt 20 tấn/mẻ tại Tam Đường, Lai Châu.
-                </p>
+                <span class="text-gray-300">Nhà máy Lai Châu #01</span>
               </div>
 
-              <!-- 4 Metrics Grid -->
-              <div class="grid grid-cols-2 gap-3.5 pt-4 border-t border-gray-100">
-                <div class="bg-white p-3.5 rounded-xl border border-gray-100 shadow-xs">
-                  <div class="font-headline text-2xl font-extrabold text-[#0B3B24]" data-counter="3500" data-counter-suffix=" m²">3.500 m²</div>
-                  <div class="text-xs text-slate-500 font-medium mt-0.5">Xưởng Cơ Khí Chế Tạo</div>
-                </div>
-                <div class="bg-white p-3.5 rounded-xl border border-gray-100 shadow-xs">
-                  <div class="font-headline text-2xl font-extrabold text-[#D97706]">20 Tấn / Mẻ</div>
-                  <div class="text-xs text-slate-500 font-medium mt-0.5">Công Suất Sấy MS-20</div>
-                </div>
-                <div class="bg-white p-3.5 rounded-xl border border-gray-100 shadow-xs">
-                  <div class="font-headline text-2xl font-extrabold text-[#0B3B24]">100% Inox</div>
-                  <div class="text-xs text-slate-500 font-medium mt-0.5">SUS 304 Chuẩn Vi Sinh</div>
-                </div>
-                <div class="bg-white p-3.5 rounded-xl border border-gray-100 shadow-xs">
-                  <div class="font-headline text-2xl font-extrabold text-[#D97706]">1,200+ Hộ</div>
-                  <div class="text-xs text-slate-500 font-medium mt-0.5">Liên Kết Vùng Trồng HTX</div>
+              <!-- Real Plant Image -->
+              <div class="aspect-[4/3] w-full overflow-hidden">
+                <img class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" 
+                     alt="Dây chuyền sấy nông sản công nghiệp MS-20 Inox SUS 304 Cường Thịnh tại Tam Đường Lai Châu" 
+                     src="https://lh3.googleusercontent.com/aida-public/AB6AXuAHITVJCB4U_hM5MFsPeZfmJtuRK11HDZen2GhlgsVFIBRyMd2Z77iXmQdlnSqQ22fhXWtQI0_o2t6i4oaEm-EucNxI6NgvfUD-qZwEs5pwsjKAVV_3QYQv8lernAXN1IpXl0dPtWbHHKemkjmazNgBUt2ggtA_UKt7MKSV3ZARDIZK5HRXx7taI8sEkzeDIWs3YtChEcjYRBaUtQYWyrKerOym_2pue4uoSnrkF_WxGIm8zZcrPzhxHg">
+              </div>
+
+              <!-- Floating Glass Badge 1 (Bottom Left) -->
+              <div class="absolute bottom-4 left-4 z-20 px-3.5 py-2 rounded-xl bg-white/95 backdrop-blur-md text-[#0B3B24] border border-white/50 shadow-lg flex items-center gap-2">
+                <div class="w-7 h-7 rounded-lg bg-[#0B3B24] text-white flex items-center justify-center shrink-0 font-bold text-xs">20T</div>
+                <div class="flex flex-col">
+                  <span class="text-[11px] font-bold uppercase leading-tight font-headline">Buồng Sấy Macca MS-20</span>
+                  <span class="text-[10px] text-slate-500 leading-tight">20.000 kg / mẻ tuần hoàn</span>
                 </div>
               </div>
 
-              <!-- Bottom Trust Stamp -->
-              <div class="flex items-center justify-between text-xs text-slate-500 pt-2 border-t border-gray-100">
-                <span class="flex items-center gap-1 font-medium text-emerald-800">
-                  <span class="material-symbols-outlined text-[16px] text-emerald-600">verified</span>
-                  Chủ động 100% công nghệ thiết kế
-                </span>
-                <span class="font-semibold text-gray-700">Hải Phòng • Lai Châu</span>
+              <!-- Floating Glass Badge 2 (Bottom Right) -->
+              <div class="absolute bottom-4 right-4 z-20 px-3 py-2 rounded-xl bg-[#0B3B24]/90 backdrop-blur-md text-white border border-[#144d32] shadow-lg flex items-center gap-1.5 text-xs font-semibold">
+                <span class="material-symbols-outlined text-[16px] text-[#F59E0B]">check_circle</span>
+                <span>100% Inox SUS 304</span>
+              </div>
+            </div>
+
+            <!-- 3 Infrastructure Anchors Below Image -->
+            <div class="mt-4 grid grid-cols-3 gap-2.5 text-center">
+              <div class="p-2.5 rounded-xl bg-white border border-gray-200/80 shadow-xs">
+                <span class="block text-xs font-bold text-[#0B3B24] font-headline">Hải Phòng</span>
+                <span class="text-[10px] text-slate-500">Xưởng 3.500m²</span>
+              </div>
+              <div class="p-2.5 rounded-xl bg-white border border-gray-200/80 shadow-xs">
+                <span class="block text-xs font-bold text-[#B45309] font-headline">Tam Đường</span>
+                <span class="text-[10px] text-slate-500">Nhà máy 5.000m²</span>
+              </div>
+              <div class="p-2.5 rounded-xl bg-white border border-gray-200/80 shadow-xs">
+                <span class="block text-xs font-bold text-emerald-700 font-headline">Tây Bắc</span>
+                <span class="text-[10px] text-slate-500">OCOP 4 Sao</span>
               </div>
             </div>
           </div>
-
         </div>
-      </div>
-    </section>
+      </div></section>
 
     <!-- SECTION 2: PHÁP LÝ HOẠT ĐỘNG & NĂNG LỰC NHÀ XƯỞNG THỰC TẾ -->
     <section id="phap-ly-vung-chac" class="py-16 lg:py-24 bg-slate-50/70 border-b border-gray-200/80">
@@ -369,7 +369,7 @@
         <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-stretch">
           
           <!-- Column 1: Official Corporate Entity Card (6 cols) -->
-          <div class="lg:col-span-6 bg-white rounded-2xl border border-gray-200/90 p-7 sm:p-8 shadow-sm flex flex-col justify-between">
+          <div class="lg:col-span-6 bg-white rounded-2xl border border-gray-200/90 p-7 sm:p-8 shadow-sm flex flex-col justify-between" data-reveal="left">
             <div class="space-y-6">
               
               <!-- Card Header -->
@@ -455,7 +455,7 @@
           </div>
 
           <!-- Column 2: Workshop Photo & Machine Engineering Showcase (6 cols) -->
-          <div class="lg:col-span-6 flex flex-col gap-5">
+          <div class="lg:col-span-6 flex flex-col gap-5" data-reveal="right">
             <div class="relative rounded-2xl overflow-hidden shadow-md aspect-video bg-gray-900 group">
               <img class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" 
                    alt="Xưởng chế tạo máy nông nghiệp Inox SUS 304 Cường Thịnh Hải Phòng" 
@@ -486,9 +486,9 @@
                 <div class="text-[11px] text-slate-500 font-medium leading-tight">Tự động ngắt khi đạt ẩm độ chuẩn</div>
               </div>
               <div class="bg-white p-4 rounded-xl border border-gray-200/80 shadow-xs flex flex-col gap-1">
-                <span class="material-symbols-outlined text-emerald-700 text-[22px]">workspace_premium</span>
-                <div class="font-headline text-lg sm:text-xl text-emerald-800 font-bold">&gt; 3.500m²</div>
-                <div class="text-[11px] text-slate-500 font-medium leading-tight">Diện tích phân xưởng cơ khí hiện đại</div>
+                <span class="material-symbols-outlined text-emerald-700 text-[22px]">engineering</span>
+                <div class="font-headline text-lg sm:text-xl text-emerald-800 font-bold">25+ Kỹ Sư</div>
+                <div class="text-[11px] text-slate-500 font-medium leading-tight">Đội ngũ cơ điện ĐH Bách Khoa</div>
               </div>
             </div>
 
@@ -520,7 +520,7 @@
         <div class="grid grid-cols-1 md:grid-cols-2 gap-8 items-stretch mb-10">
           
           <!-- Vision Card (Deep Emerald Forest) -->
-          <div class="rounded-2xl bg-[#0B3B24] text-white p-8 sm:p-10 shadow-lg relative overflow-hidden flex flex-col justify-between">
+          <div class="rounded-2xl bg-[#0B3B24] text-white p-8 sm:p-10 shadow-lg relative overflow-hidden flex flex-col justify-between" data-reveal="left">
             <!-- Ambient Glow -->
             <div class="absolute -right-10 -bottom-10 w-56 h-56 bg-emerald-400/10 rounded-full blur-3xl pointer-events-none"></div>
 
@@ -549,7 +549,7 @@
           </div>
 
           <!-- Mission Card (Crisp Executive White Slate) -->
-          <div class="rounded-2xl bg-gradient-to-br from-slate-50 to-white border border-gray-200/90 text-slate-900 p-8 sm:p-10 shadow-sm flex flex-col justify-between">
+          <div class="rounded-2xl bg-gradient-to-br from-slate-50 to-white border border-gray-200/90 text-slate-900 p-8 sm:p-10 shadow-sm flex flex-col justify-between" data-reveal="right">
             <div class="flex flex-col gap-4">
               <div class="flex items-center gap-3">
                 <div class="w-12 h-12 rounded-xl bg-amber-50 border border-amber-200 flex items-center justify-center text-[#B45309]">
@@ -583,7 +583,7 @@
         <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
           
           <!-- Value 01 -->
-          <div class="bg-slate-50/80 rounded-2xl p-7 border border-gray-200/80 hover:border-emerald-300 hover:shadow-md transition-all group">
+          <div class="bg-slate-50/80 rounded-2xl p-7 border border-gray-200/80 hover:border-emerald-300 hover:shadow-md transition-all group" data-reveal="up" data-reveal-delay="100">
             <div class="flex items-center justify-between mb-4">
               <span class="font-headline text-3xl font-extrabold text-[#0B3B24] group-hover:scale-105 transition-transform">01</span>
               <div class="w-10 h-10 rounded-xl bg-white border border-gray-200 flex items-center justify-center text-[#0B3B24] shadow-xs">
@@ -602,7 +602,7 @@
           </div>
 
           <!-- Value 02 -->
-          <div class="bg-slate-50/80 rounded-2xl p-7 border border-gray-200/80 hover:border-amber-300 hover:shadow-md transition-all group">
+          <div class="bg-slate-50/80 rounded-2xl p-7 border border-gray-200/80 hover:border-amber-300 hover:shadow-md transition-all group" data-reveal="up" data-reveal-delay="200">
             <div class="flex items-center justify-between mb-4">
               <span class="font-headline text-3xl font-extrabold text-[#D97706] group-hover:scale-105 transition-transform">02</span>
               <div class="w-10 h-10 rounded-xl bg-white border border-gray-200 flex items-center justify-center text-[#D97706] shadow-xs">
@@ -621,7 +621,7 @@
           </div>
 
           <!-- Value 03 -->
-          <div class="bg-slate-50/80 rounded-2xl p-7 border border-gray-200/80 hover:border-emerald-300 hover:shadow-md transition-all group">
+          <div class="bg-slate-50/80 rounded-2xl p-7 border border-gray-200/80 hover:border-emerald-300 hover:shadow-md transition-all group" data-reveal="up" data-reveal-delay="100">
             <div class="flex items-center justify-between mb-4">
               <span class="font-headline text-3xl font-extrabold text-emerald-700 group-hover:scale-105 transition-transform">03</span>
               <div class="w-10 h-10 rounded-xl bg-white border border-gray-200 flex items-center justify-center text-emerald-700 shadow-xs">
@@ -668,7 +668,7 @@
         <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 relative">
           
           <!-- Milestone 1: 2018 -->
-          <div class="bg-white rounded-2xl p-6 border border-gray-200/90 shadow-sm flex flex-col justify-between gap-6 hover:shadow-md transition-shadow">
+          <div class="bg-white rounded-2xl p-6 border border-gray-200/90 shadow-sm flex flex-col justify-between gap-6 hover:shadow-md transition-shadow" data-reveal="up" data-reveal-delay="100">
             <div class="space-y-4">
               <div class="flex items-center justify-between">
                 <span class="px-3 py-1 rounded-lg bg-gray-100 font-headline text-base font-bold text-slate-800">
@@ -689,7 +689,7 @@
           </div>
 
           <!-- Milestone 2: 2021 -->
-          <div class="bg-white rounded-2xl p-6 border border-gray-200/90 shadow-sm flex flex-col justify-between gap-6 hover:shadow-md transition-shadow">
+          <div class="bg-white rounded-2xl p-6 border border-gray-200/90 shadow-sm flex flex-col justify-between gap-6 hover:shadow-md transition-shadow" data-reveal="up" data-reveal-delay="100">
             <div class="space-y-4">
               <div class="flex items-center justify-between">
                 <span class="px-3 py-1 rounded-lg bg-amber-50 font-headline text-base font-bold text-[#B45309]">
@@ -710,7 +710,7 @@
           </div>
 
           <!-- Milestone 3: 2026 (Active Glowing Card) -->
-          <div class="bg-white rounded-2xl p-6 border-2 border-[#0B3B24] shadow-md flex flex-col justify-between gap-6 relative overflow-hidden">
+          <div class="bg-white rounded-2xl p-6 border-2 border-[#0B3B24] shadow-md flex flex-col justify-between gap-6 relative overflow-hidden" data-reveal="up" data-reveal-delay="300">
             <div class="absolute top-0 right-0 w-24 h-24 bg-emerald-500/10 rounded-full blur-xl pointer-events-none"></div>
             
             <div class="space-y-4 relative z-10">
@@ -735,7 +735,7 @@
           </div>
 
           <!-- Milestone 4: 2027 - 2030 -->
-          <div class="bg-white rounded-2xl p-6 border border-gray-200/90 shadow-sm flex flex-col justify-between gap-6 hover:shadow-md transition-shadow">
+          <div class="bg-white rounded-2xl p-6 border border-gray-200/90 shadow-sm flex flex-col justify-between gap-6 hover:shadow-md transition-shadow" data-reveal="up" data-reveal-delay="100">
             <div class="space-y-4">
               <div class="flex items-center justify-between">
                 <span class="px-3 py-1 rounded-lg bg-gray-100 font-headline text-base font-bold text-slate-800">
@@ -921,7 +921,7 @@
         <div class="grid grid-cols-1 lg:grid-cols-12 gap-10 items-center">
           
           <!-- Left: Team Manifesto (7 cols) -->
-          <div class="lg:col-span-7 flex flex-col gap-5">
+          <div class="lg:col-span-7 flex flex-col gap-5" data-reveal="left">
             <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-emerald-50 border border-emerald-200 text-[#0B3B24] text-xs font-bold uppercase tracking-wider self-start">
               <span class="material-symbols-outlined text-[16px] text-[#0B3B24]">groups</span>
               CON NGƯỜI CƯỜNG THỊNH
@@ -961,7 +961,7 @@
           </div>
 
           <!-- Right: Direct B2B Technical Consultation Card (5 cols) -->
-          <div class="lg:col-span-5">
+          <div class="lg:col-span-5" data-reveal="right">
             <div class="bg-white rounded-2xl border border-gray-200/90 p-7 sm:p-8 shadow-md flex flex-col justify-between gap-6">
               
               <div class="flex items-center gap-3 pb-4 border-b border-gray-100">
@@ -1012,66 +1012,82 @@
       </div>
     </section>
 
-    <!-- SECTION 7: INDUSTRIAL HIGH-IMPACT CALL TO ACTION (CTA) -->
-    <section id="ho-so-nang-luc" class="py-16 lg:py-20 bg-[#0B3B24] text-white relative overflow-hidden">
-      <!-- Background Ambient Glow -->
-      <div class="absolute inset-0 bg-gradient-to-r from-[#0B3B24] via-[#144d32] to-[#0B3B24] opacity-90 pointer-events-none"></div>
-      <div class="absolute top-0 right-1/4 w-96 h-96 bg-amber-500/10 rounded-full blur-3xl pointer-events-none"></div>
+    <!-- SECTION 7: EXECUTIVE B2B CTA BANNER -->
+    <section id="ho-so-nang-luc" class="py-16 lg:py-24 bg-white" data-reveal="up">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="rounded-3xl bg-gradient-to-r from-[#0B3B24] via-[#0E492D] to-[#0B3B24] text-white p-8 sm:p-12 lg:p-16 shadow-2xl border border-[#144d32] relative overflow-hidden">
+          <!-- Ambient Glow -->
+          <div class="absolute -right-24 -top-24 w-96 h-96 bg-emerald-500/10 rounded-full blur-3xl pointer-events-none"></div>
+          <div class="absolute -left-24 -bottom-24 w-96 h-96 bg-amber-500/10 rounded-full blur-3xl pointer-events-none"></div>
 
-      <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 flex flex-col items-center text-center gap-8">
-        
-        <div class="inline-flex items-center gap-2 px-3.5 py-1.5 bg-white/10 backdrop-blur-md rounded-full text-xs font-semibold uppercase tracking-wider text-emerald-200">
-          <span class="material-symbols-outlined text-[16px] text-[#F59E0B]">handshake</span>
-          LIÊN KẾT PHÁT TRIỂN CÔNG NGHIỆP NÔNG SẢN
-        </div>
+          <div class="relative z-10 grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 items-center">
+            
+            <!-- Left Info (7 cols) -->
+            <div class="lg:col-span-7 flex flex-col gap-6">
+              <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-white/10 backdrop-blur-md border border-white/15 w-fit">
+                <span class="w-2 h-2 rounded-full bg-[#F59E0B] animate-pulse"></span>
+                <span class="text-xs font-bold tracking-widest uppercase text-amber-300 font-headline">Hồ Sơ Năng Lực Doanh Nghiệp 2026</span>
+              </div>
 
-        <div class="flex flex-col gap-4">
-          <h2 class="font-headline text-3xl sm:text-4xl lg:text-5xl font-extrabold tracking-tight text-white leading-tight">
-            Sẵn Sàng Hợp Tác Cùng Cường Thịnh <br class="hidden sm:inline">
-            Để Tối Ưu Hóa Chuỗi Giá Trị Nông Sản?
-          </h2>
-          <p class="text-base sm:text-lg text-emerald-100 max-w-2xl mx-auto leading-relaxed">
-            Quý doanh nghiệp thu mua xuất khẩu và các Hợp tác xã (HTX) có thể tải ngay trọn bộ Hồ sơ năng lực kỹ thuật hoặc đặt lịch hẹn tham quan thực tế xưởng chế tạo Hải Phòng &amp; nhà máy sấy Lai Châu.
-          </p>
-        </div>
+              <h2 class="text-3xl sm:text-4xl lg:text-5xl font-extrabold text-white tracking-tight font-headline leading-tight">
+                Sẵn Sàng Hợp Tác Cùng Cường Thịnh <br class="hidden sm:inline">
+                Để Tối Ưu Hóa Chuỗi Giá Trị Nông Sản?
+              </h2>
 
-        <!-- 2 Big Action Buttons -->
-        <div class="flex flex-col sm:flex-row items-center gap-4 w-full justify-center">
-          <a class="w-full sm:w-auto inline-flex items-center justify-center gap-2.5 px-7 py-4 bg-gradient-to-r from-[#D97706] to-[#B45309] hover:from-[#B45309] hover:to-[#92400E] text-white rounded-xl font-headline text-sm font-bold shadow-lg hover:shadow-xl transition-all transform hover:-translate-y-0.5" 
-             href="bao-gia-rfq.html">
-            <span class="material-symbols-outlined text-[20px]">download</span>
-            <span>Tải Hồ Sơ Năng Lực (PDF • 15MB)</span>
-          </a>
+              <p class="text-base sm:text-lg text-gray-200 leading-relaxed max-w-2xl">
+                Quý Doanh nghiệp và Hợp tác xã có thể tải trọn bộ Hồ sơ năng lực &amp; Bản vẽ công nghệ buồng sấy MS-20, hoặc đặt lịch tham quan trực tiếp phân xưởng cơ khí Hải Phòng và nhà máy Tam Đường.
+              </p>
 
-          <a class="w-full sm:w-auto inline-flex items-center justify-center gap-2.5 px-7 py-4 bg-white text-[#0B3B24] hover:bg-emerald-50 rounded-xl font-headline text-sm font-bold shadow-md hover:shadow-lg transition-all transform hover:-translate-y-0.5" 
-             href="tel:0932050101">
-            <span class="material-symbols-outlined text-[20px] text-[#0B3B24]">calendar_month</span>
-            <span>Đăng Ký Tham Quan Nhà Máy</span>
-          </a>
-        </div>
+              <!-- 3 SLA Commitments -->
+              <div class="grid grid-cols-1 sm:grid-cols-3 gap-3 pt-2">
+                <div class="flex items-center gap-2.5 p-3 rounded-xl bg-white/5 border border-white/10">
+                  <span class="material-symbols-outlined text-[20px] text-[#F59E0B] shrink-0">timer</span>
+                  <span class="text-xs text-gray-200 font-medium">Phản hồi hồ sơ trong <strong>2 giờ</strong></span>
+                </div>
+                <div class="flex items-center gap-2.5 p-3 rounded-xl bg-white/5 border border-white/10">
+                  <span class="material-symbols-outlined text-[20px] text-[#F59E0B] shrink-0">location_searching</span>
+                  <span class="text-xs text-gray-200 font-medium">Khảo sát xưởng <strong>tận nơi</strong></span>
+                </div>
+                <div class="flex items-center gap-2.5 p-3 rounded-xl bg-white/5 border border-white/10">
+                  <span class="material-symbols-outlined text-[20px] text-[#F59E0B] shrink-0">lock</span>
+                  <span class="text-xs text-gray-200 font-medium">Bảo mật NDA <strong>100%</strong></span>
+                </div>
+              </div>
+            </div>
 
-        <!-- Trust Indicator Strip -->
-        <div class="pt-6 border-t border-emerald-800/60 flex flex-wrap items-center justify-center gap-6 text-xs text-emerald-200">
-          <div class="flex items-center gap-2">
-            <span class="material-symbols-outlined text-[16px] text-[#F59E0B]">call</span>
-            <span>Hotline Kỹ Thuật 24/7: <strong class="text-white">0932.050101</strong></span>
+            <!-- Right Action Box (5 cols) -->
+            <div class="lg:col-span-5 flex flex-col gap-4 bg-white/10 backdrop-blur-md p-6 sm:p-8 rounded-2xl border border-white/20 shadow-xl">
+              <span class="text-xs font-bold uppercase tracking-wider text-amber-300 font-headline">Hành Động Trọng Tâm</span>
+              
+              <a href="bao-gia-rfq.html" class="flex items-center justify-between px-6 py-4 rounded-xl bg-gradient-to-r from-[#D97706] to-[#B45309] hover:from-[#B45309] hover:to-[#92400E] text-white font-bold text-base shadow-lg hover:shadow-xl transition-all transform hover:-translate-y-0.5 group">
+                <div class="flex items-center gap-3">
+                  <span class="material-symbols-outlined text-[24px]">download</span>
+                  <span>Tải Hồ Sơ Năng Lực (PDF • 15MB)</span>
+                </div>
+                <span class="material-symbols-outlined text-[20px] group-hover:translate-x-1 transition-transform">arrow_forward</span>
+              </a>
+
+              <a href="bao-gia-rfq.html" class="flex items-center justify-between px-6 py-4 rounded-xl bg-white text-slate-800 hover:bg-slate-100 font-bold text-sm sm:text-base border border-gray-200 shadow-md transition-all group">
+                <div class="flex items-center gap-3">
+                  <span class="material-symbols-outlined text-[22px] text-[#0B3B24]">calendar_month</span>
+                  <span>Đăng Ký Tham Quan Xưởng &amp; Nhà Máy</span>
+                </div>
+                <span class="material-symbols-outlined text-[18px] text-slate-400 group-hover:translate-x-1 transition-transform">arrow_forward</span>
+              </a>
+
+              <div class="flex items-center justify-between pt-2 border-t border-white/15 text-xs text-gray-300">
+                <span>Hotline Giám Đốc Kỹ Thuật:</span>
+                <a href="tel:0932050101" class="text-amber-300 hover:text-white font-bold inline-flex items-center gap-1">
+                  <span class="material-symbols-outlined text-[16px]">call</span>
+                  0932.050101
+                </a>
+              </div>
+            </div>
+
           </div>
-          <span class="opacity-40 hidden sm:inline">•</span>
-          <div class="flex items-center gap-2">
-            <span class="material-symbols-outlined text-[16px] text-[#F59E0B]">mail</span>
-            <span>Email: <strong class="text-white">contact@cuongthinhagri.vn</strong></span>
-          </div>
-          <span class="opacity-40 hidden sm:inline">•</span>
-          <div class="flex items-center gap-2">
-            <span class="material-symbols-outlined text-[16px] text-[#F59E0B]">location_on</span>
-            <span>Hải Phòng — Lai Châu — Lạng Sơn</span>
-          </div>
         </div>
-
       </div>
-    </section>
-
-  </main>
+    </section></main>
 
   <!-- ==================== MASTER 4-COLUMN FOOTER ==================== -->
   <footer class="w-full bg-[#111827] text-gray-300 pt-16 pb-8 shadow-[0_-2px_12px_rgba(0,0,0,0.06)] border-t border-gray-800">
