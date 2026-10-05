@@ -261,7 +261,7 @@
         <div class="grid grid-cols-1 lg:grid-cols-12 gap-10 items-center">
           
           <!-- Left: Big Title & Manifesto (7 cols) -->
-          <div class="lg:col-span-7 flex flex-col gap-6">
+          <div class="lg:col-span-7 flex flex-col gap-6" data-reveal="left">
             <div class="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-emerald-50 border border-emerald-200/70 text-[#0B3B24] text-xs font-bold uppercase tracking-wider self-start shadow-xs">
               <span class="w-2 h-2 rounded-full bg-[#D97706] animate-pulse"></span>
               NĂNG LỰC R&amp;D &amp; CƠ KHÍ CHÍNH XÁC CƯỜNG THỊNH
@@ -298,67 +298,59 @@
             </div>
           </div>
 
-          <!-- Right: Interactive Engineering Schematic Card (5 cols) -->
-          <div class="lg:col-span-5">
-            <div class="rounded-2xl bg-gradient-to-br from-gray-900 via-gray-950 to-[#0B3B24] border border-gray-800 p-7 sm:p-8 text-white shadow-2xl relative overflow-hidden flex flex-col justify-between gap-6">
-              
-              <!-- Subtle blueprint grid texture -->
-              <div class="absolute inset-0 bg-[radial-gradient(#ffffff_1px,transparent_1px)] [background-size:16px_16px] opacity-10 pointer-events-none"></div>
-
-              <div>
-                <div class="flex items-center justify-between mb-4">
-                  <span class="text-xs font-mono uppercase tracking-widest text-[#F59E0B] font-bold flex items-center gap-1.5">
-                    <span class="material-symbols-outlined text-[16px]">terminal</span>
-                    CAD/CAM SCHEMATIC • REV 2026
-                  </span>
-                  <span class="px-2.5 py-0.5 rounded-full bg-emerald-500/20 text-[#86efac] text-[10px] font-bold uppercase tracking-wider border border-emerald-500/30">
-                    Sở Hữu Trí Tuệ
-                  </span>
-                </div>
-
-                <h3 class="font-headline text-xl sm:text-2xl font-bold text-white mb-2">
-                  Kiến Trúc Máy Sấy Đảo Chiều MS-20
-                </h3>
-                <p class="text-xs text-gray-300 leading-relaxed">
-                  Thiết kế module hóa hoàn chỉnh, làm chủ khí động học buồng sấy đa tầng hoàn lưu nhiệt gián tiếp không ám khói bụi.
-                </p>
+          <!-- Right: Real Machine Engineering Workshop Visual & Glass Badges (5 cols) -->
+          <div class="lg:col-span-5 relative" data-reveal="right">
+            <div class="relative rounded-2xl overflow-hidden shadow-2xl border border-gray-200/90 bg-gray-900 group">
+              <!-- Top bar indicator on image -->
+              <div class="absolute top-0 left-0 right-0 z-20 px-4 py-2.5 bg-black/60 backdrop-blur-md text-white flex items-center justify-between text-xs font-semibold tracking-wider uppercase">
+                <span class="flex items-center gap-1.5 text-[#86efac]">
+                  <span class="material-symbols-outlined text-[14px]">verified</span>
+                  Xưởng Chế Tạo Hải Phòng
+                </span>
+                <span class="text-gray-300">Quy mô 3.500m²</span>
               </div>
 
-              <!-- Technical Layer Tags -->
-              <div class="space-y-2.5 pt-4 border-t border-gray-800 text-xs font-mono">
-                <div class="flex items-center justify-between p-2.5 rounded-lg bg-white/5 border border-white/10">
-                  <span class="text-gray-300">01. Buồng đối lưu nhiệt tuần hoàn</span>
-                  <span class="text-[#F59E0B] font-bold">Inox 304 • 3.0mm</span>
-                </div>
-                <div class="flex items-center justify-between p-2.5 rounded-lg bg-white/5 border border-white/10">
-                  <span class="text-gray-300">02. Bơm nhiệt hồi lưu Heatpump</span>
-                  <span class="text-[#86efac] font-bold">-40% Điện năng</span>
-                </div>
-                <div class="flex items-center justify-between p-2.5 rounded-lg bg-white/5 border border-white/10">
-                  <span class="text-gray-300">03. Cảm biến ẩm độ &amp; PLC Siemens</span>
-                  <span class="text-white font-bold">Auto Cut-off ≤ 1.5%</span>
-                </div>
-                <div class="flex items-center justify-between p-2.5 rounded-lg bg-white/5 border border-white/10">
-                  <span class="text-gray-300">04. Khung kết cấu dầm chịu tải</span>
-                  <span class="text-gray-300 font-bold">20.000 kg / mẻ</span>
+              <!-- Real Workshop Image -->
+              <div class="aspect-[4/3] w-full overflow-hidden">
+                <img class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" 
+                     alt="Xưởng chế tạo máy sấy công nghiệp Inox SUS 304 Cường Thịnh tại Đình Vũ Hải Phòng" 
+                     src="https://lh3.googleusercontent.com/aida-public/AB6AXuArQKDyNiRiZd-dIZqsj088IZ4pgzDkVAirAWa0d8ATxVmoow9r8rovX_bvOyCoJmDK8hYETaEHfzSLb1ynlMPGEgJUiK615AzHQW8Vj19tIEhBDNzkbelox4p_nIWH7SlyV8lrO0JAzHlJn1lvVJUxz2loVIGVM5rJMIebNeK98AfhdZtPQaNp6_wFDfsGQ8rIafC8cGvieXmt53_tKX4aBp0by88gybqBeGVA524ifLyBo-tBiRrqqg">
+              </div>
+
+              <!-- Floating Glass Badge 1 (Bottom Left) -->
+              <div class="absolute bottom-4 left-4 z-20 px-3.5 py-2 rounded-xl bg-white/95 backdrop-blur-md text-[#0B3B24] border border-white/50 shadow-lg flex items-center gap-2">
+                <div class="w-7 h-7 rounded-lg bg-[#0B3B24] text-white flex items-center justify-center shrink-0 font-bold text-xs">SUS</div>
+                <div class="flex flex-col">
+                  <span class="text-[11px] font-bold uppercase leading-tight font-headline">100% Inox SUS 304</span>
+                  <span class="text-[10px] text-slate-500 leading-tight">Cắt CNC Fiber &amp; Hàn TIG vi sinh</span>
                 </div>
               </div>
 
-              <!-- Action Link -->
-              <div class="pt-2 flex items-center justify-between text-xs">
-                <a href="#thong-so-ky-thuat" class="text-[#F59E0B] hover:text-amber-400 font-semibold flex items-center gap-1 font-sans">
-                  <span>Tra cứu bảng thông số kỹ thuật</span>
-                  <span class="material-symbols-outlined text-[15px]">arrow_forward</span>
-                </a>
-                <span class="text-gray-400 font-mono text-[11px]">ISO 22000 CERT</span>
+              <!-- Floating Glass Badge 2 (Bottom Right) -->
+              <div class="absolute bottom-4 right-4 z-20 px-3 py-2 rounded-xl bg-[#0B3B24]/90 backdrop-blur-md text-white border border-[#144d32] shadow-lg flex items-center gap-1.5 text-xs font-semibold">
+                <span class="material-symbols-outlined text-[16px] text-[#F59E0B]">military_tech</span>
+                <span>Sở Hữu Trí Tuệ MS-20</span>
               </div>
+            </div>
 
+            <!-- 3 Engineering Anchors Below Image -->
+            <div class="mt-4 grid grid-cols-3 gap-2.5 text-center">
+              <div class="p-2.5 rounded-xl bg-white border border-gray-200/80 shadow-xs">
+                <span class="block text-xs font-bold text-[#0B3B24] font-headline">Inox 304 / 316L</span>
+                <span class="text-[10px] text-slate-500">Dày 2.0 - 3.5mm</span>
+              </div>
+              <div class="p-2.5 rounded-xl bg-white border border-gray-200/80 shadow-xs">
+                <span class="block text-xs font-bold text-[#B45309] font-headline">PLC Siemens</span>
+                <span class="text-[10px] text-slate-500">Màn hình HMI cảm ứng</span>
+              </div>
+              <div class="p-2.5 rounded-xl bg-white border border-gray-200/80 shadow-xs">
+                <span class="block text-xs font-bold text-emerald-700 font-headline">Bảo Hành 24T</span>
+                <span class="text-[10px] text-slate-500">Linh kiện thay thế sẵn</span>
+              </div>
             </div>
           </div>
-
         </div>
-      </div>
-    </section>
+      </div></section>
 
     <!-- SECTION 2: SPOTLIGHT TECHNOLOGY SHOWCASE MS-20 (FLAGSHIP PLANT) -->
     <section class="py-16 lg:py-24 bg-slate-50/70 border-b border-gray-200/80" data-reveal="up">
@@ -385,7 +377,7 @@
         <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-stretch">
           
           <!-- Visual Side (7 cols) -->
-          <div class="lg:col-span-7 flex flex-col bg-white rounded-2xl border border-gray-200/90 shadow-sm overflow-hidden justify-between">
+          <div class="lg:col-span-7 flex flex-col bg-white rounded-2xl border border-gray-200/90 shadow-sm overflow-hidden justify-between" data-reveal="left">
             <div class="relative w-full h-[380px] sm:h-[460px] overflow-hidden bg-gray-900 group">
               <img class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" 
                    alt="Hệ thống buồng sấy nông sản công nghiệp MS-20 Cường Thịnh tại phòng sạch Tam Đường Lai Châu" 
@@ -431,7 +423,7 @@
           </div>
 
           <!-- 3 Value Proposition Cards (5 cols) -->
-          <div class="lg:col-span-5 flex flex-col justify-between gap-4">
+          <div class="lg:col-span-5 flex flex-col justify-between gap-4" data-reveal="right">
             
             <!-- Card 1 -->
             <div class="bg-white p-6 sm:p-7 rounded-2xl border border-gray-200/90 shadow-sm flex flex-col gap-2.5 hover:shadow-md transition-shadow">
@@ -647,7 +639,7 @@
         <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
           
           <!-- Machine Card 1: Roaster -->
-          <div class="bg-white rounded-2xl border border-gray-200/90 shadow-sm overflow-hidden flex flex-col justify-between hover:shadow-lg transition-shadow">
+          <div class="bg-white rounded-2xl border border-gray-200/90 shadow-sm overflow-hidden flex flex-col justify-between hover:shadow-lg transition-shadow" data-reveal="up" data-reveal-delay="100">
             <div>
               <div class="relative h-56 bg-gray-900 overflow-hidden group">
                 <img class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" 
@@ -690,7 +682,7 @@
           </div>
 
           <!-- Machine Card 2: De-huller & Sorter -->
-          <div class="bg-white rounded-2xl border border-gray-200/90 shadow-sm overflow-hidden flex flex-col justify-between hover:shadow-lg transition-shadow">
+          <div class="bg-white rounded-2xl border border-gray-200/90 shadow-sm overflow-hidden flex flex-col justify-between hover:shadow-lg transition-shadow" data-reveal="up" data-reveal-delay="100">
             <div>
               <div class="relative h-56 bg-gray-900 overflow-hidden group">
                 <img class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" 
@@ -733,7 +725,7 @@
           </div>
 
           <!-- Machine Card 3: Vacuum Packer -->
-          <div class="bg-white rounded-2xl border border-gray-200/90 shadow-sm overflow-hidden flex flex-col justify-between hover:shadow-lg transition-shadow">
+          <div class="bg-white rounded-2xl border border-gray-200/90 shadow-sm overflow-hidden flex flex-col justify-between hover:shadow-lg transition-shadow" data-reveal="up" data-reveal-delay="100">
             <div>
               <div class="relative h-56 bg-gray-900 overflow-hidden group">
                 <img class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" 
@@ -801,7 +793,7 @@
         <!-- 4 Assurance Pillars Grid -->
         <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
           
-          <div class="bg-slate-50/80 rounded-2xl p-6 border border-gray-200/80 hover:border-emerald-300 hover:shadow-md transition-all flex flex-col gap-3 group">
+          <div class="bg-slate-50/80 rounded-2xl p-6 border border-gray-200/80 hover:border-emerald-300 hover:shadow-md transition-all flex flex-col gap-3 group" data-reveal="up" data-reveal-delay="100">
             <div class="w-12 h-12 rounded-xl bg-white border border-gray-200 flex items-center justify-center text-[#0B3B24] shadow-xs group-hover:scale-105 transition-transform">
               <span class="material-symbols-outlined text-[26px]">view_in_ar</span>
             </div>
@@ -811,7 +803,7 @@
             </p>
           </div>
 
-          <div class="bg-slate-50/80 rounded-2xl p-6 border border-gray-200/80 hover:border-emerald-300 hover:shadow-md transition-all flex flex-col gap-3 group">
+          <div class="bg-slate-50/80 rounded-2xl p-6 border border-gray-200/80 hover:border-emerald-300 hover:shadow-md transition-all flex flex-col gap-3 group" data-reveal="up" data-reveal-delay="100">
             <div class="w-12 h-12 rounded-xl bg-white border border-gray-200 flex items-center justify-center text-[#0B3B24] shadow-xs group-hover:scale-105 transition-transform">
               <span class="material-symbols-outlined text-[26px]">school</span>
             </div>
@@ -821,7 +813,7 @@
             </p>
           </div>
 
-          <div class="bg-slate-50/80 rounded-2xl p-6 border border-gray-200/80 hover:border-amber-300 hover:shadow-md transition-all flex flex-col gap-3 group">
+          <div class="bg-slate-50/80 rounded-2xl p-6 border border-gray-200/80 hover:border-amber-300 hover:shadow-md transition-all flex flex-col gap-3 group" data-reveal="up" data-reveal-delay="300">
             <div class="w-12 h-12 rounded-xl bg-white border border-gray-200 flex items-center justify-center text-[#D97706] shadow-xs group-hover:scale-105 transition-transform">
               <span class="material-symbols-outlined text-[26px]">home_repair_service</span>
             </div>
@@ -831,7 +823,7 @@
             </p>
           </div>
 
-          <div class="bg-slate-50/80 rounded-2xl p-6 border border-gray-200/80 hover:border-emerald-300 hover:shadow-md transition-all flex flex-col gap-3 group">
+          <div class="bg-slate-50/80 rounded-2xl p-6 border border-gray-200/80 hover:border-emerald-300 hover:shadow-md transition-all flex flex-col gap-3 group" data-reveal="up" data-reveal-delay="100">
             <div class="w-12 h-12 rounded-xl bg-white border border-gray-200 flex items-center justify-center text-[#0B3B24] shadow-xs group-hover:scale-105 transition-transform">
               <span class="material-symbols-outlined text-[26px]">verified_user</span>
             </div>
@@ -846,45 +838,81 @@
       </div>
     </section>
 
-    <!-- SECTION 6: HIGH-CONVERSION B2B RFQ BOX -->
-    <section class="py-16 lg:py-20 bg-[#0B3B24] text-white relative overflow-hidden" data-reveal="up">
-      <div class="absolute inset-0 bg-gradient-to-r from-[#0B3B24] via-[#144d32] to-[#0B3B24] opacity-90 pointer-events-none"></div>
-      <div class="absolute -right-12 -bottom-12 w-96 h-96 bg-amber-500/10 rounded-full blur-3xl pointer-events-none"></div>
+    <!-- SECTION 6: EXECUTIVE B2B CTA BANNER -->
+    <section class="py-16 lg:py-24 bg-white" data-reveal="up" id="rfq-section">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="rounded-3xl bg-gradient-to-r from-[#0B3B24] via-[#0E492D] to-[#0B3B24] text-white p-8 sm:p-12 lg:p-16 shadow-2xl border border-[#144d32] relative overflow-hidden">
+          <!-- Ambient Glow -->
+          <div class="absolute -right-24 -top-24 w-96 h-96 bg-emerald-500/10 rounded-full blur-3xl pointer-events-none"></div>
+          <div class="absolute -left-24 -bottom-24 w-96 h-96 bg-amber-500/10 rounded-full blur-3xl pointer-events-none"></div>
 
-      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-        <div class="flex flex-col lg:flex-row lg:items-center justify-between gap-8">
-          
-          <div class="flex flex-col gap-4 max-w-2xl">
-            <span class="inline-flex items-center gap-2 px-3 py-1 bg-white/10 backdrop-blur-md rounded-full text-xs font-semibold uppercase tracking-wider text-emerald-200 self-start">
-              <span class="material-symbols-outlined text-[16px] text-[#F59E0B]">engineering</span>
-              PHÒNG DỰ ÁN &amp; CHUYỂN GIAO CÔNG NGHỆ CƯỜNG THỊNH
-            </span>
-            <h2 class="font-headline text-3xl sm:text-4xl font-extrabold text-white tracking-tight leading-tight">
-              Cần tư vấn thiết kế dây chuyền sấy theo quy mô xưởng của bạn?
-            </h2>
-            <p class="text-base sm:text-lg text-emerald-100 leading-relaxed">
-              Đội ngũ kỹ sư Cường Thịnh sẵn sàng phân tích sản lượng vùng nguyên liệu và tính toán bài toán đầu tư hoàn vốn tối ưu nhất cho doanh nghiệp hoặc Hợp tác xã của bạn.
-            </p>
+          <div class="relative z-10 grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 items-center">
+            
+            <!-- Left Info (7 cols) -->
+            <div class="lg:col-span-7 flex flex-col gap-6">
+              <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-white/10 backdrop-blur-md border border-white/15 w-fit">
+                <span class="w-2 h-2 rounded-full bg-[#F59E0B] animate-pulse"></span>
+                <span class="text-xs font-bold tracking-widest uppercase text-amber-300 font-headline">Phòng Dự Án &amp; Chuyển Giao Công Nghệ</span>
+              </div>
+
+              <h2 class="text-3xl sm:text-4xl lg:text-5xl font-extrabold text-white tracking-tight font-headline leading-tight">
+                Cần Tư Vấn Thiết Kế Dây Chuyền Sấy Theo Quy Mô Xưởng Của Bạn?
+              </h2>
+
+              <p class="text-base sm:text-lg text-gray-200 leading-relaxed max-w-2xl">
+                Đội ngũ kỹ sư cơ điện Đại học Bách Khoa sẵn sàng khảo sát thực địa, tính toán bài toán đầu tư hoàn vốn và thiết kế layout 3D tối ưu cho nhà xưởng của Quý Doanh nghiệp &amp; HTX.
+              </p>
+
+              <!-- 3 SLA Commitments -->
+              <div class="grid grid-cols-1 sm:grid-cols-3 gap-3 pt-2">
+                <div class="flex items-center gap-2.5 p-3 rounded-xl bg-white/5 border border-white/10">
+                  <span class="material-symbols-outlined text-[20px] text-[#F59E0B] shrink-0">timer</span>
+                  <span class="text-xs text-gray-200 font-medium">Báo giá chi tiết trong <strong>2 giờ</strong></span>
+                </div>
+                <div class="flex items-center gap-2.5 p-3 rounded-xl bg-white/5 border border-white/10">
+                  <span class="material-symbols-outlined text-[20px] text-[#F59E0B] shrink-0">view_in_ar</span>
+                  <span class="text-xs text-gray-200 font-medium">Thiết kế Layout 3D <strong>tận nơi</strong></span>
+                </div>
+                <div class="flex items-center gap-2.5 p-3 rounded-xl bg-white/5 border border-white/10">
+                  <span class="material-symbols-outlined text-[20px] text-[#F59E0B] shrink-0">lock</span>
+                  <span class="text-xs text-gray-200 font-medium">Cam kết bảo mật NDA <strong>100%</strong></span>
+                </div>
+              </div>
+            </div>
+
+            <!-- Right Action Box (5 cols) -->
+            <div class="lg:col-span-5 flex flex-col gap-4 bg-white/10 backdrop-blur-md p-6 sm:p-8 rounded-2xl border border-white/20 shadow-xl">
+              <span class="text-xs font-bold uppercase tracking-wider text-amber-300 font-headline">Hành Động Trọng Tâm</span>
+              
+              <a href="../b_o_gi_rfq_li_n_h_c_ng_th_nh_tech_agro/code.html" class="flex items-center justify-between px-6 py-4 rounded-xl bg-gradient-to-r from-[#D97706] to-[#B45309] hover:from-[#B45309] hover:to-[#92400E] text-white font-bold text-base shadow-lg hover:shadow-xl transition-all transform hover:-translate-y-0.5 group">
+                <div class="flex items-center gap-3">
+                  <span class="material-symbols-outlined text-[24px]">assignment_turned_in</span>
+                  <span>Nhận Báo Giá RFQ Dây Chuyền MS-20</span>
+                </div>
+                <span class="material-symbols-outlined text-[20px] group-hover:translate-x-1 transition-transform">arrow_forward</span>
+              </a>
+
+              <a href="#thong-so-ky-thuat" class="flex items-center justify-between px-6 py-4 rounded-xl bg-white text-slate-800 hover:bg-slate-100 font-bold text-sm sm:text-base border border-gray-200 shadow-md transition-all group">
+                <div class="flex items-center gap-3">
+                  <span class="material-symbols-outlined text-[22px] text-[#0B3B24]">description</span>
+                  <span>Xem Datasheet Kỹ Thuật Tiêu Chuẩn</span>
+                </div>
+                <span class="material-symbols-outlined text-[18px] text-slate-400 group-hover:translate-x-1 transition-transform">arrow_forward</span>
+              </a>
+
+              <div class="flex items-center justify-between pt-2 border-t border-white/15 text-xs text-gray-300">
+                <span>Hotline Kỹ Sư Trưởng:</span>
+                <a href="tel:0932050101" class="text-amber-300 hover:text-white font-bold inline-flex items-center gap-1">
+                  <span class="material-symbols-outlined text-[16px]">call</span>
+                  0932.050101
+                </a>
+              </div>
+            </div>
+
           </div>
-
-          <div class="flex flex-col sm:flex-row lg:flex-col gap-3.5 shrink-0">
-            <a class="inline-flex items-center justify-center gap-2 px-7 py-4 bg-gradient-to-r from-[#D97706] to-[#B45309] hover:from-[#B45309] hover:to-[#92400E] text-white rounded-xl font-headline text-sm font-bold shadow-lg hover:shadow-xl transition-all transform hover:-translate-y-0.5" 
-               href="../b_o_gi_rfq_li_n_h_c_ng_th_nh_tech_agro/code.html">
-              <span class="material-symbols-outlined text-[20px]">request_quote</span>
-              <span>Yêu Cầu Báo Giá RFQ Dây Chuyền</span>
-            </a>
-            <a class="inline-flex items-center justify-center gap-2 px-7 py-3.5 bg-white text-[#0B3B24] hover:bg-emerald-50 rounded-xl font-headline text-sm font-bold shadow-md hover:shadow-lg transition-all" 
-               href="tel:0932050101">
-              <span class="material-symbols-outlined text-[18px] text-[#0B3B24]">phone_in_talk</span>
-              <span>Hotline Kỹ Sư Trưởng: 0932.050101</span>
-            </a>
-          </div>
-
         </div>
       </div>
-    </section>
-
-  </main>
+    </section></main>
 
   <!-- ==================== MASTER 4-COLUMN FOOTER ==================== -->
   <footer class="w-full bg-[#111827] text-gray-300 pt-16 pb-8 shadow-[0_-2px_12px_rgba(0,0,0,0.06)] border-t border-gray-800">
