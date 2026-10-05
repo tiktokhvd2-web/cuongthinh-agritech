@@ -1,0 +1,710 @@
+<!DOCTYPE html><html lang="vi"><head><meta charset="utf-8"><meta content="width=device-width, initial-scale=1.0" name="viewport"><meta content="web_standard" name="shell-type"><link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" rel="stylesheet"><link href="https://fonts.googleapis.com" rel="preconnect"><link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"><link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&amp;family=Space+Grotesk:wght@500;600;700&amp;display=swap" rel="stylesheet"><link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"><style>@layer base{html,body{margin:0;padding:0;}body{overscroll-behavior:none;}main>:first-child{margin-top:0!important;}main>:last-child{margin-bottom:0!important;}}::-webkit-scrollbar{display:none;}</style><script src="https://cdn.tailwindcss.com"></script><script id="tailwind-config">tailwind.config = {
+    darkMode: "class",
+    theme: {
+      extend: {
+        "colors": {
+          "surface": "#fcfaec",
+          "surface-tint": "#2f6947",
+          "primary-fixed-dim": "#97d4aa",
+          "on-error-container": "#93000a",
+          "on-secondary-fixed": "#2f1500",
+          "on-background": "#1c1c14",
+          "outline": "#707971",
+          "surface-dim": "#dcdacd",
+          "secondary-container": "#fe932c",
+          "on-error": "#ffffff",
+          "primary-fixed": "#b2f1c5",
+          "on-primary-fixed-variant": "#125131",
+          "secondary": "#904d00",
+          "surface-bright": "#fcfaec",
+          "on-surface": "#1c1c14",
+          "secondary-fixed-dim": "#ffb77d",
+          "on-tertiary-fixed-variant": "#3e4755",
+          "on-secondary-fixed-variant": "#6e3900",
+          "background": "#fcfaec",
+          "secondary-fixed": "#ffdcc3",
+          "outline-variant": "#c0c9bf",
+          "inverse-on-surface": "#f3f1e3",
+          "error-container": "#ffdad6",
+          "tertiary-container": "#485260",
+          "surface-variant": "#e5e3d5",
+          "on-secondary-container": "#663500",
+          "surface-container-high": "#eae9db",
+          "on-primary-fixed": "#002110",
+          "on-primary": "#ffffff",
+          "inverse-surface": "#313128",
+          "primary-container": "#205c3b",
+          "tertiary-fixed": "#d9e3f4",
+          "tertiary": "#313b48",
+          "on-primary-container": "#95d2a8",
+          "primary": "#004426",
+          "surface-container-low": "#f6f4e6",
+          "inverse-primary": "#97d4aa",
+          "on-tertiary-fixed": "#121c28",
+          "tertiary-fixed-dim": "#bdc7d8",
+          "surface-container": "#f0eee0",
+          "error": "#ba1a1a",
+          "on-tertiary": "#ffffff",
+          "on-secondary": "#ffffff",
+          "surface-container-lowest": "#ffffff",
+          "surface-container-highest": "#e5e3d5",
+          "on-surface-variant": "#404942",
+          "on-tertiary-container": "#bbc5d6"
+        },
+        "borderRadius": {
+          "DEFAULT": "0.125rem",
+          "lg": "0.25rem",
+          "xl": "0.5rem",
+          "full": "0.75rem"
+        },
+        "spacing": {
+          "space-md": "1rem",
+          "space-lg": "1.5rem",
+          "gutter": "1.5rem",
+          "space-sm": "0.5rem",
+          "margin": "3rem",
+          "space-xs": "0.25rem",
+          "gutter-mobile": "0.75rem",
+          "margin-mobile": "1rem",
+          "space-xl": "2.5rem"
+        },
+        "fontFamily": {
+          "label-lg": ["Space Grotesk"],
+          "headline-sm": ["Space Grotesk"],
+          "headline-xl": ["Space Grotesk"],
+          "headline-xl-mobile": ["Space Grotesk"],
+          "headline-md": ["Space Grotesk"],
+          "headline-lg": ["Space Grotesk"],
+          "body-sm": ["Inter"],
+          "body-lg": ["Inter"],
+          "display-lg-mobile": ["Space Grotesk"],
+          "label-md": ["Space Grotesk"],
+          "display-lg": ["Space Grotesk"],
+          "body-md": ["Inter"],
+          "label-sm": ["Space Grotesk"]
+        },
+        "fontSize": {
+          "label-lg": ["14px", {"lineHeight": "18px", "letterSpacing": "0.04em", "fontWeight": "600"}],
+          "headline-sm": ["18px", {"lineHeight": "24px", "fontWeight": "600"}],
+          "headline-xl": ["40px", {"lineHeight": "48px", "letterSpacing": "-0.02em", "fontWeight": "600"}],
+          "headline-xl-mobile": ["28px", {"lineHeight": "36px", "letterSpacing": "-0.01em", "fontWeight": "600"}],
+          "headline-md": ["22px", {"lineHeight": "28px", "fontWeight": "600"}],
+          "headline-lg": ["30px", {"lineHeight": "38px", "letterSpacing": "-0.01em", "fontWeight": "600"}],
+          "body-sm": ["13px", {"lineHeight": "18px", "fontWeight": "400"}],
+          "body-lg": ["18px", {"lineHeight": "28px", "fontWeight": "400"}],
+          "display-lg-mobile": ["36px", {"lineHeight": "44px", "letterSpacing": "-0.02em", "fontWeight": "700"}],
+          "label-md": ["12px", {"lineHeight": "16px", "letterSpacing": "0.05em", "fontWeight": "500"}],
+          "display-lg": ["56px", {"lineHeight": "64px", "letterSpacing": "-0.03em", "fontWeight": "700"}],
+          "body-md": ["15px", {"lineHeight": "22px", "fontWeight": "400"}],
+          "label-sm": ["10px", {"lineHeight": "14px", "letterSpacing": "0.08em", "fontWeight": "600"}]
+        }
+      },
+    },
+  }</script></head><body class="bg-background font-body-md text-on-surface antialiased"><header class="fixed top-0 left-0 right-0 z-50 bg-surface/90 backdrop-blur-md shadow-[0_1px_8px_rgba(0,0,0,0.04)]"><div class="w-full px-margin-mobile md:px-margin bg-primary text-on-primary py-space-xs"><div class="flex flex-wrap items-center justify-between text-label-sm font-label-sm uppercase tracking-wider"><span>Mã số DN: 0315249826 | Chứng chỉ: ISO 22000 &amp; HACCP Ready</span><div class="flex items-center gap-space-lg"><span>Hotline B2B: 0932.050101</span><span class="hidden sm:inline">Tiêu chuẩn: ISO 22000 • HACCP • FDA • OCOP 4 Sao</span></div></div></div><div class="h-20 w-full px-margin-mobile md:px-margin flex items-center justify-between"><a class="flex items-center gap-space-md" data-path="trang-chu" href="index.html"><img alt="Cường Thịnh Tech &amp; Agro Logo" class="h-8 w-auto object-contain" src="https://lh3.googleusercontent.com/aida/AEtjO1VK5_VNetglE_tANgi4cKm0v73o6jU4CBXFCSd2PBG0Z8maVFndGk_yUzhL1ifWoMypuh1vXcB_8O3ltfgn_fxearV103q2fi2I7qEK9T7atlPDZPVamElBfjCHsP6AfUSU_XFScjO8Ws2ECdNf1dJWuDqLHbtQ4Sv9fqGxc19n-daaR_ipE2OiIILMGUAuA2kwbmjRBQsuKBlLEozaUpn8jMc711824S1_87xf9Z18wJDIWFFuBF2tVjE"><div class="flex flex-col"><span class="font-headline-sm text-headline-sm text-primary tracking-tight leading-none">CƯỜNG THỊNH</span><span class="font-label-sm text-label-sm text-on-surface-variant tracking-wider uppercase mt-0.5">Tech &amp; Agro Processing</span></div></a><nav class="hidden lg:flex items-center gap-space-xs p-1" data-active-classes="bg-primary-container text-on-primary font-bold rounded-lg shadow-sm"><a class="px-3 py-2 font-label-lg text-label-lg text-on-surface-variant hover:text-on-surface transition-colors rounded-lg" data-path="trang-chu" href="index.html">Trang chủ</a><a class="px-3 py-2 font-label-lg text-label-lg text-on-surface-variant hover:text-on-surface transition-colors rounded-lg" data-path="gioi-thieu" href="gioi-thieu.html">Giới thiệu</a><a class="px-3 py-2 font-label-lg text-label-lg text-on-surface-variant hover:text-on-surface transition-colors rounded-lg" data-path="linh-vuc-cong-nghe" href="linh-vuc-cong-nghe.html">Lĩnh vực &amp; Công nghệ</a><a class="px-3 py-2 font-label-lg text-label-lg text-on-surface-variant hover:text-on-surface transition-colors rounded-lg" data-path="nong-san-chu-luc" href="nong-san-chu-luc.html">Nông sản chủ lực</a><a class="px-3 py-2 font-label-lg text-label-lg text-on-surface-variant hover:text-on-surface transition-colors rounded-lg" data-path="du-an-htx" href="du-an-htx.html">Dự án &amp; HTX</a><a class="px-3 py-2 font-label-lg text-label-lg text-on-surface-variant hover:text-on-surface transition-colors rounded-lg" data-path="tin-tuc-tai-lieu" href="index.html#rfq-section">Tin tức &amp; Tài liệu</a></nav><div class="flex items-center gap-space-md"><a class="inline-flex items-center px-4 py-2 bg-secondary text-on-secondary font-label-lg text-label-lg rounded-lg shadow-sm hover:bg-on-secondary-container transition-colors ring-2 ring-secondary-fixed ring-offset-2" data-path="bao-gia-rfq-lien-he" href="bao-gia-rfq.html">Yêu cầu báo giá RFQ</a><div class="w-8 h-8 rounded-full bg-primary flex items-center justify-center"><span class="material-symbols-outlined text-on-primary text-[18px]">person</span></div>
+<button id="mobile-menu-toggle" class="xl:hidden lg:hidden flex items-center justify-center p-2 rounded-lg text-primary hover:bg-surface-container-high transition-colors" aria-label="Mở menu điều hướng">
+  <span class="material-symbols-outlined text-[26px]">menu</span>
+</button>
+</div></div></header><main class="w-full pt-20 bg-background min-h-[calc(100vh-280px)]"><div class="flex flex-col w-full">
+<!-- 1. BREADCRUMB & HEADER SECTION -->
+<section class="w-full px-margin-mobile md:px-margin pt-space-md pb-space-lg bg-surface-container-low">
+<div class="max-w-7xl mx-auto flex flex-col gap-space-md">
+<!-- Breadcrumb -->
+<nav aria-label="Breadcrumb" class="flex items-center gap-space-xs text-label-sm font-label-sm text-on-surface-variant uppercase tracking-wider">
+<a class="hover:text-primary transition-colors" href="index.html">Trang chủ</a>
+<span class="material-symbols-outlined text-[14px]">chevron_right</span>
+<span class="text-primary font-semibold">Liên hệ &amp; Yêu cầu báo giá RFQ</span>
+</nav>
+<!-- Trust Badges Strip -->
+<div class="grid grid-cols-2 md:grid-cols-4 gap-space-sm pt-space-xs">
+<div class="flex items-center gap-space-xs bg-surface-container px-3 py-2 rounded shadow-sm">
+<span class="material-symbols-outlined text-primary text-[18px]">schedule</span>
+<span class="font-label-sm text-label-sm text-on-surface uppercase">Phản hồi báo giá trong 24h</span>
+</div>
+<div class="flex items-center gap-space-xs bg-surface-container px-3 py-2 rounded shadow-sm">
+<span class="material-symbols-outlined text-primary text-[18px]">verified_user</span>
+<span class="font-label-sm text-label-sm text-on-surface uppercase">Bảo mật thông tin theo NDA</span>
+</div>
+<div class="flex items-center gap-space-xs bg-surface-container px-3 py-2 rounded shadow-sm">
+<span class="material-symbols-outlined text-primary text-[18px]">pin_drop</span>
+<span class="font-label-sm text-label-sm text-on-surface uppercase">Khảo sát mặt bằng toàn quốc</span>
+</div>
+<div class="flex items-center gap-space-xs bg-surface-container px-3 py-2 rounded shadow-sm">
+<span class="material-symbols-outlined text-primary text-[18px]">engineering</span>
+<span class="font-label-sm text-label-sm text-on-surface uppercase">Kỹ sư cơ điện trực tiếp</span>
+</div>
+</div>
+<!-- Main Headline Content -->
+<div class="pt-space-sm">
+<span class="inline-block px-2.5 py-1 bg-primary text-on-primary font-label-sm text-label-sm uppercase rounded tracking-widest mb-2">B2B Procurement &amp; Engineering Consulting</span>
+<h1 class="font-headline-xl text-headline-xl text-primary uppercase tracking-tight">YÊU CẦU BÁO GIÁ (RFQ) &amp; LIÊN HỆ CÔNG TÁC</h1>
+<p class="font-body-lg text-body-lg text-on-surface-variant max-w-4xl mt-2 leading-relaxed">
+          Đội ngũ kỹ sư chế tạo máy và chuyên viên phát triển nông sản Cường Thịnh sẵn sàng phân tích dự toán, cung cấp hồ sơ kỹ thuật và đồng hành thực địa cùng Quý Doanh nghiệp &amp; Hợp tác xã.
+        </p>
+</div>
+</div>
+</section>
+<!-- 2. SPLIT LAYOUT (RFQ FORM LEFT / CORPORATE COORDINATES RIGHT) -->
+<section class="w-full px-margin-mobile md:px-margin py-space-xl bg-background">
+<div class="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-12 gap-space-xl">
+<!-- LEFT COLUMN: RFQ Interactive Form (7 Cols) -->
+<div class="lg:col-span-7 bg-surface-container-lowest p-space-md md:p-space-lg rounded-xl shadow-md flex flex-col gap-space-lg">
+<!-- Form Header -->
+<div class="flex flex-wrap items-center justify-between pb-space-sm bg-surface-container-low p-space-md rounded-lg">
+<div class="flex items-center gap-space-xs">
+<span class="material-symbols-outlined text-primary text-[22px]">assignment</span>
+<div>
+<div class="font-headline-sm text-headline-sm text-primary uppercase">Tiếp nhận yêu cầu B2B &amp; Khảo sát HTX</div>
+<div class="font-label-sm text-label-sm text-on-surface-variant">Hệ thống xử lý hồ sơ thầu &amp; giải pháp tự động hóa</div>
+</div>
+</div>
+<span class="px-2.5 py-1 bg-surface-container-high text-on-surface-variant font-label-sm text-label-sm rounded uppercase tracking-wider">
+            Mã phiên: #RFQ-2026-ONLINE
+          </span>
+</div>
+<form class="flex flex-col gap-space-lg" id="rfqForm" onsubmit="event.preventDefault(); alert('Yêu cầu báo giá của bạn đã được ghi nhận. Kỹ sư phụ trách sẽ liên hệ qua Zalo/Điện thoại trong vòng 4 giờ!');">
+<!-- Step 1: Category Selector -->
+<div class="flex flex-col gap-space-xs">
+<label class="font-label-lg text-label-lg text-on-surface uppercase tracking-wide">
+              1. Lĩnh vực cần cung cấp giải pháp / Báo giá <span class="text-secondary">*</span>
+</label>
+<div class="grid grid-cols-1 sm:grid-cols-3 gap-space-xs pt-1" id="categoryPillContainer">
+<label class="category-radio flex flex-col p-3 rounded-lg cursor-pointer bg-primary-container text-on-primary transition-all shadow-sm">
+<input checked="" class="sr-only" name="project_type" onchange="updatePillStyles()" type="radio" value="machine">
+<span class="material-symbols-outlined text-[20px] mb-1">precision_manufacturing</span>
+<span class="font-label-sm text-label-sm uppercase font-semibold">Dây chuyền Cơ khí</span>
+<span class="text-[11px] opacity-90 leading-tight mt-0.5">MS-20, tách vỏ, máy rang Inox</span>
+</label>
+<label class="category-radio flex flex-col p-3 rounded-lg cursor-pointer bg-surface-container text-on-surface transition-all hover:bg-surface-variant">
+<input class="sr-only" name="project_type" onchange="updatePillStyles()" type="radio" value="agro">
+<span class="material-symbols-outlined text-[20px] mb-1">agriculture</span>
+<span class="font-label-sm text-label-sm uppercase font-semibold">Nông sản giá sỉ</span>
+<span class="text-[11px] opacity-80 leading-tight mt-0.5">Macca, Cà phê Arabica, Quế &amp; Hồi</span>
+</label>
+<label class="category-radio flex flex-col p-3 rounded-lg cursor-pointer bg-surface-container text-on-surface transition-all hover:bg-surface-variant">
+<input class="sr-only" name="project_type" onchange="updatePillStyles()" type="radio" value="coop">
+<span class="material-symbols-outlined text-[20px] mb-1">published_with_changes</span>
+<span class="font-label-sm text-label-sm uppercase font-semibold">Dự án HTX &amp; OCOP</span>
+<span class="text-[11px] opacity-80 leading-tight mt-0.5">Chuyển giao máy, vốn khuyến công</span>
+</label>
+</div>
+</div>
+<!-- Step 2: Form Fields -->
+<div class="flex flex-col gap-space-md">
+<div class="font-label-lg text-label-lg text-on-surface uppercase tracking-wide">
+              2. Thông tin pháp nhân &amp; Đầu mối liên hệ
+            </div>
+<div class="grid grid-cols-1 md:grid-cols-2 gap-space-md">
+<div class="flex flex-col gap-1">
+<label class="font-label-sm text-label-sm text-on-surface-variant uppercase">Họ và tên người đại diện <span class="text-secondary">*</span></label>
+<input class="w-full px-3 py-2 bg-surface-container-lowest text-on-surface text-body-md rounded focus:outline-none focus:ring-1 focus:ring-primary shadow-sm" placeholder="Ví dụ: Nguyễn Văn An" required="" type="text">
+</div>
+<div class="flex flex-col gap-1">
+<label class="font-label-sm text-label-sm text-on-surface-variant uppercase">Chức vụ / Bộ phận</label>
+<input class="w-full px-3 py-2 bg-surface-container-lowest text-on-surface text-body-md rounded focus:outline-none focus:ring-1 focus:ring-primary shadow-sm" placeholder="Ví dụ: Giám đốc / Trưởng phòng Mua hàng / Chủ nhiệm HTX" type="text">
+</div>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-2 gap-space-md">
+<div class="flex flex-col gap-1">
+<label class="font-label-sm text-label-sm text-on-surface-variant uppercase">Tên Công ty / HTX / Đơn vị <span class="text-secondary">*</span></label>
+<input class="w-full px-3 py-2 bg-surface-container-lowest text-on-surface text-body-md rounded focus:outline-none focus:ring-1 focus:ring-primary shadow-sm" placeholder="Ví dụ: Công ty CP Nông sản An Phát..." required="" type="text">
+</div>
+<div class="flex flex-col gap-1">
+<label class="font-label-sm text-label-sm text-on-surface-variant uppercase">Số điện thoại / Zalo kỹ thuật <span class="text-secondary">*</span></label>
+<input class="w-full px-3 py-2 bg-surface-container-lowest text-on-surface text-body-md rounded focus:outline-none focus:ring-1 focus:ring-primary shadow-sm" placeholder="09xx xxx xxx (Ưu tiên gửi hồ sơ Zalo)" required="" type="tel">
+</div>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-2 gap-space-md">
+<div class="flex flex-col gap-1">
+<label class="font-label-sm text-label-sm text-on-surface-variant uppercase">Email doanh nghiệp</label>
+<input class="w-full px-3 py-2 bg-surface-container-lowest text-on-surface text-body-md rounded focus:outline-none focus:ring-1 focus:ring-primary shadow-sm" placeholder="contact@company.com" type="email">
+</div>
+<div class="flex flex-col gap-1">
+<label class="font-label-sm text-label-sm text-on-surface-variant uppercase">Tỉnh / Thành phố triển khai <span class="text-secondary">*</span></label>
+<select class="w-full px-3 py-2 bg-surface-container-lowest text-on-surface text-body-md rounded focus:outline-none focus:ring-1 focus:ring-primary shadow-sm" required="">
+<option disabled="" selected="" value="">Chọn địa bàn khảo sát / giao hàng</option>
+<option value="laichau">Lai Châu (Nhà máy Tam Đường phụ trách)</option>
+<option value="dienbien">Điện Biên (Kho Mường Ảng phụ trách)</option>
+<option value="sonla">Sơn La (Đội cơ động Tây Bắc)</option>
+<option value="haiphong">Hải Phòng (Xưởng Đình Vũ xuất xưởng)</option>
+<option value="langson">Lạng Sơn (Hub cửa khẩu Văn Quan)</option>
+<option value="hanoi">Hà Nội &amp; Vùng Đồng Bằng</option>
+<option value="lamdong">Tây Nguyên / Lâm Đồng</option>
+<option value="other">Khu vực khác...</option>
+</select>
+</div>
+</div>
+<div class="flex flex-col gap-1">
+<label class="font-label-sm text-label-sm text-on-surface-variant uppercase">Nhu cầu / Sản lượng dự kiến / Quy mô chi tiết <span class="text-secondary">*</span></label>
+<textarea class="w-full p-3 bg-surface-container-lowest text-on-surface text-body-md rounded focus:outline-none focus:ring-1 focus:ring-primary shadow-sm resize-none" placeholder="Ví dụ: Cần báo giá buồng sấy MS-20 công suất 10-20 tấn/mẻ tại huyện Phong Thổ, hoặc nhu cầu mua sỉ 5 tấn Macca nứt vỏ giao tại cảng Hải Phòng kèm chứng chỉ kiểm định xuất khẩu..." required="" rows="4"></textarea>
+</div>
+<!-- File dropzone teaser -->
+<div class="flex flex-col items-center justify-center p-space-md bg-surface-container-low rounded-lg text-center cursor-pointer hover:bg-surface-variant transition-colors">
+<span class="material-symbols-outlined text-primary text-[28px] mb-1">upload_file</span>
+<p class="font-label-md text-label-md text-on-surface font-semibold">Đính kèm bản vẽ mặt bằng / Thông số kỹ thuật yêu cầu</p>
+<p class="font-body-sm text-body-sm text-on-surface-variant mt-0.5">Chấp nhận định dạng: PDF, DWG, PNG, XLSX (Tối đa 25MB)</p>
+</div>
+<!-- Instant Value Checkboxes -->
+<div class="flex flex-col gap-2 pt-1">
+<label class="flex items-start gap-2 cursor-pointer">
+<input checked="" class="mt-1 h-4 w-4 rounded text-primary focus:ring-0 accent-primary" type="checkbox">
+<span class="font-body-md text-body-md text-on-surface">Gửi ngay <strong>Catalog thông số kỹ thuật &amp; Dossier kiểm định MS-20</strong> qua Zalo/Email</span>
+</label>
+<label class="flex items-start gap-2 cursor-pointer">
+<input class="mt-1 h-4 w-4 rounded text-primary focus:ring-0 accent-primary" type="checkbox">
+<span class="font-body-md text-body-md text-on-surface">Đăng ký nhận mẫu thử nông sản sấy công nghệ cao miễn phí (200g - 500g tiêu chuẩn kiểm nghiệm)</span>
+</label>
+</div>
+</div>
+<!-- Security and CTA -->
+<div class="flex flex-col gap-space-sm pt-space-xs">
+<div class="flex items-center gap-2 text-label-sm font-label-sm text-on-surface-variant bg-surface-container px-3 py-2 rounded">
+<span class="material-symbols-outlined text-primary text-[18px]">gavel</span>
+<span>Cam kết bảo mật 100% bản vẽ quy hoạch, công thức chế biến &amp; sẵn sàng ký thỏa thuận bảo mật NDA trước khi khảo sát.</span>
+</div>
+<button class="w-full py-3.5 px-6 bg-secondary text-on-secondary font-headline-sm text-headline-sm uppercase tracking-wider rounded-lg shadow-md hover:bg-on-secondary-container transition-all flex items-center justify-center gap-2" type="submit">
+<span class="material-symbols-outlined text-[20px]">lock</span>
+<span>Gửi Yêu Cầu Báo Giá Chính Thức</span>
+<span class="material-symbols-outlined text-[20px]">arrow_forward</span>
+</button>
+<div class="text-center font-label-sm text-label-sm text-on-surface-variant flex items-center justify-center gap-2">
+<span class="text-primary font-bold">✓ 98.6%</span> yêu cầu được phản hồi dưới 4h • Hoàn toàn không phát sinh chi phí khảo sát mặt bằng ban đầu
+            </div>
+</div>
+</form>
+</div>
+<!-- RIGHT COLUMN: Direct Corporate Contacts & Facility Coordinates (5 Cols) -->
+<div class="lg:col-span-5 flex flex-col gap-space-lg">
+<!-- Card 1: Pháp Lý & Trụ Sở Doanh Nghiệp -->
+<div class="bg-surface-container-high p-space-md rounded-xl shadow-sm flex flex-col gap-space-sm">
+<div class="flex items-center gap-space-xs pb-space-xs">
+<span class="material-symbols-outlined text-primary text-[24px]">verified</span>
+<span class="font-headline-sm text-headline-sm text-primary uppercase">Pháp Lý &amp; Trụ Sở Điều Hành</span>
+</div>
+<div class="flex flex-col gap-1.5 font-body-sm text-body-sm text-on-surface">
+<div>
+<span class="font-semibold text-primary block">CÔNG TY TNHH SẢN XUẤT VÀ ỨNG DỤNG CÔNG NGHỆ THỰC PHẨM CƯỜNG THỊNH</span>
+<span class="text-on-surface-variant italic text-[12px]">CUONG THINH FOOD TECHNOLOGY AND NORTHWEST AGRO CO., LTD</span>
+</div>
+<div class="bg-surface-container-lowest p-2.5 rounded mt-1 flex flex-col gap-1">
+<div><strong>Mã số doanh nghiệp (MST):</strong> <span class="font-mono text-primary font-semibold">0315249826</span> (Cấp bởi Sở KH&amp;ĐT)</div>
+<div><strong>Hotline điều hành B2B:</strong> <a class="text-secondary font-bold hover:underline" href="tel:0932050101">0932.050101</a> (Trực Zalo 24/7)</div>
+<div><strong>Email tiếp nhận thầu &amp; RFQ:</strong> <span class="text-primary underline font-medium">b2b@cuongthinhagro.vn</span></div>
+<div><strong>Giờ làm việc:</strong> Thứ 2 – Thứ 7: 07:30 – 18:30 (Trực kỹ thuật cơ điện 24/7)</div>
+</div>
+</div>
+</div>
+<!-- Card 2: Hệ Thống Cơ Sở Chế Tạo & Nhà Máy Thực Tế -->
+<div class="bg-surface-container-lowest p-space-md rounded-xl shadow-md flex flex-col gap-space-md">
+<div class="flex items-center justify-between pb-space-xs">
+<span class="font-headline-sm text-headline-sm text-primary uppercase">Cơ Sở Sản Xuất Thực Địa</span>
+<span class="px-2 py-0.5 bg-primary text-on-primary font-label-sm text-label-sm uppercase rounded">3 Hubs Trọng Điểm</span>
+</div>
+<div class="flex flex-col gap-space-sm divide-y-0">
+<!-- Cơ sở 1 -->
+<div class="p-3 bg-surface-container rounded-lg">
+<div class="flex items-center gap-1.5 mb-1 text-primary font-label-sm text-label-sm uppercase font-bold">
+<span class="material-symbols-outlined text-[18px]">factory</span>
+                Cơ sở 1: Xưởng Chế Tạo Cơ Khí &amp; Buồng Sấy
+              </div>
+<p class="font-body-sm text-body-sm text-on-surface">Lô CN-08, Khu Công nghiệp Đình Vũ, Phường Đông Hải 2, Quận Hải An, TP. Hải Phòng.</p>
+<div class="mt-1 text-[11px] text-on-surface-variant font-medium">
+                • Gia công Inox SUS 304 tiêu chuẩn thực phẩm<br>
+                • Lắp ráp tủ điều khiển lập trình PLC &amp; Cắt Laser CNC
+              </div>
+</div>
+<!-- Cơ sở 2 -->
+<div class="p-3 bg-surface-container rounded-lg">
+<div class="flex items-center gap-1.5 mb-1 text-primary font-label-sm text-label-sm uppercase font-bold">
+<span class="material-symbols-outlined text-[18px]">energy_savings_leaf</span>
+                Cơ sở 2: Tổ Hợp Nhà Máy Sấy Macca &amp; Nông Sản
+              </div>
+<p class="font-body-sm text-body-sm text-on-surface">Km 14, Quốc lộ 4D, Xã Nùng Nàng, Huyện Tam Đường, Tỉnh Lai Châu.</p>
+<div class="mt-1 text-[11px] text-on-surface-variant font-medium">
+                • Vận hành buồng sấy MS-20 công suất 20 tấn/mẻ<br>
+                • Hệ thống phân loại hạt quang học, đóng gói chân không &amp; kho lạnh
+              </div>
+</div>
+<!-- Cơ sở 3 -->
+<div class="p-3 bg-surface-container rounded-lg">
+<div class="flex items-center gap-1.5 mb-1 text-primary font-label-sm text-label-sm uppercase font-bold">
+<span class="material-symbols-outlined text-[18px]">hub</span>
+                Cơ sở 3: Trạm Thu Mua &amp; Kho Vận Xuất Khẩu
+              </div>
+<p class="font-body-sm text-body-sm text-on-surface">Vùng cà phê Arabica Mường Ảng (Điện Biên) &amp; Trạm nông sản hồi quế Văn Quan (Lạng Sơn).</p>
+<div class="mt-1 text-[11px] text-on-surface-variant font-medium">
+                • Thu mua bao tiêu trực tiếp từ 40+ Hợp tác xã liên kết<br>
+                • Kiểm định độ ẩm và phân hạng tiêu chuẩn xuất khẩu
+              </div>
+</div>
+</div>
+</div>
+<!-- Card 3: Cam Kết Dịch Vụ Tận Nơi -->
+<div class="bg-primary text-on-primary p-space-md rounded-xl shadow-md flex items-start gap-space-sm">
+<span class="material-symbols-outlined text-secondary-fixed text-[36px] flex-shrink-0">handshake</span>
+<div>
+<div class="font-headline-sm text-headline-sm font-bold uppercase mb-1">Cam Kết Kỹ Thuật Tận Nơi</div>
+<p class="font-body-sm text-body-sm text-surface-container-high leading-relaxed">
+              Đội ngũ kỹ sư Cường Thịnh trực tiếp đến tận nhà xưởng hoặc vùng nguyên liệu của đối tác để đo đạc mặt bằng, kiểm tra nguồn điện 3 pha và tư vấn phương án khả thi nhất trong vòng <strong>48h - 72h</strong>.
+            </p>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- 3. INTERACTIVE EMBEDDED MAP & REGIONAL NETWORK -->
+<section class="w-full px-margin-mobile md:px-margin py-space-xl bg-surface-container">
+<div class="max-w-7xl mx-auto flex flex-col gap-space-lg">
+<div class="flex flex-col md:flex-row md:items-end justify-between gap-space-md">
+<div>
+<span class="px-2.5 py-1 bg-surface-container-highest text-primary font-label-sm text-label-sm uppercase rounded tracking-wider">Hạ Tầng Khép Kín • Cơ Khí Đến Vùng Trồng</span>
+<h2 class="font-headline-xl text-headline-xl text-primary uppercase mt-1">MẠNG LƯỚI HẠ TẦNG CƠ KHÍ &amp; NHÀ MÁY THỰC ĐỊA</h2>
+<p class="font-body-md text-body-md text-on-surface-variant max-w-3xl mt-1">
+            Kết nối trục Hải Phòng (Chế tạo máy móc Inox, cảng biển xuất khẩu) với mạng lưới nhà máy chế biến sâu nông sản tại Lai Châu, Điện Biên và cửa khẩu Lạng Sơn.
+          </p>
+</div>
+<!-- Interactive Hub Selector Tabs -->
+<div class="flex items-center gap-1 bg-surface-container-lowest p-1 rounded-lg shadow-sm" id="mapTabs">
+<button class="px-3 py-1.5 rounded font-label-sm text-label-sm uppercase font-semibold bg-primary text-on-primary transition-all" data-target="all" onclick="selectMapPin('all')" type="button">Toàn mạng lưới</button>
+<button class="px-3 py-1.5 rounded font-label-sm text-label-sm uppercase font-semibold text-on-surface hover:bg-surface-variant transition-all" data-target="haiphong" onclick="selectMapPin('haiphong')" type="button">Hải Phòng</button>
+<button class="px-3 py-1.5 rounded font-label-sm text-label-sm uppercase font-semibold text-on-surface hover:bg-surface-variant transition-all" data-target="laichau" onclick="selectMapPin('laichau')" type="button">Lai Châu</button>
+<button class="px-3 py-1.5 rounded font-label-sm text-label-sm uppercase font-semibold text-on-surface hover:bg-surface-variant transition-all" data-target="taybac" onclick="selectMapPin('taybac')" type="button">Điện Biên - Lạng Sơn</button>
+</div>
+</div>
+<!-- Stylized Visual Regional Grid & Route Visualization -->
+<div class="grid grid-cols-1 lg:grid-cols-12 gap-space-md">
+<!-- Interactive Node Visual Board (8 Cols) -->
+<div class="lg:col-span-8 bg-surface-container-lowest p-space-md rounded-xl shadow-md flex flex-col justify-between relative overflow-hidden min-h-[420px]">
+<!-- Top Telemetry Bar -->
+<div class="flex items-center justify-between pb-space-sm z-10">
+<div class="flex items-center gap-2">
+<span class="inline-block w-2.5 h-2.5 rounded-full bg-secondary animate-pulse"></span>
+<span class="font-label-sm text-label-sm uppercase text-primary font-bold">Hành trình Logistics Kỹ thuật: 420km Cung đường Cơ điện</span>
+</div>
+<span class="font-label-sm text-label-sm text-on-surface-variant bg-surface-container px-2 py-0.5 rounded">Vận chuyển máy chuyên dụng 24h</span>
+</div>
+<!-- Stylized Schematic SVG Network Map -->
+<div class="w-full flex-grow relative flex items-center justify-center py-space-md">
+<svg class="w-full h-72 text-primary" fill="none" viewBox="0 0 700 280" xmlns="http://www.w3.org/2000/svg">
+<!-- Route Lines -->
+<path class="opacity-40" d="M120 70 L340 140 L560 90" stroke="currentColor" stroke-dasharray="4 4" stroke-width="2"></path>
+<path class="opacity-40" d="M120 70 L140 210 L340 140" stroke="currentColor" stroke-dasharray="4 4" stroke-width="2"></path>
+<path class="text-secondary" d="M340 140 L520 220" stroke="currentColor" stroke-width="3"></path>
+<!-- Point A: Đình Vũ - Hải Phòng -->
+<g class="cursor-pointer map-node" id="node-haiphong" onclick="selectMapPin('haiphong')">
+<circle class="shadow-lg" cx="520" cy="220" fill="#004426" r="16"></circle>
+<circle class="animate-ping opacity-30" cx="520" cy="220" r="24" stroke="#fe932c" stroke-width="2"></circle>
+<circle cx="520" cy="220" fill="#ffffff" r="7"></circle>
+<text fill="#004426" font-family="Space Grotesk" font-size="13" font-weight="700" x="545" y="215">HUB HẢI PHÒNG (R&amp;D &amp; CƠ KHÍ)</text>
+<text fill="#404942" font-family="Inter" font-size="11" x="545" y="232">Gia công Inox Đình Vũ &amp; Cảng Xuất khẩu</text>
+</g>
+<!-- Point B: Tam Đường - Lai Châu -->
+<g class="cursor-pointer map-node" id="node-laichau" onclick="selectMapPin('laichau')">
+<circle cx="120" cy="70" fill="#004426" r="14"></circle>
+<circle cx="120" cy="70" fill="#95d2a8" r="6"></circle>
+<text fill="#004426" font-family="Space Grotesk" font-size="13" font-weight="700" x="145" y="65">NHÀ MÁY TAM ĐƯỜNG (LAI CHÂU)</text>
+<text fill="#404942" font-family="Inter" font-size="11" x="145" y="82">Cụm sấy Macca MS-20 (20 tấn/mẻ)</text>
+</g>
+<!-- Point C: Mường Ảng - Điện Biên -->
+<g class="cursor-pointer map-node" id="node-dienbien" onclick="selectMapPin('taybac')">
+<circle cx="140" cy="210" fill="#205c3b" r="12"></circle>
+<circle cx="140" cy="210" fill="#fcfaec" r="5"></circle>
+<text fill="#004426" font-family="Space Grotesk" font-size="12" font-weight="600" x="165" y="208">KHO ĐIỆN BIÊN</text>
+<text fill="#404942" font-family="Inter" font-size="10" x="165" y="224">Arabica Mường Ảng</text>
+</g>
+<!-- Point D: Văn Quan - Lạng Sơn -->
+<g class="cursor-pointer map-node" id="node-langson" onclick="selectMapPin('taybac')">
+<circle cx="560" cy="90" fill="#205c3b" r="12"></circle>
+<circle cx="560" cy="90" fill="#fcfaec" r="5"></circle>
+<text fill="#004426" font-family="Space Grotesk" font-size="12" font-weight="600" text-anchor="end" x="440" y="85">CỬA KHẨU LẠNG SƠN</text>
+<text fill="#404942" font-family="Inter" font-size="10" text-anchor="end" x="440" y="101">Quế Hồi Văn Quan</text>
+</g>
+<!-- Central Control Node (Hà Nội Coordination) -->
+<g class="cursor-pointer">
+<circle cx="340" cy="140" fill="#904d00" r="8"></circle>
+<text fill="#904d00" font-family="Space Grotesk" font-size="11" font-weight="600" x="355" y="145">Điều Phối Kỹ Thuật Miền Bắc</text>
+</g>
+</svg>
+</div>
+<!-- Bottom Real-time Data Indicator Bar -->
+<div class="grid grid-cols-3 gap-space-sm bg-surface-container-low p-space-sm rounded-lg text-center">
+<div>
+<div class="font-headline-sm text-headline-sm text-primary">24h - 48h</div>
+<div class="font-label-sm text-label-sm text-on-surface-variant">Kỹ sư đến hiện trường khảo sát</div>
+</div>
+<div>
+<div class="font-headline-sm text-headline-sm text-primary">100% Inox 304</div>
+<div class="font-label-sm text-label-sm text-on-surface-variant">Tiêu chuẩn thực phẩm HACCP</div>
+</div>
+<div>
+<div class="font-headline-sm text-headline-sm text-primary">12 - 24 Tháng</div>
+<div class="font-label-sm text-label-sm text-on-surface-variant">Bảo hành cơ điện trọn gói</div>
+</div>
+</div>
+</div>
+<!-- Right Side Location Spec Cards (4 Cols) -->
+<div class="lg:col-span-4 flex flex-col gap-space-sm" id="locationDetailsBox">
+<div class="bg-surface-container-lowest p-space-md rounded-xl shadow-sm flex flex-col justify-between flex-1">
+<div>
+<span class="px-2 py-0.5 bg-secondary-fixed text-on-secondary-fixed font-label-sm text-label-sm uppercase rounded font-bold">Xưởng chế tạo cơ khí</span>
+<h3 class="font-headline-sm text-headline-sm text-primary uppercase mt-1">ĐÌNH VŨ • HẢI PHÒNG</h3>
+<p class="font-body-sm text-body-sm text-on-surface-variant mt-1 leading-relaxed">
+                Nơi chế tạo buồng sấy MS-20, máy bóc vỏ hạt, hệ thống cân định lượng và kho linh kiện PLC chính hãng.
+              </p>
+<div class="mt-2 text-label-sm font-label-sm text-on-surface space-y-1">
+<div>• Quy mô xưởng: 2.800 m²</div>
+<div>• Năng lực: 15 tổ hợp buồng sấy/tháng</div>
+<div>• Cảng Logistics: Tiếp cận Cảng Đình Vũ 5km</div>
+</div>
+</div>
+<div class="pt-2 text-label-sm text-secondary font-bold flex items-center gap-1">
+<span class="material-symbols-outlined text-[16px]">call</span> Kỹ thuật xưởng: 0932.050101 (Mr. Tuấn)
+            </div>
+</div>
+<div class="bg-surface-container-lowest p-space-md rounded-xl shadow-sm flex flex-col justify-between flex-1">
+<div>
+<span class="px-2 py-0.5 bg-primary-fixed text-on-primary-fixed font-label-sm text-label-sm uppercase rounded font-bold">Nhà máy sấy công nghệ cao</span>
+<h3 class="font-headline-sm text-headline-sm text-primary uppercase mt-1">TAM ĐƯỜNG • LAI CHÂU</h3>
+<p class="font-body-sm text-body-sm text-on-surface-variant mt-1 leading-relaxed">
+                Tổ hợp sấy nông sản quy mô lớn nhất vùng Tây Bắc, vận hành thực tế buồng sấy MS-20 cho khách tham quan.
+              </p>
+<div class="mt-2 text-label-sm font-label-sm text-on-surface space-y-1">
+<div>• Công suất sấy: 20 tấn hạt tươi/mẻ</div>
+<div>• Vùng nguyên liệu: Hơn 1.200 ha Macca</div>
+<div>• Tiêu chuẩn: ISO 22000 &amp; OCOP 4 sao</div>
+</div>
+</div>
+<div class="pt-2 text-label-sm text-primary font-bold flex items-center gap-1">
+<span class="material-symbols-outlined text-[16px]">schedule</span> Đón tiếp đoàn khảo sát HTX mỗi ngày
+            </div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- 4. QUICK FAQ ACCORDION FOR B2B CLIENTS -->
+<section class="w-full px-margin-mobile md:px-margin py-space-xl bg-background">
+<div class="max-w-4xl mx-auto flex flex-col gap-space-lg">
+<div class="text-center">
+<span class="px-2.5 py-1 bg-surface-container-high text-primary font-label-sm text-label-sm uppercase rounded tracking-wider">Hỏi Đáp Hợp Đồng &amp; Kỹ Thuật</span>
+<h2 class="font-headline-xl text-headline-xl text-primary uppercase mt-2">GIẢI ĐÁP DÀNH CHO KHÁCH HÀNG DOANH NGHIỆP &amp; HTX</h2>
+<p class="font-body-md text-body-md text-on-surface-variant max-w-2xl mx-auto mt-1">
+          Những câu hỏi phổ biến nhất về chính sách bảo hành máy móc, tiêu chuẩn cung ứng nông sản và quy trình hợp tác tài chính.
+        </p>
+</div>
+<div class="flex flex-col gap-space-sm" id="b2bFaqAccordion">
+<!-- Item 1 -->
+<div class="bg-surface-container-lowest rounded-xl shadow-sm overflow-hidden">
+<button class="w-full px-5 py-4 text-left flex items-center justify-between gap-4 font-headline-sm text-headline-sm text-on-surface hover:text-primary transition-colors focus:outline-none" onclick="toggleFaq(this)" type="button">
+<span>1. Thời gian bảo hành máy móc và dây chuyền sấy Cường Thịnh là bao lâu?</span>
+<span class="material-symbols-outlined text-primary text-[24px] transition-transform duration-200">expand_more</span>
+</button>
+<div class="faq-content px-5 pb-5 pt-1 text-body-md font-body-md text-on-surface-variant hidden">
+            Bảo hành cơ điện chính hãng <strong>12 - 24 tháng toàn diện tận xưởng</strong>. Kỹ sư Cường Thịnh có mặt hỗ trợ xử lý sự cố trong vòng 24h - 48h tại tất cả các tỉnh thành miền Bắc và Tây Bắc. Linh kiện Inox 304, động cơ chịu nhiệt và bo mạch điều khiển PLC luôn sẵn sàng thay thế nóng trong kho vận Đình Vũ và Tam Đường.
+          </div>
+</div>
+<!-- Item 2 -->
+<div class="bg-surface-container-lowest rounded-xl shadow-sm overflow-hidden">
+<button class="w-full px-5 py-4 text-left flex items-center justify-between gap-4 font-headline-sm text-headline-sm text-on-surface hover:text-primary transition-colors focus:outline-none" onclick="toggleFaq(this)" type="button">
+<span>2. Khối lượng đặt hàng nông sản tối thiểu (MOQ) đối với khách hàng mua sỉ hoặc xuất khẩu?</span>
+<span class="material-symbols-outlined text-primary text-[24px] transition-transform duration-200">expand_more</span>
+</button>
+<div class="faq-content px-5 pb-5 pt-1 text-body-md font-body-md text-on-surface-variant hidden">
+            Cường Thịnh linh hoạt chính sách MOQ theo đối tượng đối tác:
+            <ul class="list-disc pl-5 mt-2 space-y-1">
+<li><strong>Đơn hàng thử nghiệm R&amp;D / chuỗi F&amp;B:</strong> Từ 50kg đến 200kg (Macca nứt vỏ, Arabica sấy mộc, Quế vụn).</li>
+<li><strong>Đơn hàng OEM đóng gói nhãn riêng:</strong> Tối thiểu từ 500kg với đầy đủ mã vạch, chứng nhận kiểm nghiệm vi sinh.</li>
+<li><strong>Hợp đồng xuất khẩu chính ngạch:</strong> Cung ứng ổn định từ 5 tấn đến nguyên container 20ft/40ft hàng tháng kèm chứng chỉ kiểm định xuất xứ C/O, Phytosanitary, FDA và HACCP.</li>
+</ul>
+</div>
+</div>
+<!-- Item 3 -->
+<div class="bg-surface-container-lowest rounded-xl shadow-sm overflow-hidden">
+<button class="w-full px-5 py-4 text-left flex items-center justify-between gap-4 font-headline-sm text-headline-sm text-on-surface hover:text-primary transition-colors focus:outline-none" onclick="toggleFaq(this)" type="button">
+<span>3. Cường Thịnh có hỗ trợ lập hồ sơ kỹ thuật để Hợp tác xã xin vốn Khuyến công hoặc chuẩn hóa OCOP không?</span>
+<span class="material-symbols-outlined text-primary text-[24px] transition-transform duration-200">expand_more</span>
+</button>
+<div class="faq-content px-5 pb-5 pt-1 text-body-md font-body-md text-on-surface-variant hidden">
+<strong>Có. Đây là thế mạnh đồng hành của Cường Thịnh.</strong> Chúng tôi cung cấp trọn gói bộ hồ sơ kỹ thuật: Thuyết minh giải pháp công nghệ nâng cao giá trị nông sản, bản vẽ bố trí mặt bằng nhà xưởng 3D đáp ứng chuẩn một chiều HACCP, chứng nhận xuất xưởng thiết bị Inox SUS 304, hóa đơn tài chính VAT hợp lệ và cử chuyên viên đồng hành cùng Ban quản lý HTX bảo vệ thuyết minh trước Hội đồng Khuyến công và Hội đồng đánh giá phân hạng OCOP 3 - 5 sao cấp tỉnh/quốc gia.
+          </div>
+</div>
+<!-- Item 4 -->
+<div class="bg-surface-container-lowest rounded-xl shadow-sm overflow-hidden">
+<button class="w-full px-5 py-4 text-left flex items-center justify-between gap-4 font-headline-sm text-headline-sm text-on-surface hover:text-primary transition-colors focus:outline-none" onclick="toggleFaq(this)" type="button">
+<span>4. Quy trình thanh toán và chính sách chia kỳ khi đầu tư hệ thống buồng sấy MS-20?</span>
+<span class="material-symbols-outlined text-primary text-[24px] transition-transform duration-200">expand_more</span>
+</button>
+<div class="faq-content px-5 pb-5 pt-1 text-body-md font-body-md text-on-surface-variant hidden">
+            Tiến độ thanh toán cho các gói dây chuyền cơ khí được thiết kế tối ưu dòng tiền của doanh nghiệp qua 4 đợt minh bạch:
+            <ol class="list-decimal pl-5 mt-2 space-y-1">
+<li><strong>Đợt 1 (30%):</strong> Đặt cọc ký hợp đồng và bắt đầu gia công cơ khí chính xác tại xưởng Hải Phòng.</li>
+<li><strong>Đợt 2 (30%):</strong> Nghiệm thu tĩnh thiết bị và chạy thử không tải tại xưởng Đình Vũ trước khi xuất kho.</li>
+<li><strong>Đợt 3 (30%):</strong> Vận chuyển đến công trình đối tác, hoàn tất đấu nối điện 3 pha và hiệu chỉnh cảm biến nhiệt.</li>
+<li><strong>Đợt 4 (10%):</strong> Nghiệm thu mẻ sấy thực tế đạt chỉ số độ ẩm tiêu chuẩn (&lt;10%) và bảo lãnh bảo hành 12 tháng.</li>
+</ol>
+            Ngoài ra, chúng tôi hỗ trợ hồ sơ pháp lý máy móc để doanh nghiệp và HTX vay vốn ưu đãi nông nghiệp tại Agribank / Quỹ Hỗ trợ Phát triển HTX.
+          </div>
+</div>
+</div>
+</div>
+</section>
+<!-- 5. FINAL CONFIRMATION BANNER -->
+<section class="w-full px-margin-mobile md:px-margin pb-space-xl bg-background">
+<div class="max-w-7xl mx-auto bg-primary text-on-primary rounded-xl p-space-lg md:p-space-xl shadow-xl flex flex-col md:flex-row items-center justify-between gap-space-lg">
+<div class="flex flex-col gap-1 max-w-2xl">
+<span class="font-label-sm text-label-sm uppercase tracking-wider text-secondary-fixed">Trực Tiếp Cùng Kỹ Sư Trưởng</span>
+<h3 class="font-headline-lg text-headline-lg uppercase text-on-primary">BẠN CẦN TÍNH TOÁN CÔNG SUẤT VÀ DỰ TOÁN BUỒNG SẤY NGAY?</h3>
+<p class="font-body-md text-body-md text-surface-container-high leading-relaxed">
+          Không cần đợi phản hồi form, hãy kết nối trực tiếp với đội ngũ kỹ thuật trưởng của Cường Thịnh để tính toán chi phí trên mỗi kg nông sản sấy khô.
+        </p>
+</div>
+<div class="flex flex-col sm:flex-row items-center gap-space-md flex-shrink-0">
+<a class="px-6 py-3.5 bg-secondary text-on-secondary font-headline-sm text-headline-sm rounded-lg shadow-md hover:bg-on-secondary-container transition-all flex items-center gap-2" href="tel:0932050101">
+<span class="material-symbols-outlined text-[22px]">phone_in_talk</span>
+<span>0932.050101</span>
+</a>
+<a class="px-5 py-3.5 bg-surface-container-lowest text-primary font-headline-sm text-headline-sm rounded-lg shadow hover:bg-surface-variant transition-all flex items-center gap-2" href="https://zalo.me/0932050101" rel="noopener noreferrer" target="_blank">
+<span class="material-symbols-outlined text-[20px]">chat</span>
+<span>Trò chuyện Zalo</span>
+</a>
+</div>
+</div>
+</section>
+</div>
+<!-- INLINE JAVASCRIPT FOR INTERACTIVE BEHAVIORS -->
+<script>
+  function updatePillStyles() {
+    const radios = document.querySelectorAll('input[name="project_type"]');
+    radios.forEach(radio => {
+      const parentLabel = radio.closest('label');
+      if (radio.checked) {
+        parentLabel.className = 'category-radio flex flex-col p-3 rounded-lg cursor-pointer bg-primary-container text-on-primary transition-all shadow-sm';
+        const subtext = parentLabel.querySelector('span:last-child');
+        if (subtext) subtext.className = 'text-[11px] opacity-90 leading-tight mt-0.5';
+      } else {
+        parentLabel.className = 'category-radio flex flex-col p-3 rounded-lg cursor-pointer bg-surface-container text-on-surface transition-all hover:bg-surface-variant';
+        const subtext = parentLabel.querySelector('span:last-child');
+        if (subtext) subtext.className = 'text-[11px] opacity-80 leading-tight mt-0.5';
+      }
+    });
+  }
+
+  function toggleFaq(button) {
+    const content = button.nextElementSibling;
+    const icon = button.querySelector('.material-symbols-outlined');
+    const isHidden = content.classList.contains('hidden');
+
+    // Close all other FAQs
+    document.querySelectorAll('#b2bFaqAccordion .faq-content').forEach(item => {
+      item.classList.add('hidden');
+    });
+    document.querySelectorAll('#b2bFaqAccordion .material-symbols-outlined').forEach(ic => {
+      ic.style.transform = 'rotate(0deg)';
+    });
+
+    if (isHidden) {
+      content.classList.remove('hidden');
+      icon.style.transform = 'rotate(180deg)';
+    }
+  }
+
+  function selectMapPin(target) {
+    // Update button states
+    const buttons = document.querySelectorAll('#mapTabs button');
+    buttons.forEach(btn => {
+      if (btn.getAttribute('data-target') === target) {
+        btn.className = 'px-3 py-1.5 rounded font-label-sm text-label-sm uppercase font-semibold bg-primary text-on-primary transition-all';
+      } else {
+        btn.className = 'px-3 py-1.5 rounded font-label-sm text-label-sm uppercase font-semibold text-on-surface hover:bg-surface-variant transition-all';
+      }
+    });
+
+    // Node highlight simulation
+    const nodes = document.querySelectorAll('.map-node');
+    nodes.forEach(node => {
+      node.style.opacity = '1';
+    });
+
+    if (target === 'haiphong') {
+      document.getElementById('node-laichau').style.opacity = '0.3';
+      document.getElementById('node-dienbien').style.opacity = '0.3';
+      document.getElementById('node-langson').style.opacity = '0.3';
+    } else if (target === 'laichau') {
+      document.getElementById('node-haiphong').style.opacity = '0.3';
+      document.getElementById('node-dienbien').style.opacity = '0.3';
+      document.getElementById('node-langson').style.opacity = '0.3';
+    } else if (target === 'taybac') {
+      document.getElementById('node-haiphong').style.opacity = '0.3';
+      document.getElementById('node-laichau').style.opacity = '0.3';
+    }
+  }
+</script></main><footer class="w-full bg-surface-container-high text-on-surface pt-space-xl pb-space-lg"><div class="w-full px-margin-mobile md:px-margin"><div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-space-xl mb-space-xl"><div><div class="flex items-center gap-space-sm mb-space-md"><span class="font-headline-md text-headline-md text-primary">CƯỜNG THỊNH TECH &amp; AGRO</span></div><p class="font-body-sm text-body-sm text-on-surface-variant mb-space-md">Hạ tầng chế biến nông sản công nghệ cao Tây Bắc &amp; Chế tạo máy móc nông nghiệp. Kết nối chuỗi giá trị nông nghiệp tuần hoàn đạt chuẩn kiểm nghiệm toàn cầu.</p><div class="flex flex-wrap gap-2"><span class="px-2 py-0.5 bg-primary text-on-primary font-label-sm text-label-sm uppercase rounded">ISO 22000</span><span class="px-2 py-0.5 bg-surface-container text-on-surface font-label-sm text-label-sm uppercase rounded">HACCP CERT</span><span class="px-2 py-0.5 bg-secondary text-on-secondary font-label-sm text-label-sm uppercase rounded">OCOP 4 SAO</span></div></div><div><div class="font-label-lg text-label-lg uppercase tracking-wider text-primary mb-space-md">Xưởng Cơ khí &amp; Nhà máy Đình Vũ</div><p class="font-body-sm text-body-sm text-on-surface-variant mb-2"><strong>Xưởng Cơ khí chế tạo &amp; Hub Logistics:</strong><br>Khu Công nghiệp Đình Vũ, Phường Đông Hải 2, Quận Hải An, TP. Hải Phòng.</p><p class="font-body-sm text-body-sm text-on-surface-variant">Điện thoại: 0932.050101<br>Email: haiphong.plant@cuongthinhagro.vn</p></div><div><div class="font-label-lg text-label-lg uppercase tracking-wider text-primary mb-space-md">Nhà máy Tam Đường &amp; Chi nhánh</div><p class="font-body-sm text-body-sm text-on-surface-variant mb-2"><strong>Nhà máy Sấy Macca &amp; Nông sản Tây Bắc:</strong><br>Cụm Công nghiệp Tam Đường, Huyện Tam Đường, Tỉnh Lai Châu.</p><p class="font-body-sm text-body-sm text-on-surface-variant mb-2"><strong>Chi nhánh Điện Biên &amp; Lạng Sơn:</strong><br>Kho thu mua Macca Điện Biên &amp; Trạm cửa khẩu Tân Thanh, Lạng Sơn.</p><p class="font-body-sm text-body-sm text-on-surface-variant">Thu mua HTX &amp; Nông hộ: (+84) 213 378 6611</p></div><div><div class="font-label-lg text-label-lg uppercase tracking-wider text-primary mb-space-md">Pháp lý Doanh nghiệp &amp; B2B</div><ul class="space-y-2 font-body-sm text-body-sm text-on-surface-variant"><li>Mã số thuế (MST): <strong>0315249826</strong></li><li>Cung ứng Nông sản sấy &amp; Hệ thống máy sấy lạnh</li><li>Hợp tác liên kết bao tiêu nông hộ &amp; HTX vùng trồng</li><li>Hồ sơ năng lực kiểm nghiệm Lab &amp; Xuất khẩu</li><li>Chính sách chất lượng chuẩn ISO 22000 &amp; HACCP</li></ul></div></div><div class="pt-space-md flex flex-col md:flex-row items-center justify-between text-label-sm font-label-sm text-on-surface-variant gap-2"><p>© 2024 CÔNG TY CỔ PHẦN CÔNG NGHỆ &amp; NÔNG SẢN CƯỜNG THỊNH. MST: 0315249826.</p><p>Hệ thống Thiết bị &amp; Công nghệ Sấy Inox Công nghiệp - Đạt chuẩn ISO 22000 &amp; HACCP Ready</p></div></div></footer>
+<!-- Mobile Navigation Drawer & Script -->
+<div id="mobile-menu-drawer" class="fixed inset-0 z-[100] bg-inverse-surface/60 backdrop-blur-sm hidden transition-opacity">
+  <div class="fixed top-0 right-0 bottom-0 w-4/5 max-w-xs bg-surface p-6 shadow-2xl flex flex-col justify-between overflow-y-auto">
+    <div class="flex flex-col gap-6">
+      <div class="flex items-center justify-between pb-4 border-b border-outline-variant/40">
+        <div class="flex items-center gap-2">
+          <div class="w-7 h-7 rounded bg-primary text-on-primary flex items-center justify-center font-bold text-sm">CT</div>
+          <span class="font-headline-sm font-bold text-primary text-base">CƯỜNG THỊNH</span>
+        </div>
+        <button id="mobile-menu-close" class="p-1.5 rounded-lg text-on-surface-variant hover:bg-surface-container-high transition-colors">
+          <span class="material-symbols-outlined text-[24px]">close</span>
+        </button>
+      </div>
+      <nav class="flex flex-col gap-1.5 font-label-md">
+        <a class="px-4 py-3 rounded-lg flex items-center gap-3 transition-colors text-on-surface hover:bg-surface-container-high" href="index.html">
+          <span class="material-symbols-outlined text-[20px]">home</span>
+          <span>Trang chủ</span>
+        </a>
+        <a class="px-4 py-3 rounded-lg flex items-center gap-3 transition-colors text-on-surface hover:bg-surface-container-high" href="gioi-thieu.html">
+          <span class="material-symbols-outlined text-[20px]">corporate_fare</span>
+          <span>Giới thiệu</span>
+        </a>
+        <a class="px-4 py-3 rounded-lg flex items-center gap-3 transition-colors text-on-surface hover:bg-surface-container-high" href="linh-vuc-cong-nghe.html">
+          <span class="material-symbols-outlined text-[20px]">precision_manufacturing</span>
+          <span>Lĩnh vực & Công nghệ</span>
+        </a>
+        <a class="px-4 py-3 rounded-lg flex items-center gap-3 transition-colors text-on-surface hover:bg-surface-container-high" href="nong-san-chu-luc.html">
+          <span class="material-symbols-outlined text-[20px]">eco</span>
+          <span>Nông sản chủ lực</span>
+        </a>
+        <a class="px-4 py-3 rounded-lg flex items-center gap-3 transition-colors text-on-surface hover:bg-surface-container-high" href="du-an-htx.html">
+          <span class="material-symbols-outlined text-[20px]">handshake</span>
+          <span>Dự án & HTX</span>
+        </a>
+      </nav>
+      <div class="pt-4 border-t border-outline-variant/40 flex flex-col gap-3">
+        <a class="w-full py-3 px-4 rounded-lg bg-secondary text-on-secondary font-label-md font-bold flex items-center justify-center gap-2 shadow-sm hover:bg-on-secondary-container transition-colors" href="bao-gia-rfq.html">
+          <span class="material-symbols-outlined text-[18px]">request_quote</span>
+          <span>Yêu cầu báo giá RFQ</span>
+        </a>
+        <a class="w-full py-2.5 px-4 rounded-lg bg-surface-container-high text-primary font-label-md flex items-center justify-center gap-2 hover:bg-surface-variant transition-colors" href="tel:0932050101">
+          <span class="material-symbols-outlined text-[18px]">call</span>
+          <span>Hotline: 0932.050101</span>
+        </a>
+      </div>
+    </div>
+    <div class="text-[11px] text-on-surface-variant text-center pt-6 opacity-70">
+      MST: 0315249826 • Cường Thịnh Tech & Agro
+    </div>
+  </div>
+</div>
+<script>
+  (function() {
+    const toggleBtn = document.getElementById('mobile-menu-toggle');
+    const closeBtn = document.getElementById('mobile-menu-close');
+    const drawer = document.getElementById('mobile-menu-drawer');
+    if (toggleBtn && drawer) {
+      toggleBtn.addEventListener('click', () => drawer.classList.remove('hidden'));
+    }
+    if (closeBtn && drawer) {
+      closeBtn.addEventListener('click', () => drawer.classList.add('hidden'));
+      drawer.addEventListener('click', (e) => {
+        if (e.target === drawer) drawer.classList.add('hidden');
+      });
+    }
+  })();
+</script>
+
+</body></html>
