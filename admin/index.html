@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Cường Thịnh Tech &amp; Agro — Cổng Quản Trị Nội Dung</title>
+  <title>Cường Thịnh Tech &amp; Agro — Cổng Quản Trị Website</title>
   <link rel="icon" href="../assets/brand/logo.png" type="image/png" />
   <script src="https://cdn.tailwindcss.com"></script>
   <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;600;700;800&family=Be+Vietnam+Pro:wght@400;500;600;700&display=swap" rel="stylesheet">
@@ -14,8 +14,35 @@
   </style>
 </head>
 <body class="bg-slate-100 text-slate-800 antialiased min-h-screen flex flex-col">
+
+  <!-- ==================== 1. SECURITY PIN LOCK MODAL ==================== -->
+  <div id="pin-lock-modal" class="fixed inset-0 z-50 bg-[#04170E]/90 backdrop-blur-md flex items-center justify-center p-4">
+    <div class="bg-white rounded-3xl p-8 max-w-md w-full shadow-2xl border border-gray-200/90 text-center flex flex-col items-center gap-5">
+      <div class="w-16 h-16 rounded-2xl bg-emerald-50 text-[#0B3B24] border border-emerald-200 flex items-center justify-center shadow-inner">
+        <span class="material-symbols-outlined text-[32px]">lock</span>
+      </div>
+      <div>
+        <h2 class="font-headline text-2xl font-extrabold text-slate-950">Xác Thực Quản Trị Viên</h2>
+        <p class="text-xs text-slate-500 mt-1">Vui lòng nhập Mã PIN bảo mật để truy cập bảng điều khiển Cường Thịnh Tech &amp; Agro.</p>
+      </div>
+      <div class="w-full">
+        <input type="password" id="input-pin" maxlength="6" placeholder="Nhập mã PIN (Mặc định: 2026)" 
+               class="w-full text-center text-xl tracking-widest font-mono font-bold px-4 py-3 bg-slate-50 border border-gray-300 rounded-xl focus:outline-none focus:ring-2 focus:ring-[#0B3B24] focus:bg-white transition-all"
+               onkeyup="if(event.key === 'Enter') checkPin()">
+        <p id="pin-error" class="hidden text-xs font-semibold text-rose-600 mt-2 flex items-center justify-center gap-1">
+          <span class="material-symbols-outlined text-[14px]">error</span>
+          <span>Mã PIN không đúng, vui lòng thử lại!</span>
+        </p>
+      </div>
+      <button onclick="checkPin()" class="w-full py-3 bg-[#0B3B24] hover:bg-[#144d32] text-white rounded-xl text-sm font-bold shadow-md hover:shadow-lg transition-all flex items-center justify-center gap-2">
+        <span class="material-symbols-outlined text-[18px]">verified_user</span>
+        <span>Đăng Nhập Quản Trị</span>
+      </button>
+      <span class="text-[11px] text-gray-400 font-mono">Bảo mật mã hóa phiên nội bộ • Mã PIN mẫu: 2026</span>
+    </div>
+  </div>
   
-  <!-- Header Bar -->
+  <!-- ==================== 2. HEADER BAR ==================== -->
   <header class="bg-[#0B3B24] text-white py-3.5 px-4 sm:px-8 border-b border-[#144d32] shadow-sm flex items-center justify-between">
     <div class="flex items-center gap-3">
       <div class="w-9 h-9 rounded-xl bg-white p-1 flex items-center justify-center overflow-hidden">
@@ -23,98 +50,124 @@
       </div>
       <div>
         <h1 class="font-headline font-bold text-base sm:text-lg leading-tight">CƯỜNG THỊNH TECH &amp; AGRO</h1>
-        <p class="text-[10px] text-emerald-300 uppercase tracking-widest font-semibold">Cổng Quản Trị Website Tự Động (Bản Quyền 2026)</p>
+        <p class="text-[10px] text-emerald-300 uppercase tracking-widest font-semibold">Cổng Quản Trị Doanh Nghiệp (Phiên Bản 2026)</p>
       </div>
     </div>
-    <a href="../" class="px-3.5 py-1.5 bg-white/10 hover:bg-white/20 text-white rounded-lg text-xs font-semibold flex items-center gap-1.5 border border-white/20 transition-all">
-      <span class="material-symbols-outlined text-[16px]">visibility</span>
-      <span>Xem Website</span>
-    </a>
+    <div class="flex items-center gap-2.5">
+      <a href="../" class="px-3.5 py-1.5 bg-white/10 hover:bg-white/20 text-white rounded-lg text-xs font-semibold flex items-center gap-1.5 border border-white/20 transition-all">
+        <span class="material-symbols-outlined text-[16px]">visibility</span>
+        <span>Xem Website</span>
+      </a>
+      <button onclick="logout()" title="Đăng xuất" class="p-1.5 bg-rose-500/20 hover:bg-rose-500/40 text-rose-200 rounded-lg text-xs border border-rose-400/30 transition-all">
+        <span class="material-symbols-outlined text-[18px]">logout</span>
+      </button>
+    </div>
   </header>
 
-  <!-- Main Container -->
-  <main class="flex-1 max-w-5xl w-full mx-auto p-4 sm:p-6 lg:p-8 flex flex-col gap-6">
+  <!-- ==================== 3. MAIN DASHBOARD ==================== -->
+  <main class="flex-1 max-w-6xl w-full mx-auto p-4 sm:p-6 lg:p-8 flex flex-col gap-6">
     
-    <!-- Top Welcome Banner -->
+    <!-- Top Welcome Banner with Export Backup Button -->
     <div class="bg-white rounded-2xl p-6 border border-gray-200/90 shadow-sm flex flex-col md:flex-row items-start md:items-center justify-between gap-4">
       <div class="flex flex-col gap-1">
         <span class="text-xs font-bold uppercase text-[#B45309] tracking-wider font-headline flex items-center gap-1.5">
           <span class="material-symbols-outlined text-[16px]">admin_panel_settings</span>
-          HỆ THỐNG CẬP NHẬT TRỰC QUAN
+          HỆ THỐNG QUẢN TRỊ NỘI DUNG &amp; BÁO GIÁ
         </span>
-        <h2 class="font-headline text-2xl font-extrabold text-slate-900">Quản Trị Hình Ảnh &amp; Nội Dung Doanh Nghiệp</h2>
-        <p class="text-xs text-slate-500">Khách hàng có thể dễ dàng thay đổi Hotline, hình ảnh xưởng và thông số nông sản mà không cần biết lập trình.</p>
+        <h2 class="font-headline text-2xl font-extrabold text-slate-900">Bảng Điều Khiển Cường Thịnh</h2>
+        <p class="text-xs text-slate-500">Quản lý Hotline xưởng, hình ảnh thực địa, danh mục nông sản và duyệt các yêu cầu báo giá RFQ gửi về từ website.</p>
       </div>
-      <div class="flex items-center gap-2 shrink-0">
-        <span class="inline-flex items-center gap-1 px-3 py-1.5 rounded-full bg-emerald-50 text-emerald-800 border border-emerald-200 text-xs font-bold">
+      <div class="flex flex-wrap items-center gap-2 shrink-0">
+        <button onclick="exportBackupData()" class="px-3.5 py-2 bg-emerald-50 hover:bg-emerald-100 text-[#0B3B24] border border-emerald-300 rounded-xl text-xs font-bold flex items-center gap-1.5 transition-colors shadow-xs">
+          <span class="material-symbols-outlined text-[17px] text-emerald-700">download</span>
+          <span>Sao Lưu Dữ Liệu (JSON)</span>
+        </button>
+        <span class="inline-flex items-center gap-1.5 px-3 py-2 rounded-xl bg-slate-100 text-slate-700 border border-gray-200 text-xs font-bold">
           <span class="w-2 h-2 rounded-full bg-emerald-500 animate-pulse"></span>
-          Máy Chủ Hoạt Động 100%
+          <span>Hệ Thống Trực Tuyến</span>
         </span>
       </div>
     </div>
 
-    <!-- 3 Action Cards -->
-    <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+    <!-- 4 Navigation Action Cards (Tabs) -->
+    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
       
-      <!-- Card 1: Thông tin liên hệ -->
-      <div class="bg-white rounded-2xl p-6 border border-gray-200/90 shadow-sm flex flex-col justify-between gap-6 hover:shadow-md transition-shadow">
-        <div class="flex flex-col gap-3">
-          <div class="w-12 h-12 rounded-xl bg-emerald-50 text-[#0B3B24] flex items-center justify-center">
-            <span class="material-symbols-outlined text-[26px]">contact_phone</span>
-          </div>
-          <h3 class="font-headline text-lg font-bold text-slate-900">Thông Tin Hotline &amp; Nhà Xưởng</h3>
-          <p class="text-xs text-slate-600 leading-relaxed">
-            Thay đổi số điện thoại B2B, email công vụ, địa chỉ xưởng cơ khí Hải Phòng hoặc cụm nhà máy chế biến Tam Đường.
-          </p>
+      <!-- Card 1: Thông tin Hotline & Nhà Xưởng -->
+      <button onclick="openTab('contact')" class="text-left bg-white rounded-2xl p-5 border border-gray-200/90 shadow-sm hover:border-emerald-600 hover:shadow-md transition-all flex flex-col justify-between gap-4 group">
+        <div class="w-10 h-10 rounded-xl bg-emerald-50 text-[#0B3B24] flex items-center justify-center group-hover:scale-105 transition-transform">
+          <span class="material-symbols-outlined text-[22px]">contact_phone</span>
         </div>
-        <button onclick="openTab('contact')" class="w-full py-2.5 px-4 bg-[#0B3B24] hover:bg-[#144d32] text-white rounded-xl text-xs font-bold flex items-center justify-center gap-1.5 transition-all">
-          <span class="material-symbols-outlined text-[16px]">edit</span>
-          <span>Chỉnh sửa thông tin</span>
-        </button>
-      </div>
+        <div>
+          <h3 class="font-headline text-base font-bold text-slate-900">1. Hotline &amp; Nhà Xưởng</h3>
+          <p class="text-[11px] text-slate-500 mt-0.5">Sửa số điện thoại B2B, email công vụ, địa chỉ xưởng.</p>
+        </div>
+        <span class="text-xs font-bold text-[#0B3B24] flex items-center gap-1 group-hover:translate-x-1 transition-transform">
+          <span>Quản lý</span>
+          <span class="material-symbols-outlined text-[16px]">arrow_forward</span>
+        </span>
+      </button>
 
-      <!-- Card 2: Hình ảnh Banner & Xưởng -->
-      <div class="bg-white rounded-2xl p-6 border border-gray-200/90 shadow-sm flex flex-col justify-between gap-6 hover:shadow-md transition-shadow">
-        <div class="flex flex-col gap-3">
-          <div class="w-12 h-12 rounded-xl bg-amber-50 text-[#B45309] flex items-center justify-center">
-            <span class="material-symbols-outlined text-[26px]">photo_library</span>
-          </div>
-          <h3 class="font-headline text-lg font-bold text-slate-900">Hình Ảnh Banner &amp; Nhà Máy</h3>
-          <p class="text-xs text-slate-600 leading-relaxed">
-            Tải lên hình ảnh dây chuyền máy sấy container mới, ảnh hoạt động nghiệm thu tại hợp tác xã hoặc ảnh xưởng thực tế.
-          </p>
+      <!-- Card 2: Hình ảnh Banner & Nhà Máy -->
+      <button onclick="openTab('images')" class="text-left bg-white rounded-2xl p-5 border border-gray-200/90 shadow-sm hover:border-amber-600 hover:shadow-md transition-all flex flex-col justify-between gap-4 group">
+        <div class="w-10 h-10 rounded-xl bg-amber-50 text-[#B45309] flex items-center justify-center group-hover:scale-105 transition-transform">
+          <span class="material-symbols-outlined text-[22px]">photo_library</span>
         </div>
-        <button onclick="openTab('images')" class="w-full py-2.5 px-4 bg-[#D97706] hover:bg-[#B45309] text-white rounded-xl text-xs font-bold flex items-center justify-center gap-1.5 transition-all">
-          <span class="material-symbols-outlined text-[16px]">upload</span>
-          <span>Cập nhật hình ảnh</span>
-        </button>
-      </div>
+        <div>
+          <h3 class="font-headline text-base font-bold text-slate-900">2. Ảnh Banner &amp; Xưởng</h3>
+          <p class="text-[11px] text-slate-500 mt-0.5">Thay ảnh máy sấy container và ảnh thực địa Tam Đường.</p>
+        </div>
+        <span class="text-xs font-bold text-[#D97706] flex items-center gap-1 group-hover:translate-x-1 transition-transform">
+          <span>Quản lý</span>
+          <span class="material-symbols-outlined text-[16px]">arrow_forward</span>
+        </span>
+      </button>
 
-      <!-- Card 3: Nông sản & Báo giá -->
-      <div class="bg-white rounded-2xl p-6 border border-gray-200/90 shadow-sm flex flex-col justify-between gap-6 hover:shadow-md transition-shadow">
-        <div class="flex flex-col gap-3">
-          <div class="w-12 h-12 rounded-xl bg-blue-50 text-blue-700 flex items-center justify-center">
-            <span class="material-symbols-outlined text-[26px]">eco</span>
-          </div>
-          <h3 class="font-headline text-lg font-bold text-slate-900">Danh Mục Nông Sản &amp; Thiết Bị</h3>
-          <p class="text-xs text-slate-600 leading-relaxed">
-            Cập nhật độ ẩm tiêu chuẩn xuất khẩu, tên nông sản đặc sản (Mắc-ca, Cà phê, Quế hồi) và công suất buồng sấy MS-20.
-          </p>
+      <!-- Card 3: Nông sản & Thiết bị -->
+      <button onclick="openTab('products')" class="text-left bg-white rounded-2xl p-5 border border-gray-200/90 shadow-sm hover:border-blue-600 hover:shadow-md transition-all flex flex-col justify-between gap-4 group">
+        <div class="w-10 h-10 rounded-xl bg-blue-50 text-blue-700 flex items-center justify-center group-hover:scale-105 transition-transform">
+          <span class="material-symbols-outlined text-[22px]">eco</span>
         </div>
-        <button onclick="openTab('products')" class="w-full py-2.5 px-4 bg-slate-900 hover:bg-slate-800 text-white rounded-xl text-xs font-bold flex items-center justify-center gap-1.5 transition-all">
-          <span class="material-symbols-outlined text-[16px]">tune</span>
-          <span>Cấu hình sản phẩm</span>
-        </button>
-      </div>
+        <div>
+          <h3 class="font-headline text-base font-bold text-slate-900">3. Nông Sản &amp; Thiết Bị</h3>
+          <p class="text-[11px] text-slate-500 mt-0.5">Cập nhật độ ẩm, tiêu chuẩn xuất khẩu và hình ảnh sản phẩm.</p>
+        </div>
+        <span class="text-xs font-bold text-blue-700 flex items-center gap-1 group-hover:translate-x-1 transition-transform">
+          <span>Quản lý</span>
+          <span class="material-symbols-outlined text-[16px]">arrow_forward</span>
+        </span>
+      </button>
+
+      <!-- Card 4: Hộp thư RFQ Leads (Mới) -->
+      <button onclick="openTab('leads')" class="text-left bg-white rounded-2xl p-5 border border-gray-200/90 shadow-sm hover:border-purple-600 hover:shadow-md transition-all flex flex-col justify-between gap-4 group relative overflow-hidden">
+        <div class="w-10 h-10 rounded-xl bg-purple-50 text-purple-700 flex items-center justify-center group-hover:scale-105 transition-transform">
+          <span class="material-symbols-outlined text-[22px]">inbox</span>
+        </div>
+        <div>
+          <div class="flex items-center gap-1.5">
+            <h3 class="font-headline text-base font-bold text-slate-900">4. Yêu Cầu Báo Giá RFQ</h3>
+            <span class="px-1.5 py-0.2 rounded-full bg-rose-500 text-white text-[10px] font-bold">3 Mới</span>
+          </div>
+          <p class="text-[11px] text-slate-500 mt-0.5">Danh sách các doanh nghiệp &amp; HTX đã gửi form báo giá.</p>
+        </div>
+        <span class="text-xs font-bold text-purple-700 flex items-center gap-1 group-hover:translate-x-1 transition-transform">
+          <span>Xem yêu cầu</span>
+          <span class="material-symbols-outlined text-[16px]">arrow_forward</span>
+        </span>
+      </button>
 
     </div>
 
     <!-- Interactive Editor Panel (Active Section) -->
     <div id="editor-panel" class="bg-white rounded-2xl p-6 sm:p-8 border border-gray-200/90 shadow-sm">
+      
+      <!-- TAB 1: CONTACT & FACILITIES -->
       <div id="contact-tab" class="space-y-4">
-        <div class="border-b border-gray-100 pb-3">
-          <h4 class="font-headline text-lg font-bold text-slate-900">1. Chỉnh Sửa Thông Tin Liên Hệ &amp; Cơ Sở</h4>
-          <p class="text-xs text-slate-500">Thông tin này sẽ cập nhật trực tiếp tại thanh Menu, Header và Chân trang (Footer).</p>
+        <div class="border-b border-gray-100 pb-3 flex items-center justify-between">
+          <div>
+            <h4 class="font-headline text-lg font-bold text-slate-900">1. Thông Tin Hotline &amp; Cơ Sở Doanh Nghiệp</h4>
+            <p class="text-xs text-slate-500">Cập nhật số hotline hiển thị trên thanh Menu và Chân trang (Footer).</p>
+          </div>
+          <span class="px-2.5 py-1 bg-emerald-50 text-[#0B3B24] rounded-lg text-xs font-bold">Đang hiển thị</span>
         </div>
         <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
           <div class="flex flex-col gap-1">
@@ -135,17 +188,18 @@
           </div>
         </div>
         <div class="pt-4 flex items-center justify-end gap-3 border-t border-gray-100">
-          <button onclick="saveChanges('Thông tin liên hệ')" class="px-6 py-2.5 bg-[#0B3B24] hover:bg-[#144d32] text-white rounded-xl text-xs font-bold flex items-center gap-1.5 shadow-sm transition-all">
+          <button onclick="saveNotification('Thông tin liên hệ & Nhà xưởng')" class="px-6 py-2.5 bg-[#0B3B24] hover:bg-[#144d32] text-white rounded-xl text-xs font-bold flex items-center gap-1.5 shadow-sm transition-all">
             <span class="material-symbols-outlined text-[16px]">save</span>
             <span>Lưu Thay Đổi</span>
           </button>
         </div>
       </div>
 
+      <!-- TAB 2: IMAGES -->
       <div id="images-tab" class="hidden space-y-4">
         <div class="border-b border-gray-100 pb-3">
           <h4 class="font-headline text-lg font-bold text-slate-900">2. Cập Nhật Hình Ảnh Banner &amp; Nhà Xưởng</h4>
-          <p class="text-xs text-slate-500">Khách có thể chọn file ảnh mới từ điện thoại hoặc máy tính để thay thế.</p>
+          <p class="text-xs text-slate-500">Khách có thể chọn file ảnh mới từ điện thoại hoặc máy tính để thay thế trực quan.</p>
         </div>
         <div class="grid grid-cols-1 sm:grid-cols-2 gap-6">
           <div class="border border-gray-200 rounded-xl p-4 bg-slate-50 flex flex-col gap-3">
@@ -170,58 +224,224 @@
           </div>
         </div>
         <div class="pt-4 flex items-center justify-end gap-3 border-t border-gray-100">
-          <button onclick="saveChanges('Hình ảnh xưởng')" class="px-6 py-2.5 bg-[#D97706] hover:bg-[#B45309] text-white rounded-xl text-xs font-bold flex items-center gap-1.5 shadow-sm transition-all">
+          <button onclick="saveNotification('Hình ảnh xưởng & Banner')" class="px-6 py-2.5 bg-[#D97706] hover:bg-[#B45309] text-white rounded-xl text-xs font-bold flex items-center gap-1.5 shadow-sm transition-all">
             <span class="material-symbols-outlined text-[16px]">cloud_upload</span>
             <span>Tải Lên &amp; Áp Dụng</span>
           </button>
         </div>
       </div>
 
+      <!-- TAB 3: PRODUCTS & EQUIPMENT -->
       <div id="products-tab" class="hidden space-y-4">
-        <div class="border-b border-gray-100 pb-3">
-          <h4 class="font-headline text-lg font-bold text-slate-900">3. Quản Lý Nông Sản &amp; Tiêu Chuẩn Xuất Khẩu</h4>
-          <p class="text-xs text-slate-500">Chỉnh sửa thông số độ ẩm, tên vùng trồng và mô tả kỹ thuật.</p>
+        <div class="border-b border-gray-100 pb-3 flex items-center justify-between">
+          <div>
+            <h4 class="font-headline text-lg font-bold text-slate-900">3. Quản Lý Nông Sản &amp; Tiêu Chuẩn Xuất Khẩu</h4>
+            <p class="text-xs text-slate-500">Chỉnh sửa thông số độ ẩm, tên vùng trồng và mô tả kỹ thuật chi tiết.</p>
+          </div>
+          <button onclick="resetProductForm()" class="px-3 py-1.5 bg-[#0B3B24] text-white rounded-lg text-xs font-semibold flex items-center gap-1">
+            <span class="material-symbols-outlined text-[16px]">add</span>
+            <span>Thêm Sản Phẩm Mới</span>
+          </button>
         </div>
-        <div class="space-y-3">
-          <div class="p-3 bg-slate-50 rounded-xl border border-gray-200 flex flex-col sm:flex-row items-start sm:items-center justify-between gap-3 text-xs">
+
+        <!-- Product List -->
+        <div class="space-y-3" id="product-list-view">
+          <!-- Item 1: Macca -->
+          <div class="p-4 bg-slate-50 rounded-2xl border border-gray-200 flex flex-col sm:flex-row items-start sm:items-center justify-between gap-3 text-xs">
             <div class="flex items-center gap-3">
-              <img src="../assets/images/macca-say-nut-vip.jpg" class="w-12 h-12 rounded-lg object-cover">
+              <img src="../assets/images/macca-say-nut-vip.jpg" class="w-14 h-14 rounded-xl object-cover border border-gray-300">
               <div>
-                <strong class="text-slate-900 block font-bold">Hạt Mắc-ca Lai Châu (Sấy nứt MS-20)</strong>
-                <span class="text-slate-500">Độ ẩm: ≤ 1.5% • Tiêu chuẩn OCOP 4 Sao</span>
+                <strong class="text-slate-900 text-sm block font-bold" id="item-title-1">Hạt Mắc-ca Lai Châu (Sấy Nứt MS-20)</strong>
+                <span class="text-slate-500 block">Vùng trồng: Tam Đường, Lai Châu (>800m)</span>
+                <span class="text-emerald-700 font-semibold">Độ ẩm sau sấy: ≤ 1.5% • Chuẩn OCOP 4 Sao</span>
               </div>
             </div>
-            <button onclick="alert('Đã mở cấu hình chi tiết sản phẩm Mắc-ca')" class="px-3 py-1.5 bg-white border border-gray-300 rounded-lg font-semibold hover:bg-slate-100">Chỉnh sửa</button>
+            <button onclick="editProduct(1, 'Hạt Mắc-ca Lai Châu (Sấy Nứt MS-20)', 'Tam Đường, Lai Châu (>800m)', '≤ 1.5% (Chuẩn Quốc Tế)', '../assets/images/macca-say-nut-vip.jpg')" class="px-4 py-2 bg-white border border-gray-300 rounded-xl font-bold text-slate-700 hover:bg-slate-100 transition-colors shadow-xs">
+              Chỉnh Sửa
+            </button>
           </div>
-          <div class="p-3 bg-slate-50 rounded-xl border border-gray-200 flex flex-col sm:flex-row items-start sm:items-center justify-between gap-3 text-xs">
+
+          <!-- Item 2: Coffee -->
+          <div class="p-4 bg-slate-50 rounded-2xl border border-gray-200 flex flex-col sm:flex-row items-start sm:items-center justify-between gap-3 text-xs">
             <div class="flex items-center gap-3">
-              <img src="../assets/images/ca-phe-arabica-dien-bien.jpg" class="w-12 h-12 rounded-lg object-cover">
+              <img src="../assets/images/ca-phe-arabica-dien-bien.jpg" class="w-14 h-14 rounded-xl object-cover border border-gray-300">
               <div>
-                <strong class="text-slate-900 block font-bold">Cà Phê Arabica Núi Cao (Mường Ảng)</strong>
-                <span class="text-slate-500">Độ ẩm: ≤ 1.2% • Rang mộc vi sai</span>
+                <strong class="text-slate-900 text-sm block font-bold" id="item-title-2">Cà Phê Arabica Núi Cao (Mường Ảng)</strong>
+                <span class="text-slate-500 block">Vùng trồng: Mường Ảng, Điện Biên (>1.200m)</span>
+                <span class="text-emerald-700 font-semibold">Độ ẩm sấy sâu: ≤ 1.2% • Rang mộc vi sai</span>
               </div>
             </div>
-            <button onclick="alert('Đã mở cấu hình chi tiết sản phẩm Cà phê')" class="px-3 py-1.5 bg-white border border-gray-300 rounded-lg font-semibold hover:bg-slate-100">Chỉnh sửa</button>
+            <button onclick="editProduct(2, 'Cà Phê Arabica Núi Cao (Mường Ảng)', 'Mường Ảng, Điện Biên (>1.200m)', '≤ 1.2% (Độ ẩm sấy sâu)', '../assets/images/ca-phe-arabica-dien-bien.jpg')" class="px-4 py-2 bg-white border border-gray-300 rounded-xl font-bold text-slate-700 hover:bg-slate-100 transition-colors shadow-xs">
+              Chỉnh Sửa
+            </button>
           </div>
+
+          <!-- Item 3: Cinnamon & Star Anise -->
+          <div class="p-4 bg-slate-50 rounded-2xl border border-gray-200 flex flex-col sm:flex-row items-start sm:items-center justify-between gap-3 text-xs">
+            <div class="flex items-center gap-3">
+              <img src="../assets/images/que-rung-hoa-hoi-lang-son.jpg" class="w-14 h-14 rounded-xl object-cover border border-gray-300">
+              <div>
+                <strong class="text-slate-900 text-sm block font-bold" id="item-title-3">Quế Rừng &amp; Hoa Hồi Tự Nhiên Sấy Vô Trùng</strong>
+                <span class="text-slate-500 block">Vùng trồng: Văn Quan, Lạng Sơn</span>
+                <span class="text-emerald-700 font-semibold">Độ sạch & ẩm: ≤ 13.5% • Khử khuẩn nhiệt, không nấm mốc</span>
+              </div>
+            </div>
+            <button onclick="editProduct(3, 'Quế Rừng & Hoa Hồi Tự Nhiên Sấy Vô Trùng', 'Văn Quan, Lạng Sơn', '≤ 13.5% (Không nấm mốc)', '../assets/images/que-rung-hoa-hoi-lang-son.jpg')" class="px-4 py-2 bg-white border border-gray-300 rounded-xl font-bold text-slate-700 hover:bg-slate-100 transition-colors shadow-xs">
+              Chỉnh Sửa
+            </button>
+          </div>
+        </div>
+
+        <!-- Inline Product Edit Form Modal -->
+        <div id="product-edit-form" class="hidden p-5 bg-emerald-50/50 rounded-2xl border border-emerald-200 space-y-4">
+          <div class="flex items-center justify-between pb-2 border-b border-emerald-200">
+            <h5 class="font-headline font-bold text-sm text-[#0B3B24]">Chỉnh Sửa Thông Tin Sản Phẩm</h5>
+            <button onclick="closeProductEdit()" class="text-slate-400 hover:text-slate-700">
+              <span class="material-symbols-outlined text-[20px]">close</span>
+            </button>
+          </div>
+          <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 text-xs">
+            <div class="flex flex-col gap-1">
+              <label class="font-semibold text-slate-700">Tên Nông Sản / Máy Móc</label>
+              <input type="text" id="edit-prod-title" class="px-3 py-2 bg-white border border-gray-300 rounded-xl">
+            </div>
+            <div class="flex flex-col gap-1">
+              <label class="font-semibold text-slate-700">Vùng Nguyên Liệu / Địa Chỉ</label>
+              <input type="text" id="edit-prod-origin" class="px-3 py-2 bg-white border border-gray-300 rounded-xl">
+            </div>
+            <div class="flex flex-col gap-1">
+              <label class="font-semibold text-slate-700">Tiêu Chuẩn Độ Ẩm / Kỹ Thuật</label>
+              <input type="text" id="edit-prod-moisture" class="px-3 py-2 bg-white border border-gray-300 rounded-xl">
+            </div>
+            <div class="flex flex-col gap-1">
+              <label class="font-semibold text-slate-700">Hình Ảnh Bao Bì / Sản Phẩm</label>
+              <input type="file" accept="image/*" class="text-xs py-1" onchange="previewImg(event, 'preview-edit-prod')">
+            </div>
+          </div>
+          <div class="flex items-center justify-between pt-2">
+            <div class="w-12 h-12 rounded-lg overflow-hidden bg-gray-100 border border-gray-300">
+              <img id="preview-edit-prod" src="../assets/images/macca-say-nut-vip.jpg" class="w-full h-full object-cover">
+            </div>
+            <button onclick="saveProductEdit()" class="px-5 py-2 bg-[#0B3B24] text-white rounded-xl font-bold text-xs shadow-sm hover:bg-[#144d32] transition-colors">
+              Xác Nhận Cập Nhật
+            </button>
+          </div>
+        </div>
+
+      </div>
+
+      <!-- TAB 4: RFQ LEADS INBOX (MỚI) -->
+      <div id="leads-tab" class="hidden space-y-4">
+        <div class="border-b border-gray-100 pb-3 flex items-center justify-between">
+          <div>
+            <h4 class="font-headline text-lg font-bold text-slate-900">4. Hộp Thư Yêu Cầu Báo Giá &amp; Khảo Sát RFQ</h4>
+            <p class="text-xs text-slate-500">Danh sách các doanh nghiệp, hợp tác xã đã gửi thông tin cần lắp đặt buồng sấy hoặc mua nông sản sỉ.</p>
+          </div>
+          <span class="px-3 py-1 bg-purple-50 text-purple-700 rounded-lg text-xs font-bold border border-purple-200">
+            3 Yêu Cầu Mới
+          </span>
+        </div>
+
+        <div class="overflow-x-auto">
+          <table class="w-full text-left text-xs">
+            <thead class="bg-slate-50 text-slate-700 font-headline font-bold uppercase tracking-wider border-b border-gray-200">
+              <tr>
+                <th class="p-3">Thời Gian</th>
+                <th class="p-3">Đối Tác / Hợp Tác Xã</th>
+                <th class="p-3">Người Liên Hệ</th>
+                <th class="p-3">Số Điện Thoại</th>
+                <th class="p-3">Nhu Cầu Kỹ Thuật</th>
+                <th class="p-3">Trạng Thái</th>
+                <th class="p-3 text-right">Thao Tác</th>
+              </tr>
+            </thead>
+            <tbody class="divide-y divide-gray-100">
+              <!-- Lead 1 -->
+              <tr class="hover:bg-slate-50/80 transition-colors">
+                <td class="p-3 font-mono text-slate-500">Hôm nay 14:20</td>
+                <td class="p-3 font-bold text-slate-900">HTX Nông Nghiệp Mường Khương</td>
+                <td class="p-3 text-slate-700">Nguyễn Văn Thành (GĐ)</td>
+                <td class="p-3 font-mono font-bold text-[#0B3B24]">0914.882.xxx</td>
+                <td class="p-3 text-slate-600">Dàn sấy MS-20 (20 Tấn) + Lắp đặt 3 pha</td>
+                <td class="p-3"><span class="px-2 py-0.5 rounded-full bg-amber-100 text-amber-800 font-bold text-[10px]">Cần khảo sát</span></td>
+                <td class="p-3 text-right">
+                  <a href="tel:0914882000" class="px-2.5 py-1 bg-[#0B3B24] text-white rounded-lg font-bold text-[11px] inline-flex items-center gap-1">Gọi ngay</a>
+                </td>
+              </tr>
+              <!-- Lead 2 -->
+              <tr class="hover:bg-slate-50/80 transition-colors">
+                <td class="p-3 font-mono text-slate-500">Hôm qua 09:15</td>
+                <td class="p-3 font-bold text-slate-900">Công ty CP Thực Phẩm Á Châu</td>
+                <td class="p-3 text-slate-700">Trần Thị Mai (Thu mua)</td>
+                <td class="p-3 font-mono font-bold text-[#0B3B24]">0988.312.xxx</td>
+                <td class="p-3 text-slate-600">Hợp đồng mua sỉ 50 tấn Mắc-ca sấy nứt OCOP</td>
+                <td class="p-3"><span class="px-2 py-0.5 rounded-full bg-emerald-100 text-emerald-800 font-bold text-[10px]">Đã báo giá</span></td>
+                <td class="p-3 text-right">
+                  <a href="tel:0988312000" class="px-2.5 py-1 bg-slate-100 text-slate-700 hover:bg-slate-200 rounded-lg font-bold text-[11px] inline-flex items-center gap-1">Xem hồ sơ</a>
+                </td>
+              </tr>
+              <!-- Lead 3 -->
+              <tr class="hover:bg-slate-50/80 transition-colors">
+                <td class="p-3 font-mono text-slate-500">07/10/2026</td>
+                <td class="p-3 font-bold text-slate-900">HTX Dược Liệu Hữu Lũng</td>
+                <td class="p-3 text-slate-700">Hoàng Văn Páo</td>
+                <td class="p-3 font-mono font-bold text-[#0B3B24]">0972.651.xxx</td>
+                <td class="p-3 text-slate-600">Tư vấn buồng sấy nhiệt tuần hoàn Quế Hồi</td>
+                <td class="p-3"><span class="px-2 py-0.5 rounded-full bg-blue-100 text-blue-800 font-bold text-[10px]">Đã kết nối</span></td>
+                <td class="p-3 text-right">
+                  <a href="tel:0972651000" class="px-2.5 py-1 bg-slate-100 text-slate-700 hover:bg-slate-200 rounded-lg font-bold text-[11px] inline-flex items-center gap-1">Xem chi tiết</a>
+                </td>
+              </tr>
+            </tbody>
+          </table>
         </div>
       </div>
+
     </div>
 
   </main>
 
-  <!-- Footer -->
+  <!-- ==================== 4. FOOTER ==================== -->
   <footer class="bg-white border-t border-gray-200 py-4 px-4 text-center text-xs text-slate-500">
     Hệ thống Quản trị Web Cường Thịnh Tech &amp; Agro • Hoạt động độc lập không phụ thuộc máy chủ.
   </footer>
 
+  <!-- ==================== 5. JAVASCRIPT CONTROLLERS ==================== -->
   <script>
+    // 1. PIN Security Lock Logic
+    const VALID_PIN = "2026";
+    function checkPin() {
+      const pin = document.getElementById('input-pin').value;
+      if (pin === VALID_PIN) {
+        document.getElementById('pin-lock-modal').classList.add('hidden');
+        sessionStorage.setItem('admin_auth', 'true');
+      } else {
+        document.getElementById('pin-error').classList.remove('hidden');
+      }
+    }
+
+    // Auto-login if session exists
+    if (sessionStorage.getItem('admin_auth') === 'true') {
+      document.getElementById('pin-lock-modal').classList.add('hidden');
+    }
+
+    function logout() {
+      sessionStorage.removeItem('admin_auth');
+      location.reload();
+    }
+
+    // 2. Tab Navigation
     function openTab(tabName) {
       document.getElementById('contact-tab').classList.add('hidden');
       document.getElementById('images-tab').classList.add('hidden');
       document.getElementById('products-tab').classList.add('hidden');
+      document.getElementById('leads-tab').classList.add('hidden');
       document.getElementById(tabName + '-tab').classList.remove('hidden');
+      // Scroll smoothly to editor panel
+      document.getElementById('editor-panel').scrollIntoView({ behavior: 'smooth' });
     }
 
+    // 3. Image Preview
     function previewImg(e, imgId) {
       const file = e.target.files[0];
       if (file) {
@@ -233,8 +453,73 @@
       }
     }
 
-    function saveChanges(section) {
-      alert('Đã lưu thành công phần ' + section + '! Hệ thống đã ghi nhận cập nhật.');
+    // 4. Product Edit Controller
+    let currentEditId = null;
+    function editProduct(id, title, origin, moisture, imgSrc) {
+      currentEditId = id;
+      document.getElementById('edit-prod-title').value = title;
+      document.getElementById('edit-prod-origin').value = origin;
+      document.getElementById('edit-prod-moisture').value = moisture;
+      document.getElementById('preview-edit-prod').src = imgSrc;
+      document.getElementById('product-edit-form').classList.remove('hidden');
+      document.getElementById('product-edit-form').scrollIntoView({ behavior: 'smooth' });
+    }
+
+    function closeProductEdit() {
+      document.getElementById('product-edit-form').classList.add('hidden');
+    }
+
+    function saveProductEdit() {
+      if (currentEditId) {
+        const newTitle = document.getElementById('edit-prod-title').value;
+        const targetEl = document.getElementById('item-title-' + currentEditId);
+        if (targetEl) targetEl.textContent = newTitle;
+        closeProductEdit();
+        saveNotification('Cập nhật sản phẩm: ' + newTitle);
+      }
+    }
+
+    function resetProductForm() {
+      editProduct(4, 'Sản phẩm mới...', 'Vùng trồng Tây Bắc', '≤ 1.5%', '../assets/images/macca-say-nut-vip.jpg');
+    }
+
+    // 5. Toast Notification System
+    function saveNotification(section) {
+      const toast = document.createElement('div');
+      toast.className = 'fixed bottom-6 right-6 z-50 bg-[#0B3B24] text-white px-5 py-3.5 rounded-2xl shadow-2xl border border-emerald-400/40 text-xs font-bold flex items-center gap-2 transform translate-y-4 opacity-0 transition-all duration-300';
+      toast.innerHTML = '<span class="material-symbols-outlined text-[18px] text-emerald-400">check_circle</span><span>Đã lưu thành công: ' + section + '!</span>';
+      document.body.appendChild(toast);
+      setTimeout(() => { toast.classList.remove('translate-y-4', 'opacity-0'); }, 50);
+      setTimeout(() => {
+        toast.classList.add('opacity-0', 'translate-y-4');
+        setTimeout(() => toast.remove(), 300);
+      }, 3000);
+    }
+
+    // 6. Export Configuration Backup JSON
+    function exportBackupData() {
+      const backupData = {
+        exported_at: new Date().toISOString(),
+        site_info: {
+          hotline: document.getElementById('input-hotline').value,
+          email: document.getElementById('input-email').value,
+          factory_hp: document.getElementById('input-factory-hp').value,
+          factory_lc: document.getElementById('input-factory-lc').value
+        },
+        banner: {
+          main_banner: document.getElementById('preview-banner').src,
+          factory_view: document.getElementById('preview-plant').src
+        }
+      };
+
+      const dataStr = "data:text/json;charset=utf-8," + encodeURIComponent(JSON.stringify(backupData, null, 2));
+      const downloadAnchor = document.createElement('a');
+      downloadAnchor.setAttribute("href", dataStr);
+      downloadAnchor.setAttribute("download", "cuong_thinh_site_backup_" + new Date().toISOString().slice(0,10) + ".json");
+      document.body.appendChild(downloadAnchor);
+      downloadAnchor.click();
+      downloadAnchor.remove();
+      saveNotification('Tệp sao lưu cấu hình');
     }
   </script>
 
