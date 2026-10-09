@@ -50,6 +50,8 @@
     };
   </script>
     <style>
+    html { scroll-behavior: smooth; }
+
     body { 
       font-family: 'Be Vietnam Pro', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; 
       color: #334155; 
@@ -79,23 +81,23 @@
     /* Cinematic Optical Blur-to-Focus Motion Engine */
     [data-reveal] {
       opacity: 0;
-      filter: blur(10px);
-      transition: opacity 0.85s cubic-bezier(0.16, 1, 0.3, 1), 
-                  transform 0.85s cubic-bezier(0.16, 1, 0.3, 1), 
-                  filter 0.85s cubic-bezier(0.16, 1, 0.3, 1);
+      filter: blur(4px);
+      transition: opacity 1.25s cubic-bezier(0.22, 1, 0.36, 1),
+                  transform 1.25s cubic-bezier(0.22, 1, 0.36, 1),
+                  filter 1.25s cubic-bezier(0.22, 1, 0.36, 1);
       will-change: opacity, transform, filter;
     }
     [data-reveal="up"] {
-      transform: translateY(54px);
+      transform: translateY(24px);
     }
     [data-reveal="left"] {
-      transform: translateX(-64px);
+      transform: translateX(-28px);
     }
     [data-reveal="right"] {
-      transform: translateX(64px);
+      transform: translateX(28px);
     }
     [data-reveal="scale"] {
-      transform: scale(0.92);
+      transform: scale(0.96);
     }
     [data-reveal].revealed {
       opacity: 1 !important;
@@ -128,12 +130,12 @@
     .animate-marquee-left {
       display: flex;
       width: max-content;
-      animation: marquee-left 68s linear infinite;
+      animation: marquee-left 130s linear infinite;
     }
     .animate-marquee-right {
       display: flex;
       width: max-content;
-      animation: marquee-right 68s linear infinite;
+      animation: marquee-right 130s linear infinite;
     }
     .marquee-container:hover .animate-marquee-left,
     .marquee-container:hover .animate-marquee-right {
@@ -1302,14 +1304,14 @@
               const targetVal = parseInt(el.getAttribute('data-counter'), 10);
               const prefix = el.getAttribute('data-counter-prefix') || '';
               const suffix = el.getAttribute('data-counter-suffix') || '';
-              const duration = 1500;
+              const duration = 2400;
               const startTimestamp = performance.now();
 
               function step(now) {
                 const elapsed = now - startTimestamp;
                 const progress = Math.min(elapsed / duration, 1);
                 // EaseOutCubic
-                const easeVal = 1 - Math.pow(1 - progress, 3);
+                const easeVal = progress === 1 ? 1 : 1 - Math.pow(2, -10 * progress);
                 const currentVal = Math.floor(easeVal * targetVal);
                 el.textContent = prefix + currentVal.toLocaleString('en-US') + suffix;
 
