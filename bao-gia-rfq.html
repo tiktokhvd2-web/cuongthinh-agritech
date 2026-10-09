@@ -195,7 +195,7 @@
       <!-- Right: Action Cluster (Language Switcher + Hotline + Glowing RFQ CTA) -->
       <div class="flex items-center gap-2.5 sm:gap-3 shrink-0">
         <!-- International Language Switcher -->
-                <div class="hidden lg:inline-flex items-center bg-slate-100 p-0.5 rounded-full border border-gray-200/80 text-[11px] font-bold" title="Chọn ngôn ngữ hiển thị">
+                <div class="inline-flex items-center bg-slate-100 p-0.5 rounded-full border border-gray-200/80 text-[11px] font-bold" title="Chọn ngôn ngữ hiển thị">
           <span class="px-2 py-0.5 rounded-full bg-[#0B3B24] text-white shadow-xs">VN</span>
           <a href="en/" class="px-2 py-0.5 text-slate-500 hover:text-slate-900 cursor-pointer transition-colors" title="Switch to English version">EN</a>
         </div>
@@ -206,9 +206,10 @@
         </a>
 
         <!-- Glowing Amber RFQ Button -->
-        <a class="inline-flex items-center gap-1.5 sm:gap-2 px-4 sm:px-5 py-2 sm:py-2.5 bg-gradient-to-r from-[#D97706] to-[#B45309] hover:from-[#B45309] hover:to-[#92400E] text-white rounded-full text-xs sm:text-sm font-bold shadow-md hover:shadow-lg ring-2 ring-[#D97706]/20 hover:ring-[#D97706]/40 transition-all duration-200 transform hover:-translate-y-0.5" href="bao-gia-rfq/">
-          <span class="material-symbols-outlined text-[17px] text-amber-200">request_quote</span>
-          <span>Yêu cầu báo giá RFQ</span>
+        <a class="inline-flex items-center gap-1 sm:gap-2 px-3 sm:px-5 py-2 sm:py-2.5 bg-gradient-to-r from-[#D97706] to-[#B45309] hover:from-[#B45309] hover:to-[#92400E] text-white rounded-full text-xs sm:text-sm font-bold shadow-md hover:shadow-lg ring-2 ring-[#D97706]/20 hover:ring-[#D97706]/40 transition-all duration-200 transform hover:-translate-y-0.5" href="bao-gia-rfq/">
+          <span class="material-symbols-outlined text-[16px] sm:text-[17px] text-amber-200">request_quote</span>
+          <span class="hidden sm:inline">Yêu cầu báo giá RFQ</span>
+          <span class="sm:hidden text-[11px]">Báo giá</span>
         </a>
 
         <button id="mobile-menu-toggle" class="xl:hidden flex items-center justify-center p-2 rounded-lg text-[#0B3B24] hover:bg-gray-100 transition-colors" aria-label="Mở menu điều hướng">
@@ -1024,6 +1025,22 @@
     })();
   </script>
 
+
+  <!-- STICKY BOTTOM ACTION BAR FOR MOBILE (CALL + RFQ) -->
+  <div class="xl:hidden fixed bottom-0 left-0 right-0 z-40 bg-white/95 backdrop-blur-md border-t border-gray-200 px-3 py-2 flex items-center gap-2.5 shadow-[0_-4px_16px_rgba(0,0,0,0.06)]">
+    <a href="tel:0932050101" class="flex-1 py-2.5 px-3 rounded-xl bg-emerald-50 hover:bg-emerald-100 border border-emerald-300/80 text-[#0B3B24] font-bold text-xs flex items-center justify-center gap-1.5 transition-colors">
+      <span class="material-symbols-outlined text-[17px] text-[#0B3B24]">phone_in_talk</span>
+      <span>Gọi Hotline</span>
+    </a>
+    <a href="https://zalo.me/0932050101" target="_blank" rel="noopener noreferrer" class="py-2.5 px-3 rounded-xl bg-blue-50 hover:bg-blue-100 border border-blue-200 text-blue-700 font-bold text-xs flex items-center justify-center gap-1 transition-colors">
+      <span class="material-symbols-outlined text-[17px] text-blue-600">chat</span>
+      <span>Zalo</span>
+    </a>
+    <a href="bao-gia-rfq/" class="flex-1 py-2.5 px-3 rounded-xl bg-gradient-to-r from-[#D97706] to-[#B45309] hover:from-[#B45309] hover:to-[#92400E] text-white font-bold text-xs flex items-center justify-center gap-1.5 shadow-sm transition-all">
+      <span class="material-symbols-outlined text-[17px] text-amber-200">request_quote</span>
+      <span>Báo Giá RFQ</span>
+    </a>
+  </div>
 
 </body>
 </html>
