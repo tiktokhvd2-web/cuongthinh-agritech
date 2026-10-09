@@ -1,0 +1,54 @@
+backend:
+  name: github
+  repo: tiktokhvd2-web/cuongthinh-agritech
+  branch: main
+
+# Media files will be saved in assets/images/
+media_folder: "assets/images"
+public_folder: "../assets/images"
+
+# Vietnamese localization for admin UI
+locale: "vi"
+
+collections:
+  - name: "site_settings"
+    label: "Thông Tin Chung Website"
+    files:
+      - label: "Thông Tin Liên Hệ & Pháp Lý"
+        name: "contact_info"
+        file: "data/site_info.json"
+        fields:
+          - { label: "Tên Doanh Nghiệp", name: "company_name", widget: "string", default: "CÔNG TY TNHH SẢN XUẤT VÀ ỨNG DỤNG CÔNG NGHỆ THỰC PHẨM CƯỜNG THỊNH" }
+          - { label: "Mã Số Thuế", name: "tax_code", widget: "string", default: "0315249826" }
+          - { label: "Hotline B2B", name: "hotline", widget: "string", default: "0932.050.101" }
+          - { label: "Email Liên Hệ", name: "email", widget: "string", default: "contact@cuongthinhagri.vn" }
+          - { label: "Địa Chỉ Xưởng Hải Phòng", name: "factory_hp", widget: "string", default: "KCN Đình Vũ, Quận Hải An, TP. Hải Phòng (3.500m²)" }
+          - { label: "Địa Chỉ Nhà Máy Lai Châu", name: "factory_lc", widget: "string", default: "Bản Nùng Nàng, Huyện Tam Đường, Tỉnh Lai Châu (5.000m²)" }
+
+  - name: "banners"
+    label: "Quản Lý Ảnh & Banner Chính"
+    files:
+      - label: "Banner Trang Chủ"
+        name: "hero_banner"
+        file: "data/hero_banner.json"
+        fields:
+          - { label: "Tiêu Đề Lớn", name: "headline", widget: "string", default: "NÂNG TẦM GIÁ TRỊ NÔNG SẢN VIỆT — VƯƠN TẦM TƯƠNG LAI" }
+          - { label: "Ảnh Nền Nhà Máy Thực Tế", name: "background_image", widget: "image", default: "../assets/images/may-say-container-cuong-thinh.jpg" }
+          - { label: "Ảnh Vận Hành Thực Địa (Bên Phải)", name: "featured_image", widget: "image", default: "../assets/images/nha-may-che-bien-tam-duong.jpg" }
+
+  - name: "products"
+    label: "Nông Sản & Sản Phẩm Sấy"
+    files:
+      - label: "Danh Mục Nông Sản Chủ Lực"
+        name: "agricultural_products"
+        file: "data/products.json"
+        fields:
+          - label: "Danh Sách Sản Phẩm"
+            name: "items"
+            widget: "list"
+            fields:
+              - { label: "Tên Sản Phẩm", name: "title", widget: "string" }
+              - { label: "Vùng Trồng", name: "origin", widget: "string" }
+              - { label: "Độ Ẩm Chuẩn", name: "moisture", widget: "string" }
+              - { label: "Ảnh Sản Phẩm", name: "image", widget: "image" }
+              - { label: "Mô Tả Kỹ Thuật", name: "description", widget: "text" }

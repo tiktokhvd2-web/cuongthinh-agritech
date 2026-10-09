@@ -1,0 +1,25 @@
+{
+  "items": [
+    {
+      "title": "Hạt Mắc-ca Tây Bắc Sấy Nứt Tự Nhiên",
+      "origin": "Tam Đường, Lai Châu (Độ cao >800m)",
+      "moisture": "≤ 1.5% (Chuẩn Quốc Tế)",
+      "image": "../assets/images/macca-say-nut-vip.jpg",
+      "description": "Sản phẩm chủ lực sấy nứt tự nhiên bằng công nghệ hồi nhiệt đa tầng MS-20. Hạt nhân căng mẩy, vị béo bùi, giàu Omega 3-6-9."
+    },
+    {
+      "title": "Cà Phê Arabica Núi Cao Rang Mộc Vi Sai",
+      "origin": "Mường Ảng, Điện Biên (Độ cao >1.200m)",
+      "moisture": "≤ 1.2% (Độ ẩm sấy sâu)",
+      "image": "../assets/images/ca-phe-arabica-dien-bien.jpg",
+      "description": "Thu hái chọn lọc 100% quả chín mọng, sơ chế ướt và rang mộc vi sai chuẩn vị đặc sản xuất khẩu."
+    },
+    {
+      "title": "Quế Rừng & Hoa Hồi Tự Nhiên Sấy Vô Trùng",
+      "origin": "Văn Quan, Lạng Sơn",
+      "moisture": "≤ 13.5% (Không ẩm mốc)",
+      "image": "../assets/images/que-rung-hoa-hoi-lang-son.jpg",
+      "description": "Vỏ quế già nhiều năm tuổi, sấy nhiệt sạch vô trùng. Hoa hồi cánh to đều, hàm lượng tinh dầu đậm đặc."
+    }
+  ]
+}
